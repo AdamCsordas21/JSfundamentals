@@ -113,7 +113,7 @@ for (let i = 100; i >= 95; i--) {
 // either 1 + 2 that work OR 1 + 4 that don't work
 
 
-// Homework 1. 
+// Homework 1.
 // prints list of even numbers from 1 to 15
 for (let i = 1; i < 15; i++) {
   if (i % 2 === 0) {
@@ -121,7 +121,7 @@ for (let i = 1; i < 15; i++) {
   }
 }
 
-// HOMEWORK 2. 
+// HOMEWORK 2.
 // prints the numbers from 25 to 55
 
 // for loop
@@ -176,4 +176,74 @@ function tellMe(what) { // not pure
   console.log(what)
   return `I'm telling you ${what}!`
 }
+
+
+/*
+1 byte = 8 bits
+
+bit?
+1
+0
+
+byte?
+10101011
+01011100
+00000000 = 0
+11111111 = 255
+
+0 -> 0 * 2^0 -> 0 * 1   -> 0
+0 -> 0 * 2^1 -> 0 * 2   -> 0
+0 -> 0 * 2^2 -> 0 * 4   -> 0
+0 -> 0 * 2^3 -> 0 * 8   -> 0
+0 -> 0 * 2^4 -> 0 * 16  -> 0
+0 -> 0 * 2^5 -> 0 * 32  -> 0
+0 -> 0 * 2^6 -> 0 * 64  -> 0
+0 -> 0 * 2^7 -> 0 * 128 -> 0
+---------           sum -> 0
+
+00011010 = 26
+0 -> 0 * 2^0 -> 0 * 1   -> 0
+1 -> 1 * 2^1 -> 1 * 2   -> 2
+0 -> 0 * 2^2 -> 0 * 4   -> 0
+1 -> 1 * 2^3 -> 1 * 8   -> 8
+1 -> 1 * 2^4 -> 1 * 16  -> 16
+0 -> 0 * 2^5 -> 0 * 32  -> 0
+0 -> 0 * 2^6 -> 0 * 64  -> 0
+0 -> 0 * 2^7 -> 0 * 128 -> 0
+---------           sum -> 26
+
+11111111 = 26
+1 -> 1 * 2^0 -> 1 * 1   -> 1
+1 -> 1 * 2^1 -> 1 * 2   -> 2
+1 -> 1 * 2^2 -> 1 * 4   -> 4
+1 -> 1 * 2^3 -> 1 * 8   -> 8
+1 -> 1 * 2^4 -> 1 * 16  -> 16
+1 -> 1 * 2^5 -> 1 * 32  -> 32
+1 -> 1 * 2^6 -> 1 * 64  -> 64
+1 -> 1 * 2^7 -> 1 * 128 -> 128
+---------           sum -> 255
+
+kilobyte = 1024 bytes // kilo - 1000
+megabyte = 1024 kilobytes = 1,048,576 bytes
+gigabyte = 1024 megabytes = 1,048,576 kilobytes = 1,073,741,824 bytes
+
+ASCII = American Standard Code for Information Interchange
+
+
+
+function decToBin(n) {
+  return n.toString(2).padStart(8, '0')
+}
+function decToChar(n) {
+  return String.fromCharCode(n)
+}
+
+for ( let i = 0; i < 128; i++) {
+  console.log(i, decToBin(i), decToChar(i))
+}
+*/
+
+// recursive function
+
+
 

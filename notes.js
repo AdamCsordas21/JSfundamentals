@@ -37,7 +37,7 @@ Cost of delay    - The lost opportunity to build and release another feature now
 Cost of carry    - The complexity added by the feature to the code, making the software harder to modify and debug
 Cost of repair   - The effort spent on modifying a feature because it is not exactly what you need now
 
-It is important to know that YAGNI is meant to be used in combination with several other practices, such as 
+It is important to know that YAGNI is meant to be used in combination with several other practices, such as
 continuous refactoring, continuous automated unit testing and continuous integration. Used without these practices
 could lead to disorganized code and massive rework.
 
@@ -74,7 +74,7 @@ Typical invidual mistakes include:
 
 Typical team pitfalls include:
 - partial adoption - only a few developers on the team use TDD
-- poor maintenance of the test suite - most commonly leading to a test suite with a prohibitively test suite 
+- poor maintenance of the test suite - most commonly leading to a test suite with a prohibitively test suite
   (i.e. seldom or never run) - sometimes as a result of poor maintenance, sometimes as a result of team turnover
 
 Skill Levels
@@ -106,7 +106,7 @@ A class should have one and only one reason to change, meaning that a class shou
 
 O - Open-closed principle
 Object or entities should be open for extension but closed for modification. This simply means that a class
-should be easily extandable without modifying the class itself. 
+should be easily extandable without modifying the class itself.
 
 L - Liskov substitution principle
 The principle defines that objects of a superclass shall be replaceable with objects of its subclasses without
@@ -118,7 +118,7 @@ A client should never be forced to implement an interface that it doesn't use or
 depend on methods they don't use.
 
 D - Dependency Inversion principle
-Entities must depend on abstraction not on concretions. It states that the high level module must not depend on
+Entities must depend on abstractions not on concretions. It states that the high level module must not depend on
 the low level module, but they should depend on abstraction.
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -127,15 +127,15 @@ Testing Pyramid
 
 It is a framework that can help both developers and QAs create high-quality software. It reduces the time required
 for developers to identify if a change they introduced breaks a code. It can also be helpful in building a more
-reliable test suite. The testing pyramid also referred to as the test automataion pyramid, lays out the types of 
+reliable test suite. The testing pyramid also referred to as the test automataion pyramid, lays out the types of
 tests that should be included in an automated test suite. It also outlines the sequence and frequency of these
 tests. The whole point is to offer immediate feedback to ensure that code changes do not distrup existing
 features.
 
 LEVEL 1 - Unit tests
 Unit tests form the base of the testing pyramid. They test individual components or functionalities to validate
-that it works as expected in isolated conditions. It is important to run a number of scenarios in unit tests - 
-happy path, error handling, etc. 
+that it works as expected in isolated conditions. It is important to run a number of scenarios in unit tests -
+happy path, error handling, etc.
 Since this is the largest subset, the unit test must be written to run quickly as possible. Keep in mind that the
 number of unit tests will increase as more features are added. This test suite needs to be run every time a new
 feature is added. Consequently, developers receive immediate feedback on whether individual features are working
@@ -157,7 +157,7 @@ tests. They also require a preproduction environment in which to run.
 
 LEVEL 3 - End-to-End tests
 At the top of the pyramid are the end-to-end tests. These ensure that the entire application is functioning as
-required. End-to-end tests do exactly what the name suggests: test that the application i working flawlessly
+required. End-to-end tests do exactly what the name suggests: test that the application is working flawlessly
 from start to finish.
 When running these tests, it is important to imagine the user's perspective. How would an actual user interact
 with the app? How can tests be written to replicate that interaction?
@@ -330,7 +330,7 @@ example (as per the code sample lower down), then each object created by that sa
 same property.
 One of the benefits of using prototype pattern is that we're working with the prototypal strengths JavaScript has
 to offer natively rather than attempting to imitate features of other languages. With other design patterns, this
-isn't always the case. Not only is the pattern an easy way to implement inheritance, but it can also come with a 
+isn't always the case. Not only is the pattern an easy way to implement inheritance, but it can also come with a
 performance boost as well: when defining a function in an object, they're all created by reference (so all child
 objects point to the same function) instead of creating their own individual copies.
 
@@ -362,7 +362,7 @@ var car = Object.create(vehicle, {
   "id": {
     value: MY_GLOBAL.nextId(),
     // writable: false, configurable: false by default
-    enumerable: trueerOUfvdf 
+    enumerable: trueerOUfvdf
   },
   "model": {
     value: "Ford",
@@ -392,7 +392,7 @@ function vehicle(model) {
 var car = vehicle ("Ford Escort");
 car.getModel();
 
-Note: This alternative does not allow the user to define read-only properties in the same manner (as the 
+Note: This alternative does not allow the user to define read-only properties in the same manner (as the
 vehiclePrototype may be altered if not careful).
 
 A final alternative implementation of the Prototype pattern could be following:
@@ -405,7 +405,7 @@ var beget = (function () {
   };
 }) ();
 
-One could reference this method from the vehicle function. Note, however that vehicle here is emulating a 
+One could reference this method from the vehicle function. Note, however that vehicle here is emulating a
 constructor, since the prototype pattern does not include any notion of initialization beyond linking an
 object to a prototype.
 
