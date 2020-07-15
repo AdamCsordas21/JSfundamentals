@@ -1,0 +1,32 @@
+1. Starting point
+remote A - B - C
+adam A - B - C
+osh A - B - C
+
+2. Adam and Osh are working
+remote A - B - C
+adam A - B - C - adams_work
+osh A - B - C - oshs_work
+
+3. Adam finished and ready to integrate (git push)
+remote A - B - C - adams_work
+adam A - B - C - adams_work
+osh A - B - C - oshs_work
+
+4. Osh finished and ready to integrate (git pull -r && git push)
+remote A - B - C - adams_work - oshs_work
+adam A - B - C - adams_work
+osh A - B - C - adams_work - oshs_work
+
+
+When you work with someone on the trunk (main branch, often master),
+
+You probably want to brainlessly always do `git pull -r` - even if
+there are no changes in the upstream (remote, e.g. Github)
+then nothing will happen, so no risk involved.
+If there are some changes, then your local changes will be applied
+on the top of the upstream (new base) changes.
+
+If you have uncommitted changes:
+- commit your changes and `git pull --rebase`
+- stash your changes `git stash`, `git pull --rebase`, unstash `git stash pop`
