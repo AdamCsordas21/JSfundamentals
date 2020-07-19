@@ -246,5 +246,7 @@ for ( let i = 0; i < 128; i++) {
 
 // recursive function
 
-
-
+// What is an expression in JS?
+// What is a statement in JS? (bonus)
+// What is the returned value of a given expression?
+// What is the precedence of operators (which de facto dictate the order of expressions to be evaluated in)?

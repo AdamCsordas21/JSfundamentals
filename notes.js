@@ -412,3 +412,89 @@ object to a prototype.
 
 
 */
+
+/*
+What is an expression in JS?
+
+Any unit of code that can be evaluated to a value is an expression. Since expressions produce values, they
+can appear anywhere in a program where JavaScript expects a value such as the arguments of a function
+invocation.
+An expression is any valid set of literlas, variables, operators, and expressions that evaluates to a single
+value.
+
+e.g.
+
+---Arithmetich expressions:---
+10;    // It is an expression that is evaluated to the numeric value 10 by the JS interpreter.
+10+13; // This is another expression that is evaluated tp produce the numeric value 23.
+
+---String expressions:---
+'hello';
+'hello' + 'world'; // evaluates to the string 'hello world'
+
+---Logical expressions:---
+Evaluate to the boolena value true or flase are considered to be logical expressions.
+&&, ||, !
+
+10 > 9               // evaluates to boolean value true
+10 > 20              // evaluates to boolean value false
+true;                // evaluates to boolean value true
+a === 20 && b === 30 // evaluates to true or false based on the values of a and b
+
+---Primary expressions:---
+Refer to stand alone expressions such as literal values, certain keywords and variable values
+'hello world' // A string literal
+23;           // A numeric literal
+true;         // A boolean value true
+sum;          // Value of variable sum
+this;         // A keyword that evaluates to the current object
+
+---Left-hand-side expressions:---
+Left-hand-side expressions are those that can appear on the left side of an assignment expression.
+
+// variables such as variables
+i = 10;
+total = 0;
+
+// properties of objects
+var obj = {} // empty object with no properties
+obj.x = 10   // an assingment expression
+
+// elements of array
+array[0] = 20;
+array[1] = 'hello';
+
+// Invalid left-hand-side errors
+++(a + 1); // SyntaxError. Attempting to increment or decrement an expression that is not an lvalue
+will lead to errors.
+
+---Assignments expressions:---
+When expressions use the = operator to assign a value to a variable, it is called assignemtn expression.
+average = 55;
+
+var b = (a = 1);
+
+---Expressions with side effect:---
+Expressions with side effects are those that result in a change or a side effect such as setting or
+modifying the value of a variable through the assignment operator, function call, incementing or
+decrementing the value of a variable.
+
+sum = 20;
+sum ++;
+
+function modify() {
+  a *= 10;
+}
+
+var a = 10;
+modify;
+
+
+// What is the returned value of a given expression?
+The type of the value returned by an expression depends on the elements used in the expression.
+
+// What is the precedence of operators (which de facto dictate the order of expressions to be evaluated in)?
+Expressions with higher-precedence operators are evaluated first. Where several operators have equal precedence,
+they are evaluated from left to right.
+
+*/
