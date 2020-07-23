@@ -5,18 +5,34 @@ osh A - B - C
 
 2. Adam and Osh are working
 remote A - B - C
-adam A - B - C - adams_work
+adam A - B - C - adams_work (git add && git commit)
+osh A - B - C - oshs_work (git add && git commit)
+
+3. Adam finished and ready to integrate
+remote A - B - C - adams_work
+adam A - B - C - adams_work (git pull -r])
 osh A - B - C - oshs_work
 
-3. Adam finished and ready to integrate (git push)
+3. Adam updates remote with his changes
+remote A - B - C - adams_work
+adam A - B - C - adams_work (git push)
+osh A - B - C - oshs_work
+
+4. Osh finished and ready to integrate
 remote A - B - C - adams_work
 adam A - B - C - adams_work
-osh A - B - C - oshs_work
+osh A - B - C - adams_work - oshs_work (git pull -r)
 
-4. Osh finished and ready to integrate (git pull -r && git push)
+5. Osh updates remote with his changes
 remote A - B - C - adams_work - oshs_work
 adam A - B - C - adams_work
-osh A - B - C - adams_work - oshs_work
+osh A - B - C - adams_work - oshs_work (git push)
+
+
+When you do `git push`, that means you try to push your history to the place you push to, e.g. origin
+When you do `git fetch`, that means you fetch the latest changes from the upstream, e.g. origin and make them avaialable to you, but you don't merge them.
+To merge them you do `git merge <source>`, e.g. `git merge origin/master`, which merges is the remote history to your current branch.
+When you want to fetch and merge quicker, you can simply do `git pull`.
 
 
 When you work with someone on the trunk (main branch, often master),
@@ -27,6 +43,32 @@ then nothing will happen, so no risk involved.
 If there are some changes, then your local changes will be applied
 on the top of the upstream (new base) changes.
 
-If you have uncommitted changes:
-- commit your changes and `git pull --rebase`
-- stash your changes `git stash`, `git pull --rebase`, unstash `git stash pop`
+!!! If you have uncommitted changes:
+- commit your changes (but not push, if you try, it will be rejected, because the history is different) and `git pull --rebase`
+- or stash your changes `git stash`, `git pull --rebase`, unstash `git stash pop`
+
+
+Ideal scenario without knowledge about any changes in the upstream (remote):
+1. Do some work
+2. git add & commit
+3. git pull -r (maybe some changes, maybe not - who cares)
+3a. if there are no changes - nothing happens - go to 4
+3b. if there are changes, but no conflicts - nothing happens* - go to 4
+3c. if there are changes and they cause some conflicts - resolve and go to 2
+4. git push
+
+* nothing happens 99.99% of time. However imagine that you have file.js and file.spec.js.
+// file.spec.js
+const { myFunc } = require('./file2')
+expect(myFunc('osh')).toEqual('OSH')
+
+// file.js
+module.exports = {
+  someFunc: (s) => s.toUpperCase()
+}
+
+// file2.js
+module.exports = {
+  myFunc: (s) => s.toUpperCase(),
+}
+
