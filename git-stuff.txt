@@ -60,21 +60,10 @@ Ideal scenario without knowledge about any changes in the upstream (remote):
 
 * nothing happens 99.99% of time. However imagine that you have file.js and file.spec.js.
 // file.spec.js
-const { myFunc } = require('./file2')
-expect(myFunc('osh')).toEqual('OSH')
+const { someFunc } = require('./file')
+expect(someFunc('osh')).toEqual('OSH')
 
 // file.js
 module.exports = {
   someFunc: (s) => s.toUpperCase()
 }
-
-// file2.js
-module.exports = {
-  myFunc: (s) => s.toUpperCase(),
-}
-
-
-
-
-
-
