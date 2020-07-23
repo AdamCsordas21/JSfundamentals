@@ -233,7 +233,6 @@ describe('arrays simple functions', () => {
     })
   })
 
-<<<<<<< HEAD
   describe('sorting (without mutation)', () => {
     it('sorts numbers ascending', () => {
       const numbers = [-2, 2, 1, 0, -1]
@@ -320,8 +319,7 @@ describe('arrays simple functions', () => {
       ])
     })
   })
-})
-=======
+
   describe('splicing without mutating input', () => {
     it(`removes all elements to the end
     starting from a given element index (starting from zero and including)
@@ -372,4 +370,3 @@ describe('arrays simple functions', () => {
     })
   })
 })
->>>>>>> 3f40111ba8d9c2c47920714896f8746ecbd338fd
