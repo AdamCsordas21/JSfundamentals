@@ -200,6 +200,37 @@ function sortPlayersByWorstPerformingPure(players) {
 12 - 7 - 5 = 0
 */
 
+/* Pure functions vs input mutating functions
+
+const myNumbers = [4, 1, 2, 3]
+const toBeMutated =[...myNumbers]
+sortNumbersAscending(toBeMutated)
+// myNumbers = [4, 1, 2, 3]
+// toBeSrted = [1, 2, 3, 4]
+
+let myNumbers = [4, 1, 2, 3]
+myNumbers = sortNumbersAscendingPure(toBeSorted)
+// myNumbers = [1, 2, 3, 4]
+
+Advatanges of pure functions
+- easier to test and use in separation
+
+Advatages of mutating functions
+- memory efficient, particularly visible on big data sets like sorting arrays
+
+In JavaScript, it's not immediately clean if a function is mutating the input or not.
+Requires knowledge of the implementation
+When creating mutating functions, if you don't return the result of the operation,
+it's clear that the input was mutated, e.g.:
+sorting requires changing order, when a function does not return the sorted input,
+it becomes obvious that the input was mutated.
+When a function returns a result of operation, it's easy to assume that the input was not mutated,
+but this is not necessarily true. e.g.: the built in Array.prototype.sort function
+mutates the input to be memory efficient, but on top of that it returns the result for convenience.
+
+
+*/
+
 module.exports = {
   prependElement,
   prependElementPure,
