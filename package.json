@@ -1,7 +1,7 @@
 {
   "name": "intro-to-functional-programming",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is actually not only about JS, but some other stuff as well",
   "main": "index.js",
   "scripts": {
     "test": "jest"
