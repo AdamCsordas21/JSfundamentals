@@ -182,9 +182,12 @@ function sortPlayersByAvgScoreDescendingPure(players) {
   return [...players].sort((a, b) => b.avgScore - a.avgScore)
 }
 
-const sortPlayersByWorstPerformingPure = (players) => [...players].sort((a, b) =>
-  a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
-)
+function sortPlayersByWorstPerformingPure(players) {
+  return [...players].sort((a, b) =>
+    a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
+  )
+}
+
 
 /*
 12 = 7 + 5
