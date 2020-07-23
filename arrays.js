@@ -1,20 +1,25 @@
-function prependElement(arr) {
-  arr.unshift('great')
+function prependElement(arr, newElement) {
+  arr.unshift(newElement)
   return arr
 }
 
-function prepend2Elements(arr) {
-  arr.unshift('the', 'great')
+function prependElementPure(arr, newElement) {
+  const copy = [...arr]
+  return prependElement(copy, newElement)
+}
+
+function prepend2Elements(arr, newElement, newElement2) {
+  arr.unshift(newElement, newElement2)
   return arr
 }
 
-function appendElement(arr) {
-  arr.push('!')
+function appendElement(arr, element) {
+  arr.push(element)
   return arr
 }
 
-function append2Elements(arr) {
-  arr.push('!', '!')
+function append2Elements(arr, element, element2) {
+  arr.push(element, element2)
   return arr
 }
 
@@ -118,8 +123,83 @@ function shoutAroundOsh(array) {
   // return newArray
 }
 
+const sortNumbersAscending = (numbers) => void numbers.sort((a, b) => a - b)
+
+const sortNumbersDescending = (numbers) => void numbers.sort((a, b) => b - a)
+
+const sortStringsAscending = (strings) => void strings.sort((a, b) => a.localeCompare(b))
+
+const sortStringsDescending = (strings) => void strings.sort((a, b) => b.localeCompare(a))
+
+const sortPlayersByTopScoreDescending = (players) => void players.sort((a, b) => b.topScore - a.topScore)
+
+const sortPlayersByAvgScoreAscending = (players) => void players.sort((a, b) => a.avgScore - b.avgScore)
+
+const sortPlayersByWorstPerforming = (players) => void players.sort((a, b) =>
+  a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
+)
+
+const sortPlayersByTopScoreAscending = (players) => {
+  sortPlayersByTopScoreDescending(players)
+  players.reverse()
+}
+
+const sortPlayersByAvgScoreDescending = (players) => {
+  sortPlayersByAvgScoreAscending(players)
+  players.reverse()
+}
+
+// pure functions
+function sortNumbersAscendingPure(numbers) {
+  return [...numbers].sort((a, b) => a - b)
+}
+
+function sortNumbersDescendingPure(numbers) {
+  return [...numbers].sort((a, b) => b - a)
+}
+
+function sortStringsAscendingPure(strings) {
+  return [...strings].sort((a, b) => a.localeCompare(b))
+}
+
+function sortStringsDescendingPure(strings) {
+  return [...strings].sort((a, b) => b.localeCompare(a))
+}
+
+function sortPlayersByTopScoreDescendingPure(players) {
+  return [...players].sort((a, b) => b.topScore - a.topScore)
+}
+
+function sortPlayersByTopScoreAscendingPure(players) {
+  return [...players].sort((a, b) => a.topScore - b.topScore)
+}
+
+function sortPlayersByAvgScoreAscendingPure(players) {
+  return [...players].sort((a, b) => a.avgScore - b.avgScore)
+}
+
+function sortPlayersByAvgScoreDescendingPure(players) {
+  return [...players].sort((a, b) => b.avgScore - a.avgScore)
+}
+
+const sortPlayersByWorstPerformingPure = (players) => [...players].sort((a, b) =>
+  a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
+)
+
+/*
+12 = 7 + 5
+12 - 7 = 5
+-7 = 5 - 12
+-7 - 5 = -12
+
+12 = 7 + 5
+12 - 7 = 5
+12 - 7 - 5 = 0
+*/
+
 module.exports = {
   prependElement,
+  prependElementPure,
   prepend2Elements,
   appendElement,
   append2Elements,
@@ -139,4 +219,22 @@ module.exports = {
   trimArray,
   dashArray,
   shoutAroundOsh,
+  sortNumbersAscending,
+  sortNumbersDescending,
+  sortStringsAscending,
+  sortStringsDescending,
+  sortPlayersByTopScoreDescending,
+  sortPlayersByAvgScoreAscending,
+  sortPlayersByWorstPerforming,
+  sortPlayersByTopScoreAscending,
+  sortPlayersByAvgScoreDescending,
+  sortNumbersAscendingPure,
+  sortNumbersDescendingPure,
+  sortStringsAscendingPure,
+  sortStringsDescendingPure,
+  sortPlayersByTopScoreDescendingPure,
+  sortPlayersByTopScoreAscendingPure,
+  sortPlayersByAvgScoreAscendingPure,
+  sortPlayersByAvgScoreDescendingPure,
+  sortPlayersByWorstPerformingPure,
 }

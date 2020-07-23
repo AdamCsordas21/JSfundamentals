@@ -1,5 +1,6 @@
 const {
   prependElement,
+  prependElementPure,
   prepend2Elements,
   appendElement,
   append2Elements,
@@ -19,11 +20,38 @@ const {
   trimArray,
   dashArray,
   shoutAroundOsh,
+  sortNumbersAscending,
+  sortNumbersDescending,
+  sortStringsAscending,
+  sortStringsDescending,
+  sortPlayersByTopScoreDescending,
+  sortPlayersByTopScoreAscending,
+  sortPlayersByAvgScoreAscending,
+  sortPlayersByAvgScoreDescending,
+  sortPlayersByWorstPerforming,
+  sortNumbersAscendingPure,
+  sortNumbersDescendingPure,
+  sortStringsAscendingPure,
+  sortStringsDescendingPure,
+  sortPlayersByTopScoreDescendingPure,
+  sortPlayersByTopScoreAscendingPure,
+  sortPlayersByAvgScoreAscendingPure,
+  sortPlayersByAvgScoreDescendingPure,
+  sortPlayersByWorstPerformingPure,
 } = require('./arrays')
 
 describe('arrays simple functions', () => {
   it('adds an element to the beginning of an array and returns the resulting array', () => {
-    expect(prependElement(['osh', 'was', 'here'], 'great')).toEqual(['great', 'osh', 'was', 'here'])
+    const input = ['osh', 'was', 'here']
+    expect(prependElement(input, 'great')).toEqual(['great', 'osh', 'was', 'here'])
+    expect(input).toEqual(['great', 'osh', 'was', 'here'])
+  })
+
+  it(`adds an element to the beginning of an array and returns the resulting array
+  without mutating the original array`, () => {
+    const input = ['osh', 'was', 'here']
+    expect(prependElementPure(input, 'great')).toEqual(['great', 'osh', 'was', 'here'])
+    expect(input).toEqual(['osh', 'was', 'here'])
   })
 
   it('adds 2 elements to the beginning of an array and returns the resulting array', () => {
@@ -157,17 +185,35 @@ describe('arrays simple functions', () => {
       expect(players).toEqual([{ topScore: 4 }, { topScore: 2 }, { topScore: 1 }])
     })
 
+    it(`sorts players, by their top score ascending
+    player is an object with a number property topScore, e.g.
+    { topScore: 4 }
+    `, () => {
+      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      expect(sortPlayersByTopScoreAscending(players)).toEqual(undefined)
+      expect(players).toEqual([{ topScore: 1 }, { topScore: 2 }, { topScore: 4 }])
+    })
+
     it(`sorts players, by their average score ascending
     player is an object with a number property avgScore, e.g.
     { avgScore: 4 }
     `, () => {
       const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
-      expect(sortPlayersByAvgScoreDescending(players)).toEqual(undefined)
+      expect(sortPlayersByAvgScoreAscending(players)).toEqual(undefined)
       expect(players).toEqual([{ avgScore: 1 }, { avgScore: 2 }, { avgScore: 4 }])
     })
 
+    it(`sorts players, by their average score descending
+    player is an object with a number property avgScore, e.g.
+    { avgScore: 4 }
+    `, () => {
+      const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
+      expect(sortPlayersByAvgScoreDescending(players)).toEqual(undefined)
+      expect(players).toEqual([{ avgScore: 4 }, { avgScore: 2 }, { avgScore: 1 }])
+    })
+
     it(`sorts players, by their top and average score:
-    sort first by their top score ascending, if the top score is the same, sort by average score descending    
+    sort first by their top score ascending, if the top score is the same, sort by average score descending
     player is an object with number properties topScore and avgScore, e.g.
     { topScore: 4, avgScore: 4 }
     `, () => {
@@ -186,5 +232,91 @@ describe('arrays simple functions', () => {
       ])
     })
   })
-})
 
+  describe('sorting (without mutation)', () => {
+    it('sorts numbers ascending', () => {
+      const numbers = [-2, 2, 1, 0, -1]
+      expect(sortNumbersAscendingPure(numbers)).toEqual([-2, -1, 0, 1, 2])
+      expect(numbers).toEqual([-2, 2, 1, 0, -1])
+    })
+
+    it('sorts numbers descending', () => {
+      const numbers = [-2, 2, 1, 0, -1]
+      expect(sortNumbersDescendingPure(numbers)).toEqual([2, 1, 0, -1, -2])
+      expect(numbers).toEqual([-2, 2, 1, 0, -1])
+    })
+
+    it('sorts strings alphabetically', () => {
+      const strings = ['d', 'a', 'c', 'b']
+      expect(sortStringsAscendingPure(strings)).toEqual(['a', 'b', 'c', 'd'])
+      expect(strings).toEqual(['d', 'a', 'c', 'b'])
+    })
+
+    it('sorts strings reverse alphabetically', () => {
+      const strings = ['d', 'a', 'c', 'b']
+      expect(sortStringsDescendingPure(strings)).toEqual(['d', 'c', 'b', 'a'])
+      expect(strings).toEqual(['d', 'a', 'c', 'b'])
+    })
+
+    it(`sorts players, by their top score descending
+    player is an object with a number property topScore, e.g.
+    { topScore: 4 }
+    `, () => {
+      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      expect(sortPlayersByTopScoreDescendingPure(players)).toEqual([{ topScore: 4 }, { topScore: 2 }, { topScore: 1 }])
+      expect(players).toEqual([{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }])
+    })
+
+    it(`sorts players, by their top score ascending
+    player is an object with a number property topScore, e.g.
+    { topScore: 4 }
+    `, () => {
+      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      expect(sortPlayersByTopScoreAscendingPure(players)).toEqual([{ topScore: 1 }, { topScore: 2 }, { topScore: 4 }])
+      expect(players).toEqual([{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }])
+    })
+
+    it(`sorts players, by their average score ascending
+    player is an object with a number property avgScore, e.g.
+    { avgScore: 4 }
+    `, () => {
+      const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
+      expect(sortPlayersByAvgScoreAscendingPure(players)).toEqual([{ avgScore: 1 }, { avgScore: 2 }, { avgScore: 4 }])
+      expect(players).toEqual([{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }])
+    })
+
+    it(`sorts players, by their average score descending
+    player is an object with a number property avgScore, e.g.
+    { avgScore: 4 }
+    `, () => {
+      const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
+      expect(sortPlayersByAvgScoreDescendingPure(players)).toEqual([{ avgScore: 4 }, { avgScore: 2 }, { avgScore: 1 }])
+      expect(players).toEqual([{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }])
+    })
+
+    it(`sorts players, by their top and average score:
+    sort first by their top score ascending, if the top score is the same, sort by average score descending
+    player is an object with number properties topScore and avgScore, e.g.
+    { topScore: 4, avgScore: 4 }
+    `, () => {
+      const players = [
+        { topScore: 5, avgScore: 2 },
+        { topScore: 4, avgScore: 3 },
+        { topScore: 6, avgScore: 1 },
+        { topScore: 5, avgScore: 4 },
+      ]
+      expect(sortPlayersByWorstPerformingPure(players)).toEqual([
+        { topScore: 4, avgScore: 3 },
+        { topScore: 5, avgScore: 4 },
+        { topScore: 5, avgScore: 2 },
+        { topScore: 6, avgScore: 1 },
+      ])
+      expect(players).toEqual([
+        { topScore: 5, avgScore: 2 },
+        { topScore: 4, avgScore: 3 },
+        { topScore: 6, avgScore: 1 },
+        { topScore: 5, avgScore: 4 },
+      ])
+    })
+  })
+})

@@ -250,3 +250,8 @@ for ( let i = 0; i < 128; i++) {
 // What is a statement in JS? (bonus)
 // What is the returned value of a given expression?
 // What is the precedence of operators (which de facto dictate the order of expressions to be evaluated in)?
+
+// the value of a variable holding a string is that string
+// the value of a variable holding a number is that number
+// the value of a variable holding an array is a reference to that array - this is why it allows us to mutate the value
+// the value of a variable holding an object is a reference to that object - this is why it allows us to mutate the value

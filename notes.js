@@ -419,21 +419,21 @@ What is an expression in JS?
 Any unit of code that can be evaluated to a value is an expression. Since expressions produce values, they
 can appear anywhere in a program where JavaScript expects a value such as the arguments of a function
 invocation.
-An expression is any valid set of literlas, variables, operators, and expressions that evaluates to a single
+An expression is any valid set of literals, variables, operators, and expressions that evaluates to a single
 value.
 
 e.g.
 
 ---Arithmetich expressions:---
 10;    // It is an expression that is evaluated to the numeric value 10 by the JS interpreter.
-10+13; // This is another expression that is evaluated tp produce the numeric value 23.
+10+13; // This is another expression that is evaluated to produce the numeric value 23.
 
 ---String expressions:---
 'hello';
 'hello' + 'world'; // evaluates to the string 'hello world'
 
 ---Logical expressions:---
-Evaluate to the boolena value true or flase are considered to be logical expressions.
+Evaluate to the boolean value true or false are considered to be logical expressions.
 &&, ||, !
 
 10 > 9               // evaluates to boolean value true
@@ -452,7 +452,7 @@ this;         // A keyword that evaluates to the current object
 ---Left-hand-side expressions:---
 Left-hand-side expressions are those that can appear on the left side of an assignment expression.
 
-// variables such as variables
+// variables such as i and total
 i = 10;
 total = 0;
 
@@ -476,7 +476,7 @@ var b = (a = 1);
 
 ---Expressions with side effect:---
 Expressions with side effects are those that result in a change or a side effect such as setting or
-modifying the value of a variable through the assignment operator, function call, incementing or
+modifying the value of a variable through the assignment operator, function call, incrementing or
 decrementing the value of a variable.
 
 sum = 20;
