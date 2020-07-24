@@ -38,6 +38,7 @@ const {
   sortPlayersByAvgScoreAscendingPure,
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
+  removeAllFromIndex
 } = require('./arrays')
 
 describe('arrays simple functions', () => {
@@ -320,53 +321,53 @@ describe('arrays simple functions', () => {
     })
   })
 
-  // describe('splicing without mutating input', () => {
-  //   it(`removes all elements to the end
-  //   starting from a given element index (starting from zero and including)
-  //   (assume the index will be within valid range)`, () => {
-  //     const input = ['a', 'b', 'c', 'd', 'e']
-  //     expect(removeAllFromIndex(input, 3)).toEqual(['a', 'b', 'c'])
-  //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-  //   })
+  describe('splicing without mutating input', () => {
+    it(`removes all elements to the end
+    starting from a given element index (starting from zero and including)
+    (assume the index will be within valid range)`, () => {
+      const input = ['a', 'b', 'c', 'd', 'e']
+      expect(removeAllFromIndex(input, 3)).toEqual(['a', 'b', 'c'])
+      expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    })
 
-  //   it(`removes all elements to the end
-  //   starting from a given element number from the end (starting from 1 and including)
-  //   (assume the index will be within valid range)`, () => {
-  //     const input = ['a', 'b', 'c', 'd', 'e']
-  //     expect(removeAllFromElementNumberCountingFromEnd(input, 3)).toEqual(['a', 'b'])
-  //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-  //   })
+    // it(`removes all elements to the end
+    // starting from a given element number from the end (starting from 1 and including)
+    // (assume the index will be within valid range)`, () => {
+    //   const input = ['a', 'b', 'c', 'd', 'e']
+    //   expect(removeAllFromElementNumberCountingFromEnd(input, 3)).toEqual(['a', 'b'])
+    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    // })
 
-  //   it(`removes selected number of elements
-  //   starting from a given element index (starting from zero and including)
-  //   (assume both indices will be within valid range and start <= end)`, () => {
-  //     const input = ['a', 'b', 'c', 'd', 'e']
-  //     expect(removeSomeFromIndex(input, 2, 2)).toEqual(['a', 'b', 'e'])
-  //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-  //   })
+    // it(`removes selected number of elements
+    // starting from a given element index (starting from zero and including)
+    // (assume both indices will be within valid range and start <= end)`, () => {
+    //   const input = ['a', 'b', 'c', 'd', 'e']
+    //   expect(removeSomeFromIndex(input, 2, 2)).toEqual(['a', 'b', 'e'])
+    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    // })
 
-  //   it(`removes selected number of elements
-  //   starting from a given element number from the end (starting from 1 and including)
-  //   (assume both indices will be within valid range and start <= end)`, () => {
-  //     const input = ['a', 'b', 'c', 'd', 'e']
-  //     expect(removeSomeFromElementNumberCountingFromEnd(input, 4, 2)).toEqual(['a', 'd', 'e'])
-  //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-  //   })
+    // it(`removes selected number of elements
+    // starting from a given element number from the end (starting from 1 and including)
+    // (assume both indices will be within valid range and start <= end)`, () => {
+    //   const input = ['a', 'b', 'c', 'd', 'e']
+    //   expect(removeSomeFromElementNumberCountingFromEnd(input, 4, 2)).toEqual(['a', 'd', 'e'])
+    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    // })
 
-  //   it(`removes all elements
-  //   starting from a given element index (starting from 0 and including)
-  //   and ending with another given element index (starting from 0 and including)
-  //   (assume both indices will be within valid range and start <= end + 1)`, () => {
-  //     const tests = [
-  //       [['a', 'b', 'c', 'd', 'e'], 1, 4, ['a', 'e']],
-  //       [['a', 'b', 'c', 'd', 'e'], 2, 3, ['a', 'b', 'd', 'e']],
-  //       [['a', 'b', 'c', 'd', 'e'], 0, 5, []],
-  //       [['a', 'b', 'c', 'd', 'e'], 4, 4, ['a', 'b', 'c', 'd', 'e']],
-  //     ]
-  //     for (const [input, from, to, output] of tests) {
-  //       expect(removeSomeElementsFromIndexToIndex([...input], from, to)).toEqual(output)
-  //       expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-  //     }
-  //   })
-  // })
+    // it(`removes all elements
+    // starting from a given element index (starting from 0 and including)
+    // and ending with another given element index (starting from 0 and including)
+    // (assume both indices will be within valid range and start <= end + 1)`, () => {
+    //   const tests = [
+    //     [['a', 'b', 'c', 'd', 'e'], 1, 4, ['a', 'e']],
+    //     [['a', 'b', 'c', 'd', 'e'], 2, 3, ['a', 'b', 'd', 'e']],
+    //     [['a', 'b', 'c', 'd', 'e'], 0, 5, []],
+    //     [['a', 'b', 'c', 'd', 'e'], 4, 4, ['a', 'b', 'c', 'd', 'e']],
+    //   ]
+    //   for (const [input, from, to, output] of tests) {
+    //     expect(removeSomeElementsFromIndexToIndex([...input], from, to)).toEqual(output)
+    //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    //   }
+    // })
+  })
 })
