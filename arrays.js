@@ -228,8 +228,13 @@ When a function returns a result of operation, it's easy to assume that the inpu
 but this is not necessarily true. e.g.: the built in Array.prototype.sort function
 mutates the input to be memory efficient, but on top of that it returns the result for convenience.
 
-
 */
+
+function removeAllFromIndex(array) {
+  return [...array].slice(0, 3)
+}
+
+
 
 module.exports = {
   prependElement,
@@ -271,4 +276,5 @@ module.exports = {
   sortPlayersByAvgScoreAscendingPure,
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
+  removeAllFromIndex
 }
