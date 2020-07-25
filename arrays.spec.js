@@ -38,7 +38,8 @@ const {
   sortPlayersByAvgScoreAscendingPure,
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
-  removeAllFromIndex
+  removeAllFromIndex,
+  removeAllFromElementNumberCountingFromEnd
 } = require('./arrays')
 
 describe('arrays simple functions', () => {
@@ -330,13 +331,13 @@ describe('arrays simple functions', () => {
       expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
     })
 
-    // it(`removes all elements to the end
-    // starting from a given element number from the end (starting from 1 and including)
-    // (assume the index will be within valid range)`, () => {
-    //   const input = ['a', 'b', 'c', 'd', 'e']
-    //   expect(removeAllFromElementNumberCountingFromEnd(input, 3)).toEqual(['a', 'b'])
-    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-    // })
+    it(`removes all elements to the end
+    starting from a given element number from the end (starting from 1 and including)
+    (assume the index will be within valid range)`, () => {
+      const input = ['a', 'b', 'c', 'd', 'e']
+      expect(removeAllFromElementNumberCountingFromEnd(input, 3)).toEqual(['a', 'b'])
+      expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    })
 
     // it(`removes selected number of elements
     // starting from a given element index (starting from zero and including)
