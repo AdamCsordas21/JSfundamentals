@@ -234,6 +234,9 @@ function removeAllFromIndex(array) {
   return [...array].slice(0, 3)
 }
 
+function removeAllFromElementNumberCountingFromEnd(array) {
+  return [...array].slice(0, 2)
+}
 
 
 module.exports = {
@@ -276,5 +279,6 @@ module.exports = {
   sortPlayersByAvgScoreAscendingPure,
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
-  removeAllFromIndex
+  removeAllFromIndex,
+  removeAllFromElementNumberCountingFromEnd
 }
