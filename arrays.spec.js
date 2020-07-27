@@ -39,7 +39,9 @@ const {
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
   removeAllFromIndex,
-  removeAllFromElementNumberCountingFromEnd
+  removeAllFromElementNumberCountingFromEnd,
+  removeSomeFromIndex,
+  removeSomeFromElementNumberCountingFromEnd
 } = require('./arrays')
 
 describe('arrays simple functions', () => {
@@ -339,21 +341,21 @@ describe('arrays simple functions', () => {
       expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
     })
 
-    // it(`removes selected number of elements
-    // starting from a given element index (starting from zero and including)
-    // (assume both indices will be within valid range and start <= end)`, () => {
-    //   const input = ['a', 'b', 'c', 'd', 'e']
-    //   expect(removeSomeFromIndex(input, 2, 2)).toEqual(['a', 'b', 'e'])
-    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-    // })
+    it(`removes selected number of elements
+    starting from a given element index (starting from zero and including)
+    (assume both indices will be within valid range and start <= end)`, () => {
+      const input = ['a', 'b', 'c', 'd', 'e']
+      expect(removeSomeFromIndex(input, 2, 1)).toEqual(['a', 'b', 'd', 'e'])
+      expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    })
 
-    // it(`removes selected number of elements
-    // starting from a given element number from the end (starting from 1 and including)
-    // (assume both indices will be within valid range and start <= end)`, () => {
-    //   const input = ['a', 'b', 'c', 'd', 'e']
-    //   expect(removeSomeFromElementNumberCountingFromEnd(input, 4, 2)).toEqual(['a', 'd', 'e'])
-    //   expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-    // })
+    it(`removes selected number of elements
+    starting from a given element number from the end (starting from 1 and including)
+    (assume both indices will be within valid range and start <= end)`, () => {
+      const input = ['a', 'b', 'c', 'd', 'e']
+      expect(removeSomeFromElementNumberCountingFromEnd(input, 4, 2)).toEqual(['a', 'd', 'e'])
+      expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+    })
 
     // it(`removes all elements
     // starting from a given element index (starting from 0 and including)
