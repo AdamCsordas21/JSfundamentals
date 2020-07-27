@@ -230,14 +230,47 @@ mutates the input to be memory efficient, but on top of that it returns the resu
 
 */
 
-function removeAllFromIndex(array) {
-  return [...array].slice(0, 3)
+/*
+SLICE VS SPLICE
+slice(start, end)
+splice(start[, deleteCount[, itemToAdd1[, [itemToAdd2[, ...]]]]])
+*/
+
+function removeAllFromIndex(array, index) {
+  return array.slice(0, index)
+  // const copy = [...array]
+  // copy.splice(index)
+  // return copy
 }
 
-function removeAllFromElementNumberCountingFromEnd(array) {
-  return [...array].slice(0, 2)
+function removeAllFromElementNumberCountingFromEnd(array, elementFromTheEnd) {
+  return array.slice(0, array.length - elementFromTheEnd)
+  // const copy = [...array]
+  // copy.splice(array.length - elementFromTheEnd)
+  // return copy
 }
 
+/*
+const cake = [1, 2, 3]
+const oshsSlice = cake.slice(0, 1)
+const adamsSlice = cake.slice(1, 2)
+const nelasSlice = cake.slice(2, 3)
+*/
+
+function removeSomeFromIndex(array, index, elementsToRemoveCount) {
+  const copy = [...array]
+  copy.splice(index, elementsToRemoveCount)
+  return copy
+  // return array.slice(0, index).concat(array.slice(index + elementsToRemoveCount))
+}
+
+function removeSomeFromElementNumberCountingFromEnd(array, elementFromTheEnd, elementCount) {
+  const copy = [...array]
+  const startIndex = array.length - elementFromTheEnd
+  copy.splice(startIndex, elementCount)
+  return copy
+  // return array.slice(0, array.length - elementFromTheEnd).concat(array.slice(array.length - elementFromTheEnd + elementCount))
+}
 
 module.exports = {
   prependElement,
@@ -280,5 +313,7 @@ module.exports = {
   sortPlayersByAvgScoreDescendingPure,
   sortPlayersByWorstPerformingPure,
   removeAllFromIndex,
-  removeAllFromElementNumberCountingFromEnd
+  removeAllFromElementNumberCountingFromEnd,
+  removeSomeFromIndex,
+  removeSomeFromElementNumberCountingFromEnd
 }
