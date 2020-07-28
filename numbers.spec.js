@@ -1,3 +1,7 @@
+const {
+  strToNumber
+} = require('./numbers')
+
 describe('numbers', () => {
   it(`converts a string to a number
     if input is not a valid number, returns 0 instead
