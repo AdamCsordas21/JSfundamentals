@@ -1,5 +1,5 @@
-function strToNumber(array) {
-  return isNaN(array) ? 0 : Number(array)
+function strToNumber(input) {
+  return isNaN(input) ? 0 : Number(input)
 }
 
 module.exports = {
