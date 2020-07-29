@@ -1,5 +1,6 @@
 const {
-  strToNumber
+  strToNumber,
+  strToInteger
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -19,18 +20,18 @@ describe('numbers', () => {
     }
   })
 
-  // it('converts number from different format to decimal integer', () => {
-  //   const testCases = [
-  //     { input: '123', base: 10, expected: 123 },
-  //     { input: '01111011', base: 2, expected: 123 },
-  //     { input: '0173', base: 8, expected: 123 },
-  //     { input: '0x7b', base: 16, expected: 123 },
-  //   ]
+  it('converts number from different format to decimal integer', () => {
+    const testCases = [
+      { input: '123', base: 10, expected: 123 },
+      { input: '01111011', base: 2, expected: 123 },
+      { input: '0173', base: 8, expected: 123 },
+      { input: '0x7b', base: 16, expected: 123 },
+    ]
 
-  //   for (const { input, base, expected } of testCases) {
-  //     expect(strToInteger(input, base)).toBe(expected)
-  //   }
-  // })
+    for (const { input, base, expected } of testCases) {
+      expect(strToInteger(input, base)).toBe(expected)
+    }
+  })
 
   // it(`converts number to desired base number as string
   // the base can be decimal, hexadecimal, octal or binary; defaults to decimal,
