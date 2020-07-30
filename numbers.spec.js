@@ -1,7 +1,8 @@
 const {
   strToNumber,
   strToInteger,
-  // numberToString
+  // numberToString,
+  numberToCurrency
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -71,20 +72,20 @@ describe('numbers', () => {
   //   }
   // })
 
-  // it('converts number to currency', () => {
-  //   const testCases = [
-  //     { number: 1000, currency: 'GBP', expected: '£1,000.00' },
-  //     { number: 9999.99, currency: 'USD', expected: '$9,999.99' },
-  //     { number: 9999.99, currency: 'EUR', expected: '€9,999.99' },
-  //     { number: 9999.99, currency: 'JPY', expected: '¥10,000' },
-  //     { number: 9999.99, currency: 'HUF', expected: 'HUF 9,999.99' },
-  //     { number: 9999.99, currency: 'OSH', expected: 'OSH 9,999.99' },
-  //   ]
+  it('converts number to currency', () => {
+    const testCases = [
+      { number: 1000, currency: 'GBP', expected: '£1,000.00' },
+      { number: 9999.99, currency: 'USD', expected: '$9,999.99' },
+      { number: 9999.99, currency: 'EUR', expected: '€9,999.99' },
+      { number: 9999.99, currency: 'JPY', expected: '¥10,000' },
+      { number: 9999.99, currency: 'HUF', expected: 'HUF 9,999.99' },
+      { number: 9999.99, currency: 'OSH', expected: 'OSH 9,999.99' },
+    ]
 
-  //   for (const { number, currency, expected } of testCases) {
-  //     expect(numberToCurrency(number, currency)).toBe(expected)
-  //   }
-  // })
+    for (const { number, currency, expected } of testCases) {
+      expect(numberToCurrency(number, currency)).toBe(expected)
+    }
+  })
 
   // it('converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)', () => {
   //   const testCases = [
