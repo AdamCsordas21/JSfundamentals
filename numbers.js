@@ -20,8 +20,16 @@ return something ? something : something
 
 */
 
+function numberToCurrency(number, currency) {
+  return number.toLocaleString('en-US', {
+    style: 'currency',
+    currency: `${currency}`,
+  });
+}
+
 module.exports = {
   strToNumber,
   strToInteger,
-  // numberToString
+  // numberToString,
+  numberToCurrency
 }
