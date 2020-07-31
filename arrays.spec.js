@@ -41,7 +41,8 @@ const {
   removeAllFromIndex,
   removeAllFromElementNumberCountingFromEnd,
   removeSomeFromIndex,
-  removeSomeFromElementNumberCountingFromEnd
+  removeSomeFromElementNumberCountingFromEnd,
+  removeSomeElementsFromIndexToIndex
 } = require('./arrays')
 
 describe('arrays simple functions', () => {
@@ -357,20 +358,20 @@ describe('arrays simple functions', () => {
       expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
     })
 
-    // it(`removes all elements
-    // starting from a given element index (starting from 0 and including)
-    // and ending with another given element index (starting from 0 and including)
-    // (assume both indices will be within valid range and start <= end + 1)`, () => {
-    //   const tests = [
-    //     [['a', 'b', 'c', 'd', 'e'], 1, 4, ['a', 'e']],
-    //     [['a', 'b', 'c', 'd', 'e'], 2, 3, ['a', 'b', 'd', 'e']],
-    //     [['a', 'b', 'c', 'd', 'e'], 0, 5, []],
-    //     [['a', 'b', 'c', 'd', 'e'], 4, 4, ['a', 'b', 'c', 'd', 'e']],
-    //   ]
-    //   for (const [input, from, to, output] of tests) {
-    //     expect(removeSomeElementsFromIndexToIndex([...input], from, to)).toEqual(output)
-    //     expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
-    //   }
-    // })
+    it(`removes some elements
+    starting from a given element index (counting from 0 and including)
+    and ending with another given element index (counting from 0 and excluding)
+    (assume both indices will be within valid range and start <= end + 1)`, () => {
+      const tests = [
+        [['a', 'b', 'c', 'd', 'e'], 1, 4, ['a', 'e']],
+        [['a', 'b', 'c', 'd', 'e'], 2, 3, ['a', 'b', 'd', 'e']],
+        [['a', 'b', 'c', 'd', 'e'], 0, 5, []],
+        [['a', 'b', 'c', 'd', 'e'], 4, 4, ['a', 'b', 'c', 'd', 'e']],
+      ]
+      for (const [input, from, to, output] of tests) {
+        expect(removeSomeElementsFromIndexToIndex(input, from, to)).toEqual(output)
+        expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
+      }
+    })
   })
 })
