@@ -277,6 +277,12 @@ function removeSomeElementsFromIndexToIndex(input, from, to) {
   return copy
 }
 
+function removeSomeElementsFromIndexToIndex2(input, from, to) {
+  const copy = [...input]
+  copy.splice(from, to - from + 1)
+  return copy
+}
+
 module.exports = {
   prependElement,
   prependElementPure,
@@ -321,5 +327,6 @@ module.exports = {
   removeAllFromElementNumberCountingFromEnd,
   removeSomeFromIndex,
   removeSomeFromElementNumberCountingFromEnd,
-  removeSomeElementsFromIndexToIndex
+  removeSomeElementsFromIndexToIndex,
+  removeSomeElementsFromIndexToIndex2
 }
