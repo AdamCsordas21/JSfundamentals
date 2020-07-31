@@ -1,7 +1,7 @@
 const {
   strToNumber,
   strToInteger,
-  // numberToString,
+  numberToString,
   numberToCurrency
 } = require('./numbers')
 
@@ -43,42 +43,24 @@ describe('numbers', () => {
     }
   })
 
-  // it(`converts number to desired base number as string
-  // the base can be decimal, hexadecimal, octal or binary; defaults to decimal,
-  // the number will be positive integer < 256
-  // prefix binary numbers with 0 up to a length of 8 digits
-  // prefix octal values with 0
-  // prefix hexadecimal values with 0x`, () => {
-  //   const testCases = [
-  //     { input: 123, base: 10, expected: '123' },
-  //     // { input: 123, base: 2, expected: '01111011' },
-  //     // { input: 123, base: 8, expected: '0173' },
-  //     // { input: 123, base: 16, expected: '0x7b' },
-  //     // { input: 255, base: 16, expected: '0xff' },
-  //   ]
+  it(`converts number to desired base number as string
+  the base can be decimal, hexadecimal, octal or binary; defaults to decimal,
+  the number will be positive integer < 256
+  prefix binary numbers with 0 up to a length of 8 digits
+  prefix octal values with 0
+  prefix hexadecimal values with 0x`, () => {
+    const testCases = [
+      { input: 123, base: 10, expected: '123' },
+      { input: 123, base: 2, expected: '01111011' },
+      { input: 123, base: 8, expected: '0173' },
+      { input: 123, base: 16, expected: '0x7b' },
+      { input: 255, base: 16, expected: '0xff' },
+    ]
 
-  //   for (const { input, base, expected } of testCases) {
-  //     expect(numberToString(input, base)).toBe(expected)
-  //   }
-  // })
-
-  // it(`converts number to desired base number as string
-  // the base can be decimal, hexadecimal, octal or binary; defaults to decimal,
-  // the number will be positive integer < 256
-  // prefix binary numbers with 0 up to a length of 8 digits
-  // prefix octal values with 0
-  // prefix hexadecimal values with 0x`, () => {
-  //   const testCases = [
-  //     { input: 123, base: 10, expected: '123' },
-  //     { input: 123, base: 2, expected: '01111011' },
-  //     { input: 123, base: 8, expected: '0173' },
-  //     { input: 123, base: 16, expected: '0x7b' },
-  //   ]
-
-  //   for (const { input, base, expected } of testCases) {
-  //     expect(numberToStringWithSwitch(input, base)).toBe(expected)
-  //   }
-  // })
+    for (const { input, base, expected } of testCases) {
+      expect(numberToString(input, base)).toBe(expected)
+    }
+  })
 
   it('converts number to currency', () => {
     const testCases = [
