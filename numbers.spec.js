@@ -22,12 +22,20 @@ describe('numbers', () => {
     }
   })
 
-  it('converts number from different format to decimal integer', () => {
+  it(`converts number from different format to decimal integer
+  the base can be decimal, hexadecimal, octal or binary; defaults to decimal,
+  the number will be positive integer < 256
+  if the input is not a valid number, returns 0 instead
+  if the base is not one of the supported, returns 0 instead`, () => {
     const testCases = [
       { input: '123', base: 10, expected: 123 },
+      { input: '123abc', base: 10, expected: 0 },
       { input: '01111011', base: 2, expected: 123 },
+      { input: '01211011', base: 2, expected: 0 },
       { input: '0173', base: 8, expected: 123 },
+      { input: '0183', base: 8, expected: 0 },
       { input: '0x7b', base: 16, expected: 123 },
+      { input: '0x7g', base: 16, expected: 0 },
     ]
 
     for (const { input, base, expected } of testCases) {
