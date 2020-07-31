@@ -266,10 +266,15 @@ function removeSomeFromIndex(array, index, elementsToRemoveCount) {
 
 function removeSomeFromElementNumberCountingFromEnd(array, elementFromTheEnd, elementCount) {
   const copy = [...array]
-  const startIndex = array.length - elementFromTheEnd
-  copy.splice(startIndex, elementCount)
+  copy.splice(array.length - elementFromTheEnd, elementCount)
   return copy
   // return array.slice(0, array.length - elementFromTheEnd).concat(array.slice(array.length - elementFromTheEnd + elementCount))
+}
+
+function removeSomeElementsFromIndexToIndex(input, from, to) {
+  const copy = [...input]
+  copy.splice(from, to - from)
+  return copy
 }
 
 module.exports = {
@@ -315,5 +320,6 @@ module.exports = {
   removeAllFromIndex,
   removeAllFromElementNumberCountingFromEnd,
   removeSomeFromIndex,
-  removeSomeFromElementNumberCountingFromEnd
+  removeSomeFromElementNumberCountingFromEnd,
+  removeSomeElementsFromIndexToIndex
 }
