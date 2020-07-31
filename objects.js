@@ -36,3 +36,29 @@ const { first: name } = test
 
 test.age = 12
 */
+
+function createShallowCopy(myObj) {
+  return { ...myObj }
+}
+
+function createDeepCopy(myObj) {
+  return { ...myObj, address: { ...myObj.address } }
+}
+
+function listProperties(object) {
+  // @see https://stackoverflow.com/a/22658584/4514601 for the difference
+  return Object.keys(object)
+  // return Object.getOwnPropertyNames(object)
+}
+
+function describeProps(object) {
+  const keys = Object.keys(object)
+  return `This object has ${keys.length} props: ${keys.join(', ')}`
+}
+
+module.exports = {
+  createShallowCopy,
+  createDeepCopy,
+  listProperties,
+  describeProps
+}
