@@ -41,4 +41,6 @@ describe('objects', () => {
   it('describes the properites of an object', () => {
     expect(describeProps({ a: 1, b: 2, c: 3})).toEqual('This object has 3 props: a, b, c')
   })
+
+  it('types text')
 })

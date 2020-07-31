@@ -35,6 +35,8 @@ const [, second] = myNumbers
 const { first: name } = test
 
 test.age = 12
+
+
 */
 
 function createShallowCopy(myObj) {
@@ -56,9 +58,47 @@ function describeProps(object) {
   return `This object has ${keys.length} props: ${keys.join(', ')}`
 }
 
+function doubleProps(object) {
+  for (const key in object) {
+    object[key] = object[key] * 2
+  }
+  // for (const key of Object.keys(object)) {
+  //   object[key] = object[key] * 2
+  // }
+  return object
+}
+
+function listPropertyValues(object) {
+  return Object.values(object)
+}
+
+function describePropValues(object) {
+  const values = Object.values(object)
+  const count = values.length
+  const lastValue = values.pop() // const lastValue = values[values.length - 1]
+  const valuesList = `${values.join(', ')} and ${lastValue}`
+
+  return `This object has ${count} props, with values: ${valuesList}`
+}
+
+function sumDoubledValues(object) {
+  let sum = 0
+  // for (const value in object) {
+  //   sum += value * 2
+  // }
+  for (const value of Object.values(object)) {
+    sum += value * 2
+  }
+  return sum
+}
+
 module.exports = {
   createShallowCopy,
   createDeepCopy,
   listProperties,
-  describeProps
+  describeProps,
+  doubleProps,
+  listPropertyValues,
+  describePropValues,
+  sumDoubledValues
 }
