@@ -37,11 +37,31 @@ function strToInteger(input, base) {
   return isValid(filtered, base) ? parseInt(filtered, base) : 0
 }
 
-/*
+
 function numberToString(input, base) {
-  return input.toString(base)
+  const converted = input.toString(base)
+  // if (base === 2) {
+  //   return converted.padStart(8, 0)
+  // }
+  // if (base === 8) {
+  //   return `0${converted}`
+  // }
+  // if (base === 16) {
+  //   return `0x${converted}`
+  // }
+  // return converted
+  switch (base) {
+    case 2: return converted.padStart(8, 0)
+    case 8: return `0${converted}`
+    case 16: return `0x${converted}`
+    default: return converted
+  }
 }
 
+
+
+
+/*
 input === 0 <= 256
 binary numbers = input.padStart(8, 0) input.toString(base).padStart(8, 0)
 octal numbers = input.padStart(0)     `0${input.toString(base)}`
@@ -61,6 +81,6 @@ function numberToCurrency(number, currency) {
 module.exports = {
   strToNumber,
   strToInteger,
-  // numberToString,
+  numberToString,
   numberToCurrency
 }
