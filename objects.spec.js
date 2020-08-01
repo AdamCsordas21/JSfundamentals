@@ -6,7 +6,8 @@ const {
   doubleProps,
   listPropertyValues,
   describePropValues,
-  sumDoubledValues
+  sumDoubledValues,
+  tripleProps
 } = require('./objects')
 
 describe('objects', () => {
@@ -50,9 +51,9 @@ describe('objects', () => {
     expect(doubleProps({ a: 1, b: 2, c: 3 })).toEqual({ a: 2, b: 4, c: 6 })
   })
 
-  // it('triples each property value', () => {
-  //   expect(doubleProps({ a: 1, b: 2, c: 3 })).toEqual({ a: 3, b: 6, c: 9 })
-  // })
+  it('triples each property value', () => {
+    expect(tripleProps({ a: 1, b: 2, c: 3 })).toEqual({ a: 3, b: 6, c: 9 })
+  })
 
   it('provides list of values of any object', () => {
     expect(listPropertyValues({ a: 1, b: 2, c: 3 })).toEqual([1, 2, 3])
