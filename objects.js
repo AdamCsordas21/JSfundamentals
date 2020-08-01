@@ -68,6 +68,13 @@ function doubleProps(object) {
   return object
 }
 
+function tripleProps(object) {
+  for (const key in object) {
+    object[key] = object[key] * 3
+  }
+  return object
+}
+
 function listPropertyValues(object) {
   return Object.values(object)
 }
@@ -100,5 +107,7 @@ module.exports = {
   doubleProps,
   listPropertyValues,
   describePropValues,
-  sumDoubledValues
+  sumDoubledValues,
+  doubleProps,
+  tripleProps
 }
