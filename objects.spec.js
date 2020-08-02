@@ -7,7 +7,8 @@ const {
   listPropertyValues,
   describePropValues,
   sumDoubledValues,
-  tripleProps
+  tripleProps,
+  sumTripleProps
 } = require('./objects')
 
 describe('objects', () => {
@@ -68,7 +69,7 @@ describe('objects', () => {
     expect(sumDoubledValues({ a: 1, b: 2, c: 3 })).toEqual(12)
   })
 
-  // it('triples each property value and sums it', () => {
-  //   expect(sumTripleProps({ a: 1, b: 2, c: 3 })).toEqual(18)
-  // })
+  it('triples each property value and sums it', () => {
+    expect(sumTripleProps({ a: 1, b: 2, c: 3 })).toEqual(18)
+  })
 })
