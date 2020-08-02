@@ -99,6 +99,14 @@ function sumDoubledValues(object) {
   return sum
 }
 
+function sumTripleProps(object) {
+  let sum = 0
+  for (const value of Object.values(object)) {
+    sum += value * 3
+  }
+  return sum
+}
+
 module.exports = {
   createShallowCopy,
   createDeepCopy,
@@ -109,5 +117,6 @@ module.exports = {
   describePropValues,
   sumDoubledValues,
   doubleProps,
-  tripleProps
+  tripleProps,
+  sumTripleProps
 }
