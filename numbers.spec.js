@@ -4,7 +4,8 @@ const {
   numberToString,
   numberToCurrency,
   numberToShortCompactForm,
-  numberToLongCompactForm
+  numberToLongCompactForm,
+  numberToAccounting
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -117,22 +118,22 @@ describe('numbers', () => {
     }
   })
 
-  // it('converts numbers to format that Nela understands (accounting; GBP)', () => {
-  //   const testCases = [
-  //     [1, '£1.00'],
-  //     [12, '£12.00'],
-  //     [123, '£123.00'],
-  //     [1234, '£1,234.00'],
-  //     [-1, '(£1.00)'],
-  //     [-12, '(£12.00)'],
-  //     [-123, '(£123.00)'],
-  //     [-1234, '(£1,234.00)'],
-  //   ]
+  it('converts numbers to format that Nela understands (accounting; GBP)', () => {
+    const testCases = [
+      [1, '£1.00'],
+      [12, '£12.00'],
+      [123, '£123.00'],
+      [1234, '£1,234.00'],
+      [-1, '(£1.00)'],
+      [-12, '(£12.00)'],
+      [-123, '(£123.00)'],
+      [-1234, '(£1,234.00)'],
+    ]
 
-  //   for (const [number, expected] of testCases) {
-  //     expect(numberToAccounting(number)).toBe(expected)
-  //   }
-  // })
+    for (const [number, expected] of testCases) {
+      expect(numberToAccounting(number)).toBe(expected)
+    }
+  })
 
   // it(`converts CSS colour written in hexadecimal form
   // eg. "#ffffff" -> "rgb(255, 25\z, 255)"
