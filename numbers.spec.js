@@ -2,7 +2,8 @@ const {
   strToNumber,
   strToInteger,
   numberToString,
-  numberToCurrency
+  numberToCurrency,
+  numberToShortCompactForm
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -77,24 +78,24 @@ describe('numbers', () => {
     }
   })
 
-  // it('converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)', () => {
-  //   const testCases = [
-  //     [1, '1'],
-  //     [12, '12'],
-  //     [123, '123'],
-  //     [1234, '1.2K'],
-  //     [12345, '12K'],
-  //     [123456, '123K'],
-  //     [1234567, '1.2M'],
-  //     [12345678, '12M'],
-  //     [123456789, '123M'],
-  //     [1234567890, '1.2B'],
-  //   ]
+  it('converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)', () => {
+    const testCases = [
+      [1, '1'],
+      [12, '12'],
+      [123, '123'],
+      [1234, '1.2K'],
+      [12345, '12K'],
+      [123456, '123K'],
+      [1234567, '1.2M'],
+      [12345678, '12M'],
+      [123456789, '123M'],
+      [1234567890, '1.2B'],
+    ]
 
-  //   for (const [number, expected] of testCases) {
-  //     expect(numberToShortCompactForm(number)).toBe(expected)
-  //   }
-  // })
+    for (const [number, expected] of testCases) {
+      expect(numberToShortCompactForm(number)).toBe(expected)
+    }
+  })
 
   // it('converts number to long compact form, e.g. thousands, millions, etc... (in British English)', () => {
   //   const testCases = [
