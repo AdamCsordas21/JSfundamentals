@@ -3,7 +3,8 @@ const {
   strToInteger,
   numberToString,
   numberToCurrency,
-  numberToShortCompactForm
+  numberToShortCompactForm,
+  numberToLongCompactForm
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -97,24 +98,24 @@ describe('numbers', () => {
     }
   })
 
-  // it('converts number to long compact form, e.g. thousands, millions, etc... (in British English)', () => {
-  //   const testCases = [
-  //     [1, '1'],
-  //     [12, '12'],
-  //     [123, '123'],
-  //     [1234, '1.2 thousand'],
-  //     [12345, '12 thousand'],
-  //     [123456, '123 thousand'],
-  //     [1234567, '1.2 million'],
-  //     [12345678, '12 million'],
-  //     [123456789, '123 million'],
-  //     [1234567890, '1.2 billion'],
-  //   ]
+  it('converts number to long compact form, e.g. thousands, millions, etc... (in British English)', () => {
+    const testCases = [
+      [1, '1'],
+      [12, '12'],
+      [123, '123'],
+      [1234, '1.2 thousand'],
+      [12345, '12 thousand'],
+      [123456, '123 thousand'],
+      [1234567, '1.2 million'],
+      [12345678, '12 million'],
+      [123456789, '123 million'],
+      [1234567890, '1.2 billion'],
+    ]
 
-  //   for (const [number, expected] of testCases) {
-  //     expect(numberToLongCompactForm(number)).toBe(expected)
-  //   }
-  // })
+    for (const [number, expected] of testCases) {
+      expect(numberToLongCompactForm(number)).toBe(expected)
+    }
+  })
 
   // it('converts numbers to format that Nela understands (accounting; GBP)', () => {
   //   const testCases = [
