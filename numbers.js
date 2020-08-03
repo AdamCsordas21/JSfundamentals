@@ -86,7 +86,22 @@ function numberToShortCompactForm(number) {
   //   return new Intl.NumberFormat('en-GB', { notation: "compact" }).format(number);
   // }
   if (converted >= 1000 && converted < 9999999999) {
-    return new Intl.NumberFormat('en-GB', { notation: "compact" }).format(number);
+    return new Intl.NumberFormat('en-GB', {
+      notation: "compact"
+    })
+      .format(number);
+  }
+  return converted
+}
+
+function numberToLongCompactForm(number) {
+  const converted = isNaN(number) ? 0 : Number(number).toString()
+  if (converted >= 1000 && converted < 9999999999) {
+    return new Intl.NumberFormat('en-GB', {
+      notation: "compact",
+      compactDisplay: "long"
+    })
+      .format(number);
   }
   return converted
 }
@@ -96,5 +111,6 @@ module.exports = {
   strToInteger,
   numberToString,
   numberToCurrency,
-  numberToShortCompactForm
+  numberToShortCompactForm,
+  numberToLongCompactForm
 }
