@@ -132,12 +132,15 @@ function describeObjectPropsAndValues(input) {
   // const lastKey = keys.pop()
   // const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
 
-  const values = Object.values(input)
-  const lastValue = values.pop()
-  const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
+  // const values = Object.values(input)
+  // const lastValue = values.pop()
+  // const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
 
   const keys = Object.keys(input).map((k) => `"${k}"`)
   const keysString = joinItems(keys, ', ', ' and ')
+
+  const values = Object.values(input)
+  const valuesString = joinItems(values, '", "', '" and "')
 
   return `The object props are ${keysString} and the values are "${valuesString}"`
 }
