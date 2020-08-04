@@ -5,7 +5,8 @@ const {
   numberToCurrency,
   numberToShortCompactForm,
   numberToLongCompactForm,
-  numberToAccounting
+  numberToAccounting,
+  hexCodeToDecimalCode
 } = require('./numbers')
 
 describe('numbers', () => {
@@ -137,9 +138,21 @@ describe('numbers', () => {
     }
   })
 
-  // it(`converts CSS colour written in hexadecimal form
-  // eg. "#ffffff" -> "rgb(255, 25\z, 255)"
-  // accepts short form as well, e.g. #fff`, () => {
-  //   //todo
-  // })
+  it(`converts CSS colour written in hexadecimal form
+  eg. "#ffffff" -> "rgb(255, 255, 255)"
+  accepts short form as well, e.g. #fff`, () => {
+    const testCases = [
+      ["#FF0000", "rgb(255, 0, 0)"],
+      ["#008000", "rgb(0, 128, 0)"],
+      ["#0000FF", "rgb(0, 0, 255)"],
+      ["#010203", "rgb(1, 2, 3)"],
+      ["#123456", "rgb(18, 52, 86)"],
+      ["#FFF", "rgb(255, 255, 255)"],
+      ["#ABC", "rgb(170, 187, 204)"],
+    ]
+
+    for (const [input, expected] of testCases) {
+      expect(hexCodeToDecimalCode(input)).toBe(expected)
+    }
+  })
 })
