@@ -59,20 +59,22 @@ function describeProps(object) {
 }
 
 function doubleProps(object) {
+  const doubled = {}
   for (const key in object) {
-    object[key] = object[key] * 2
+    doubled[key] = object[key] * 2
   }
   // for (const key of Object.keys(object)) {
   //   object[key] = object[key] * 2
   // }
-  return object
+  return doubled
 }
 
 function tripleProps(object) {
+  const copy = { ...object }
   for (const key in object) {
-    object[key] = object[key] * 3
+    copy[key] = object[key] * 3
   }
-  return object
+  return copy
 }
 
 function listPropertyValues(object) {
@@ -107,6 +109,15 @@ function sumTripleProps(object) {
   return sum
 }
 
+function describeObjectPropsAndValues(input) {
+  const keys = Object.keys(input).map(key => `"${key}"`)
+  const lastKey = keys.pop()
+  const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
+
+  const values = Object.values(input).join('", "')
+  return `The object props are ${keysString} and the values are "${values}"`
+}
+
 module.exports = {
   createShallowCopy,
   createDeepCopy,
@@ -118,5 +129,6 @@ module.exports = {
   sumDoubledValues,
   doubleProps,
   tripleProps,
-  sumTripleProps
+  sumTripleProps,
+  describeObjectPropsAndValues
 }
