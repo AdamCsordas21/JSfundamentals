@@ -80,7 +80,8 @@ describe('numbers', () => {
     }
   })
 
-  it('converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)', () => {
+  it(`converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)
+  the numbers will always be valid positive integers`, () => {
     const testCases = [
       [1, '1'],
       [12, '12'],
