@@ -78,7 +78,7 @@ function numberToLongCompactForm(number) {
 
 function numberToAccounting(number) {
   const converted = isNaN(number) ? 0 : Number(number).toString()
-  if (converted > 0) {
+  if (converted >= 0) {
     return number.toLocaleString('en-GB', {
       style: 'currency',
       currency: 'GBP',
