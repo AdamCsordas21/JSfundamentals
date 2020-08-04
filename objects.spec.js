@@ -8,7 +8,8 @@ const {
   describePropValues,
   sumDoubledValues,
   tripleProps,
-  sumTripleProps
+  sumTripleProps,
+  describeObjectPropsAndValues
 } = require('./objects')
 
 describe('objects', () => {
@@ -52,8 +53,20 @@ describe('objects', () => {
     expect(doubleProps({ a: 1, b: 2, c: 3 })).toEqual({ a: 2, b: 4, c: 6 })
   })
 
+  it('doubles each property value', () => {
+    const obj = { a: 1, b: 2, c: 3 }
+
+    const expected = { a: 2, b: 4, c: 6 }
+    const actual = doubleProps(obj)
+
+    expect(actual).toEqual(expected)
+    expect(obj).toEqual({ a: 1, b: 2, c: 3 })
+  })
+
   it('triples each property value', () => {
-    expect(tripleProps({ a: 1, b: 2, c: 3 })).toEqual({ a: 3, b: 6, c: 9 })
+    const input = { a: 1, b: 2, c: 3 }
+    expect(tripleProps(input)).toEqual({ a: 3, b: 6, c: 9 })
+    expect(input).toEqual({ a: 1, b: 2, c: 3 })
   })
 
   it('provides list of values of any object', () => {
@@ -72,4 +85,15 @@ describe('objects', () => {
   it('triples each property value and sums it', () => {
     expect(sumTripleProps({ a: 1, b: 2, c: 3 })).toEqual(18)
   })
+
+  const testCases = [
+    [{ a: 1, b: 2, c: 3, d: 4 }, 'The object props are "a", "b", "c" and "d" and the values are "1", "2", "3", "4"'],
+    [{ a: 1, b: 2 }, 'The object props are "a" and "b" and the values are "1", "2"'],
+    [{ a: 1 }, 'The object props are "a" and the values are "1"'],
+  ]
+  for (const [input, expected] of testCases) {
+    it('describes all props and all values: ' + expected, () => {
+      expect(describeObjectPropsAndValues(input)).toEqual(expected)
+    })
+  }
 })
