@@ -66,15 +66,14 @@ function numberToCurrency(number, currency) {
 }
 
 function numberToShortCompactForm(number) {
-  return new Intl.NumberFormat('en-GB', { notation: "compact" }).format(number);
+  return number.toLocaleString('en-GB', { notation: "compact" });
 }
 
 function numberToLongCompactForm(number) {
-  return new Intl.NumberFormat('en-GB', {
+  return number.toLocaleString('en-GB', {
     notation: "compact",
     compactDisplay: "long"
   })
-    .format(number);
 }
 
 function numberToAccounting(number) {
