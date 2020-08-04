@@ -109,22 +109,13 @@ function sumTripleProps(object) {
   return sum
 }
 
-function getKeysAsStrings(object) {
-  return Object.keys(object)
-}
-
-function getValuesAsStrings(object) {
-  return Object.values(object)
-}
-
 function joinRestWithLast(rest, last, restJoiner, lastJoiner) {
   return [rest.join(restJoiner), last].filter((e) => e !== '').join(lastJoiner)
 }
 
 function joinItems(items, restJoiner, lastJoiner) {
-  const elements = [...items]
-  const last = elements.pop()
-  return [elements.join(restJoiner), last].filter((e) => e !== '').join(lastJoiner)
+  const lastIndex = items.length - 1
+  return joinRestWithLast(items.slice(0, lastIndex), items.slice(lastIndex), restJoiner, lastJoiner)
 }
 
 function describeObjectPropsAndValues(input) {
