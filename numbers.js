@@ -84,6 +84,27 @@ function numberToAccounting(number) {
   })
 }
 
+function hexCodeToDecimalCode(h) {
+  //    0 12 34 56
+  //    # 01 02 03
+  //     /   |   \
+  //    /    |    \
+  //   /     |     \
+  // red   green   blue
+  // const red = "0x"+input.slice(1, 3)
+  // const green = "0x"+input.slice(3, 5)
+  // const blue = "0x"+input.slice(5, 7)
+  // return `rgb(${+red}, ${+green}, ${+blue})`
+
+  if (h.length === 4) {
+    h = '#' + h[1] + h[1] + h[2] + h[2] + h[3] + h[3]
+  }
+  const red = parseInt(h.slice(1, 3), 16)
+  const green = parseInt(h.slice(3, 5), 16)
+  const blue = parseInt(h.slice(5), 16)
+  return `rgb(${red}, ${green}, ${blue})`
+}
+
 module.exports = {
   strToNumber,
   strToInteger,
@@ -91,5 +112,6 @@ module.exports = {
   numberToCurrency,
   numberToShortCompactForm,
   numberToLongCompactForm,
-  numberToAccounting
+  numberToAccounting,
+  hexCodeToDecimalCode
 }
