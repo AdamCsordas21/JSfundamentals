@@ -109,14 +109,35 @@ function sumTripleProps(object) {
   return sum
 }
 
+function getKeysAsStrings(object) {
+  return Object.keys(object)
+}
+
+function getValuesAsStrings(object) {
+  return Object.values(object)
+}
+
+function joinRestWithLast(rest, last, restJoiner, lastJoiner) {
+  return [rest.join(restJoiner), last].filter((e) => e !== '').join(lastJoiner)
+}
+
+function joinItems(items, restJoiner, lastJoiner) {
+  const elements = [...items]
+  const last = elements.pop()
+  return [elements.join(restJoiner), last].filter((e) => e !== '').join(lastJoiner)
+}
+
 function describeObjectPropsAndValues(input) {
-  const keys = Object.keys(input).map(key => `"${key}"`)
-  const lastKey = keys.pop()
-  const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
+  // const keys = Object.keys(input).map((key) => `"${key}"`)
+  // const lastKey = keys.pop()
+  // const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
 
   const values = Object.values(input)
   const lastValue = values.pop()
   const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
+
+  const keys = Object.keys(input).map((k) => `"${k}"`)
+  const keysString = joinItems(keys, ', ', ' and ')
 
   return `The object props are ${keysString} and the values are "${valuesString}"`
 }
