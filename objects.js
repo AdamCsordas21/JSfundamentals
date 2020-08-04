@@ -114,8 +114,11 @@ function describeObjectPropsAndValues(input) {
   const lastKey = keys.pop()
   const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
 
-  const values = Object.values(input).join('", "')
-  return `The object props are ${keysString} and the values are "${values}"`
+  const values = Object.values(input)
+  const lastValue = values.pop()
+  const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
+
+  return `The object props are ${keysString} and the values are "${valuesString}"`
 }
 
 module.exports = {
