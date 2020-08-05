@@ -136,6 +136,10 @@ function describeObjectPropsAndValues(input) {
   return `The object props are ${keysString} and the values are "${valuesString}"`
 }
 
+function describeObject(object) {
+  return 'osh was here'
+}
+
 module.exports = {
   createShallowCopy,
   createDeepCopy,
@@ -145,8 +149,8 @@ module.exports = {
   listPropertyValues,
   describePropValues,
   sumDoubledValues,
-  doubleProps,
   tripleProps,
   sumTripleProps,
-  describeObjectPropsAndValues
+  describeObjectPropsAndValues,
+  describeObject,
 }

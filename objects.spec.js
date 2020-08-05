@@ -9,7 +9,8 @@ const {
   sumDoubledValues,
   tripleProps,
   sumTripleProps,
-  describeObjectPropsAndValues
+  describeObjectPropsAndValues,
+  describeObject,
 } = require('./objects')
 
 describe('objects', () => {
@@ -96,4 +97,14 @@ describe('objects', () => {
       expect(describeObjectPropsAndValues(input)).toEqual(expected)
     })
   }
+
+  it('describes all props and values as pairs', () => {
+    const testCases = [
+      [{ a: 1, b: '2', c: false, d: null }, 'The object has 4 properties: { "a": 1, "b": "2", "c": false, "d": null }'],
+      [{ a: 1 }, 'The object has 1 property: { "a": 1 }'],
+    ]
+    for (const [input, expected] of testCases) {
+      expect(describeObject(input)).toEqual(expected)
+    }
+  })
 })
