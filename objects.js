@@ -140,9 +140,9 @@ function quote(maybeString) {
   return typeof maybeString === "string" ? `"${maybeString}"` : maybeString
 }
 
-function describeObject(object) {
+function describeObject(object, q) {
   const pairs = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
-  const descriptions = pairs.map(([key, value]) => `${quote(key)}: ${quote(value)}`)
+  const descriptions = pairs.map(([key, value]) => `${q(key)}: ${q(value)}`)
   return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 
@@ -159,4 +159,5 @@ module.exports = {
   sumTripleProps,
   describeObjectPropsAndValues,
   describeObject,
+  quote,
 }
