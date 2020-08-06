@@ -127,7 +127,7 @@ function describeObjectPropsAndValues(input) {
   // const lastValue = values.pop()
   // const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
 
-  const keys = Object.keys(input).map((k) => `"${k}"`)
+  const keys = Object.keys(input).map(quote)
   const keysString = joinItems(keys, ', ', ' and ')
 
   const values = Object.values(input)
@@ -136,22 +136,17 @@ function describeObjectPropsAndValues(input) {
   return `The object props are ${keysString} and the values are "${valuesString}"`
 }
 
+function quote(maybeString) {
+  return typeof maybeString === "string" ? `"${maybeString}"` : maybeString
+}
+
 function describeObject(object) {
   const pairs = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
   const descriptions = []
-  const prop = pairs.length === 1 ? 'property' : 'properties'
   for (const [key, value] of pairs) {
-    if (typeof value === "string") {
-      descriptions.push(`"${key}": "${value}"`)
-    } else {
-      descriptions.push(`"${key}": ${value}`)
-    }
+    descriptions.push(`${quote(key)}: ${quote(value)}`)
   }
-  // ["a", 1] -> '"a": 1'
-  // ["b", "2"] -> '"b": "2"'
-  // ["c", false] -> '"c": false'
-  // ["d", null] -> '"d": null'
-  return `The object has ${pairs.length} ${prop}: { ${descriptions.join(", ")} }`
+  return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 
 module.exports = {
