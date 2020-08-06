@@ -137,7 +137,21 @@ function describeObjectPropsAndValues(input) {
 }
 
 function describeObject(object) {
-  return 'osh was here'
+  const pairs = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
+  const descriptions = []
+  const prop = pairs.length === 1 ? 'property' : 'properties'
+  for (const [key, value] of pairs) {
+    if (typeof value === "string") {
+      descriptions.push(`"${key}": "${value}"`)
+    } else {
+      descriptions.push(`"${key}": ${value}`)
+    }
+  }
+  // ["a", 1] -> '"a": 1'
+  // ["b", "2"] -> '"b": "2"'
+  // ["c", false] -> '"c": false'
+  // ["d", null] -> '"d": null'
+  return `The object has ${pairs.length} ${prop}: { ${descriptions.join(", ")} }`
 }
 
 module.exports = {
