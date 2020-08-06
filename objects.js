@@ -142,10 +142,7 @@ function quote(maybeString) {
 
 function describeObject(object) {
   const pairs = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
-  const descriptions = []
-  for (const [key, value] of pairs) {
-    descriptions.push(`${quote(key)}: ${quote(value)}`)
-  }
+  const descriptions = pairs.map(([key, value]) => `${quote(key)}: ${quote(value)}`)
   return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 
