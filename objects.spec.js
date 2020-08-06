@@ -11,6 +11,7 @@ const {
   sumTripleProps,
   describeObjectPropsAndValues,
   describeObject,
+  quote
 } = require('./objects')
 
 describe('objects', () => {
@@ -104,7 +105,7 @@ describe('objects', () => {
       [{ a: 1 }, 'The object has 1 property: { "a": 1 }'],
     ]
     for (const [input, expected] of testCases) {
-      expect(describeObject(input)).toEqual(expected)
+      expect(describeObject(input, quote)).toEqual(expected)
     }
   })
 })
