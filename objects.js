@@ -146,6 +146,12 @@ function describeObject(object, q) {
   return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 
+function checkValueForNumber(input) {
+  // to do
+}
+
+
+
 module.exports = {
   createShallowCopy,
   createDeepCopy,
@@ -160,4 +166,5 @@ module.exports = {
   describeObjectPropsAndValues,
   describeObject,
   quote,
+  checkValueForNumber
 }

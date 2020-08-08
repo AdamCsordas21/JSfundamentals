@@ -11,7 +11,8 @@ const {
   sumTripleProps,
   describeObjectPropsAndValues,
   describeObject,
-  quote
+  quote,
+  checkValueForNumber
 } = require('./objects')
 
 describe('objects', () => {
