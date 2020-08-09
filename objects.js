@@ -147,7 +147,7 @@ function describeObject(object, q) {
 }
 
 function checkValueForNumber(input) {
-  const isValidNumber = ([, value]) => typeof value === 'number' && !isNaN(value)
+  const isValidNumber = ([, value]) => typeof value === 'number' && !isNaN(value) && value !== Infinity && value !== -Infinity
   const describeAndDoubleNumber = ([key, value]) => `${key}: ${value} -> ${(value * 2 )}`
   const numbersDescription = Object.entries(input)
     .filter(isValidNumber)
