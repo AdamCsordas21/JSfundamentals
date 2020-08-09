@@ -147,7 +147,12 @@ function describeObject(object, q) {
 }
 
 function checkValueForNumber(input) {
-  // to do
+  const pairs = Object.entries(input)
+  const message = pairs
+    .filter(([, value]) => typeof value === 'number')
+    .filter(([, value]) => !isNaN(value))
+    .map(([key, value]) => `${key}: ${value} -> ${(value * 2 )}`)
+  return `I found these values as numbers and doubled them: { ${message.join(', ')} }`
 }
 
 
