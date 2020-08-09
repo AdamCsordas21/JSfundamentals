@@ -147,15 +147,14 @@ function describeObject(object, q) {
 }
 
 function checkValueForNumber(input) {
-  const pairs = Object.entries(input)
-  const message = pairs
-    .filter(([, value]) => typeof value === 'number')
-    .filter(([, value]) => !isNaN(value))
-    .map(([key, value]) => `${key}: ${value} -> ${(value * 2 )}`)
-  return `I found these values as numbers and doubled them: { ${message.join(', ')} }`
+  const isValidNumber = ([, value]) => typeof value === 'number' && !isNaN(value)
+  const describeAndDoubleNumber = ([key, value]) => `${key}: ${value} -> ${(value * 2 )}`
+  const numbersDescription = Object.entries(input)
+    .filter(isValidNumber)
+    .map(describeAndDoubleNumber)
+    .join(', ')
+  return `I found these values as numbers and doubled them: { ${numbersDescription} }`
 }
-
-
 
 module.exports = {
   createShallowCopy,
