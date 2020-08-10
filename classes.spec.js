@@ -15,11 +15,6 @@ describe('class fundamentals', () => {
         { name: 'coke', price: '£123' }
       ])
     })
-
-    it('returns contact details', () => {
-      const testShop = new Shop([])
-      expect(testShop.contactDetails).toEqual('contact@shop.com')
-    })
   })
 
   describe('food shop', () => {

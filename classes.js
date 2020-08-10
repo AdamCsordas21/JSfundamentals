@@ -1,5 +1,4 @@
 class Shop {
-  #contactDetails = 'contact@shop.com'
   #items
 
   constructor(items) {
@@ -8,10 +7,6 @@ class Shop {
 
   get items() {
     return this.#items
-  }
-  
-  get contactDetails() {
-    return this.#contactDetails
   }
 }
 
