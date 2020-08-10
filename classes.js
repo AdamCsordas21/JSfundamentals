@@ -1,25 +1,37 @@
+class ConsoleDispatcher {
+  dispatch(items) {
+    console.log(items)
+  }
+}
+
 class Shop {
+  #dispatcher
   #items
 
-  constructor(items) {
+  constructor(dispatcher, items) {
+    this.#dispatcher = dispatcher
     this.#items = items
   }
 
   get items() {
     return this.#items
   }
+
+  dispatch() {
+    this.#dispatcher.dispatch(this.#items)
+  }
 }
 
 class FoodShop extends Shop {
-  constructor(items) {
+  constructor(dispatcher, items) {
     const alwaysInStock = [
       { name: 'candies', price: '£9' }
     ]
-    super([...alwaysInStock, ...items]) // <- new Shop()
+    super(dispatcher, [...alwaysInStock, ...items]) // <- new Shop()
   }
 }
 
 module.exports = {
   Shop,
-  FoodShop
+  FoodShop,
 }
