@@ -1,4 +1,11 @@
-class ConsoleDispatcher {
+// interface Dispatcher {
+//   /*
+//    * Dispatch provided items
+//    */
+//   dispatch(items)
+// }
+
+class ConsoleDispatcher /* implements Dispatcher */ {
   dispatch(items) {
     console.log(items)
   }
