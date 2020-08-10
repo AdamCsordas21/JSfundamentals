@@ -10,12 +10,13 @@ describe('class fundamentals', () => {
         { name: 'laptop', price: '£3' },
       ]
       const testShop = new Shop(items)
-      expect(testShop.getItems()).toEqual(items)
+      expect(testShop.items).toEqual(items)
     })
 
-    it('can instantiate a shop class', () => {
+    it('returns contact details', () => {
       const testShop = new Shop([])
-      expect(testShop.getContactDetails()).toEqual('contact@shop.com')
+      expect(testShop.contactDetails).toEqual('contact@shop.com')
     })
+
   })
 })

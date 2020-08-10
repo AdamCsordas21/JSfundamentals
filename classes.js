@@ -1,16 +1,17 @@
 class Shop {
-  contactDetails = 'contact@shop.com'
+  #contactDetails = 'contact@shop.com'
+  #items
 
   constructor(items) {
-    this.items = items
+    this.#items = items
   }
 
-  getItems() {
-    return this.items
+  get items() {
+    return this.#items
   }
   
-  getContactDetails() {
-    return this.contactDetails
+  get contactDetails() {
+    return this.#contactDetails
   }
 }
 
