@@ -10,20 +10,12 @@ class Shop {
   }
 }
 
-class FoodShop {
-  #alwaysInStock = [
-    { name: 'candies', price: '£9' }
-  ]
-  #items
-
+class FoodShop extends Shop {
   constructor(items) {
-    this.#items = [...this.#alwaysInStock, ...items]
-    // this.#items = items
-  }
-
-  get items() {
-    return this.#items
-    // return [...this.#items, ...this.#alwaysInStock]
+    const alwaysInStock = [
+      { name: 'candies', price: '£9' }
+    ]
+    super([...alwaysInStock, ...items]) // <- new Shop()
   }
 }
 
