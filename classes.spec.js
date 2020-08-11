@@ -1,6 +1,7 @@
 const {
   Shop,
-  FoodShop
+  FoodShop,
+  Player
 } = require('./classes')
 
 const nullDispatcher = { dispatch() { } }
@@ -27,11 +28,11 @@ describe('food shop', () => {
   })
 })
 
-// describe('players', () => {
-//   it('can get player name', () => {
-//     const osh = new Player('osh', 23, [])
-//     expect(osh.name).toEqual('osh')
-//   })
+describe('players', () => {
+  it('can get player name', () => {
+    const osh = new Player('osh', 23, [])
+    expect(osh.name).toEqual('osh')
+  })
 
   // it('can change player name', () => {
   //   const osh = new Player('osh', 23, [])
@@ -64,4 +65,4 @@ describe('food shop', () => {
   //   const osh = new Player('osh', 23, [{ date: '2020-02-03', result: 'loss' }])
   //   expect(osh.lastWin).toEqual(undefined)
   // })
-// })
+})
