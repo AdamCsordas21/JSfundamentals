@@ -38,11 +38,7 @@ class FoodShop extends Shop {
   }
 }
 
-class Player {
-}
-
 module.exports = {
   Shop,
-  FoodShop,
-  Player,
+  FoodShop
 }
