@@ -40,10 +40,10 @@ describe('players', () => {
     expect(osh.name).toEqual('Osh')
   })
 
-  // it('can get player level', () => {
-  //   const osh = new Player('osh', 23, [])
-  //   expect(osh.level).toEqual(23)
-  // })
+  it('can get player level', () => {
+    const osh = new Player('osh', 23, [])
+    expect(osh.level).toEqual(23)
+  })
 
   // it('prevents changing player level', () => {
   //   const osh = new Player('osh', 23, [])
