@@ -58,6 +58,10 @@ class Player {
   get level() {
     return this.#playerLevel
   }
+  
+  static level(level) {
+    this.#playerLevel = level
+  }
 }
 
 module.exports = {

@@ -45,11 +45,11 @@ describe('players', () => {
     expect(osh.level).toEqual(23)
   })
 
-  // it('prevents changing player level', () => {
-  //   const osh = new Player('osh', 23, [])
-  //   osh.level = 99
-  //   expect(osh.level).toEqual(23)
-  // })
+  it('prevents changing player level', () => {
+    const osh = new Player('osh', 23, [])
+    osh.level = 99
+    expect(osh.level).toEqual(23)
+  })
 
   // it('can get games', () => {
   //   const osh = new Player('osh', 23, [{ date: '2020-02-02', result: 'win' }, { date: '2020-02-03', result: 'loss' }])
