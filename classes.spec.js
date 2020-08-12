@@ -34,11 +34,11 @@ describe('players', () => {
     expect(osh.name).toEqual('osh')
   })
 
-  // it('can change player name', () => {
-  //   const osh = new Player('osh', 23, [])
-  //   osh.name = 'Osh'
-  //   expect(osh.name).toEqual('Osh')
-  // })
+  it('can change player name', () => {
+    const osh = new Player('osh', 23, [])
+    osh.name = 'Osh'
+    expect(osh.name).toEqual('Osh')
+  })
 
   // it('can get player level', () => {
   //   const osh = new Player('osh', 23, [])

@@ -39,14 +39,18 @@ class FoodShop extends Shop {
 }
 
 class Player {
-  #name
-  
-  constructor(name) {
-    this.#name = name  
+  #playerName
+
+  constructor(player) {
+    this.#playerName = player
+  }
+
+  get name() {
+    return this.#playerName
   }
   
-  get name() {
-    return this.#name
+  set name(name) {
+    this.#playerName = name
   }
 }
 
