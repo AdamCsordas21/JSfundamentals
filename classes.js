@@ -41,10 +41,12 @@ class FoodShop extends Shop {
 class Player {
   #playerName
   #playerLevel
+  #games
 
-  constructor(player, playerLevel) {
+  constructor(player, playerLevel, games) {
     this.#playerName = player
     this.#playerLevel = playerLevel
+    this.#games = games
   }
 
   get name() {
@@ -61,6 +63,10 @@ class Player {
   
   static level(level) {
     this.#playerLevel = level
+  }
+  
+  get games() {
+    return this.#games
   }
 }
 
