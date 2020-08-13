@@ -40,13 +40,19 @@ class FoodShop extends Shop {
 
 class Item {
   #name
+  #price
   
-  constructor(name) {
+  constructor(name, price) {
     this.#name = name
+    this.#price = price
   }
   
   get name() {
     return this.#name
+  }
+  
+  get price() {
+    return this.#price
   }
 }
 

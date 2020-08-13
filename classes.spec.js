@@ -36,7 +36,11 @@ describe('food shop', () => {
 
   describe('shop items', () => {
     it('provides item name', () => {
-      expect(new Item('candy').name).toEqual('candy')
+      expect(new Item('candy', 'some price').name).toEqual('candy')
+    })
+
+    it('provides item price', () => {
+      expect(new Item('candy', '£123').price).toEqual('£123')
     })
   })
 })
