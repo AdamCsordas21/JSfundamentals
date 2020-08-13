@@ -73,8 +73,37 @@ class Player {
   }
 }
 
+class Letter {
+  static template = `
+Dear {{PERSON}}
+
+{{BODY}}
+
+Regards,
+{{AUTHOR}}
+`
+
+  #person
+  #body
+  #author
+
+  constructor(person, body, author) {
+    this.#person = person
+    this.#body = body
+    this.#author = author
+  }
+
+  get formated() {
+    return Letter.template
+      .replace('{{PERSON}}', this.#person)
+      .replace('{{BODY}}', this.#body)
+      .replace('{{AUTHOR}}', this.#author)
+  }
+}
+
 module.exports = {
   Shop,
   FoodShop,
+  Letter,
   Player
 }

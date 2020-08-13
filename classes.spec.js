@@ -1,10 +1,16 @@
 const {
   Shop,
   FoodShop,
+  Letter,
   Player
 } = require('./classes')
 
 const nullDispatcher = { dispatch() { } }
+
+// const myObject = new Object() // {}
+// const myArray = new Array() // []
+// const myString = new String('dsf') // 'dsf'
+// const myNumber = new Number(235) // 235
 
 describe('class fundamentals', () => {
   it('provides current stock on request', () => {
@@ -25,6 +31,28 @@ describe('food shop', () => {
     expect(testShop.items).toEqual([
       { name: 'candies', price: '£9' }
     ])
+  })
+})
+
+describe('Letter', () => {
+  it('formats a letter', () => {
+    expect(new Letter('Adam', 'How do you do?', 'Osh').formated).toEqual(`
+Dear Adam
+
+How do you do?
+
+Regards,
+Osh
+`)
+
+    expect(new Letter('Nela', 'I love you', 'Adam').formated).toEqual(`
+Dear Nela
+
+I love you
+
+Regards,
+Adam
+`)
   })
 })
 
