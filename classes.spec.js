@@ -29,9 +29,7 @@ describe('food shop', () => {
 
   it('always has candies in stock', () => {
     const testShop = new FoodShop(nullDispatcher, [])
-    expect(testShop.items).toEqual([
-      { name: 'candies', price: '£9' }
-    ])
+    expect(testShop.items).toContainEqual(new Item('candies', '£9'))
   })
 
   describe('shop items', () => {

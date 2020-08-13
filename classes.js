@@ -32,9 +32,9 @@ class Shop {
 class FoodShop extends Shop {
   constructor(dispatcher, items) {
     const alwaysInStock = [
-      { name: 'candies', price: '£9' }
+      new Item('candies', '£9')
     ]
-    super(dispatcher, [...alwaysInStock, ...items]) // <- new Shop()
+    super(dispatcher, alwaysInStock.concat(items)) // <- new Shop()
   }
 }
 
