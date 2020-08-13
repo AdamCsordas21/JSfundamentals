@@ -56,10 +56,10 @@ describe('players', () => {
     expect(osh.games).toEqual([{ date: '2020-02-02', result: 'win' }, { date: '2020-02-03', result: 'loss' }])
   })
 
-  // it('can get last won game', () => {
-  //   const osh = new Player('osh', 23, [{ date: '2020-02-02', result: 'win' }, { date: '2020-02-03', result: 'loss' }, { date: '2020-02-01', result: 'win' }])
-  //   expect(osh.lastWin).toEqual({ date: '2020-02-02', result: 'win' })
-  // })
+  it('can get last won game', () => {
+    const osh = new Player('osh', 23, [{ date: '2020-01-31', result: 'win' }, { date: '2020-02-02', result: 'win' }, { date: '2020-02-03', result: 'loss' }, { date: '2020-02-01', result: 'win' }])
+    expect(osh.lastWin).toEqual({ date: '2020-02-02', result: 'win' })
+  })
 
   // it('returns undefined for last won game if the player never won', () => {
   //   const osh = new Player('osh', 23, [{ date: '2020-02-03', result: 'loss' }])

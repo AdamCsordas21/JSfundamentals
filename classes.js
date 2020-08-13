@@ -42,31 +42,39 @@ class Player {
   #playerName
   #playerLevel
   #games
+  #lastWin
 
-  constructor(player, playerLevel, games) {
+  constructor(player, playerLevel, games, lastWin) {
     this.#playerName = player
     this.#playerLevel = playerLevel
     this.#games = games
+    this.#lastWin = lastWin
   }
 
   get name() {
     return this.#playerName
   }
-  
+
   set name(name) {
     this.#playerName = name
   }
-  
+
   get level() {
     return this.#playerLevel
   }
-  
+
   static level(level) {
     this.#playerLevel = level
   }
-  
+
   get games() {
     return this.#games
+  }
+
+  get lastWin() {
+    return this.#games
+      .filter((game) => game.result === 'win')
+      .sort((a, b) => b.date.localeCompare(a.date))[0]
   }
 }
 
