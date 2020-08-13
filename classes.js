@@ -63,18 +63,15 @@ class Player {
     return this.#playerLevel
   }
 
-  static level(level) {
-    this.#playerLevel = level
-  }
-
   get games() {
     return this.#games
   }
 
   get lastWin() {
     return this.#games
-      .filter((game) => game.result === 'win')
-      .sort((a, b) => b.date.localeCompare(a.date))[0]
+      .filter((game) => game.result === 'win') 
+      .sort((a, b) => b.date.localeCompare(a.date))
+      [0]
   }
 }
 

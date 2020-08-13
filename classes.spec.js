@@ -61,8 +61,8 @@ describe('players', () => {
     expect(osh.lastWin).toEqual({ date: '2020-02-02', result: 'win' })
   })
 
-  // it('returns undefined for last won game if the player never won', () => {
-  //   const osh = new Player('osh', 23, [{ date: '2020-02-03', result: 'loss' }])
-  //   expect(osh.lastWin).toEqual(undefined)
-  // })
+  it('returns undefined for last won game if the player never won', () => {
+    const osh = new Player('osh', 23, [{ date: '2020-02-03', result: 'loss' }])
+    expect(osh.lastWin).toEqual(undefined)
+  })
 })
