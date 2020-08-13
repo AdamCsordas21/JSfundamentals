@@ -1,6 +1,7 @@
 const {
   Shop,
   FoodShop,
+  Item,
   Letter,
   Player
 } = require('./classes')
@@ -31,6 +32,12 @@ describe('food shop', () => {
     expect(testShop.items).toEqual([
       { name: 'candies', price: '£9' }
     ])
+  })
+
+  describe('shop items', () => {
+    it('provides item name', () => {
+      expect(new Item('candy').name).toEqual('candy')
+    })
   })
 })
 

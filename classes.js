@@ -38,6 +38,18 @@ class FoodShop extends Shop {
   }
 }
 
+class Item {
+  #name
+  
+  constructor(name) {
+    this.#name = name
+  }
+  
+  get name() {
+    return this.#name
+  }
+}
+
 class Player {
   #name
   #level
@@ -104,6 +116,7 @@ Regards,
 module.exports = {
   Shop,
   FoodShop,
+  Item,
   Letter,
   Player
 }
