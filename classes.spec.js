@@ -15,6 +15,7 @@ const nullDispatcher = { dispatch() { } }
 
 describe('class fundamentals', () => {
   it('provides current stock on request', () => {
+    // refactor to make this test also use the Item class
     const testShop = new Shop(nullDispatcher, [{ name: 'coke', price: '£123' }])
     expect(testShop.items).toEqual([
       { name: 'coke', price: '£123' }
@@ -39,6 +40,10 @@ describe('food shop', () => {
 
     it('provides item price', () => {
       expect(new Item('candy', '£123').price).toEqual('£123')
+    })
+
+    it('provides item description', () => {
+      expect(new Item('candy', '£123', 'super sweet candy that is also very cheap').description).toEqual('super sweet candy that is also very cheap')
     })
   })
 })
@@ -102,4 +107,8 @@ describe('players', () => {
     const osh = new Player('osh', 23, [{ date: '2020-02-03', result: 'loss' }])
     expect(osh.lastWin).toEqual(undefined)
   })
+
+  // create a class for the games and refactor above code to use it
+  // suggestion: start by adding new tests for the class alone,
+  // before you try to use it in the tests above
 })
