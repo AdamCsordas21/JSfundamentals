@@ -41,10 +41,12 @@ class FoodShop extends Shop {
 class Item {
   #name
   #price
+  #description
   
-  constructor(name, price) {
+  constructor(name, price, description) {
     this.#name = name
     this.#price = price
+    this.#description = description
   }
   
   get name() {
@@ -53,6 +55,10 @@ class Item {
   
   get price() {
     return this.#price
+  }
+  
+  get description() {
+    return this.#description
   }
 }
 
