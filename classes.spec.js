@@ -21,30 +21,30 @@ describe('class fundamentals', () => {
   })
 })
 
-// describe('food shop', () => {
-//   it('can instantiate a food shop class', () => {
-//     new FoodShop(nullDispatcher, [])
-//   })
+describe('food shop', () => {
+  it('can instantiate a food shop class', () => {
+    new FoodShop(nullDispatcher, [])
+  })
 
-//   it('always has candies in stock', () => {
-//     const testShop = new FoodShop(nullDispatcher, [])
-//     expect(testShop.items).toContainEqual(new Item('candies', '£9'))
-//   })
+  it('always has candies in stock', () => {
+    const testShop = new FoodShop(nullDispatcher, [])
+    expect(testShop.items).toContainEqual(new Item('candies', '£9'))
+  })
 
-//   describe('shop items', () => {
-//     it('provides item name', () => {
-//       expect(new Item('candy', 'some price').name).toEqual('candy')
-//     })
+  describe('shop items', () => {
+    it('provides item name', () => {
+      expect(new Item('candy', 'some price').name).toEqual('candy')
+    })
 
-//     it('provides item price', () => {
-//       expect(new Item('candy', '£123').price).toEqual('£123')
-//     })
+    it('provides item price', () => {
+      expect(new Item('candy', '£123').price).toEqual('£123')
+    })
 
-//     it('provides item description', () => {
-//       expect(new Item('candy', '£123', 'super sweet candy that is also very cheap').description).toEqual('super sweet candy that is also very cheap')
-//     })
-//   })
-// })
+    it('provides item description', () => {
+      expect(new Item('candy', '£123', 'super sweet candy that is also very cheap').description).toEqual('super sweet candy that is also very cheap')
+    })
+  })
+})
 
 describe('Letter', () => {
   it('formats a letter', () => {
