@@ -30,20 +30,6 @@ describe('food shop', () => {
     const testShop = new FoodShop(nullDispatcher, [])
     expect(testShop.items).toContainEqual(new Item('candies', '£9'))
   })
-
-  describe('shop items', () => {
-    it('provides item name', () => {
-      expect(new Item('candy', 'some price').name).toEqual('candy')
-    })
-
-    it('provides item price', () => {
-      expect(new Item('candy', '£123').price).toEqual('£123')
-    })
-
-    it('provides item description', () => {
-      expect(new Item('candy', '£123', 'super sweet candy that is also very cheap').description).toEqual('super sweet candy that is also very cheap')
-    })
-  })
 })
 
 describe('Letter', () => {
