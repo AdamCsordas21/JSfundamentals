@@ -1,4 +1,9 @@
-const shapeToCirclesArea = () => {}
+const shapeToCirclesArea = (totalArea, figure) => {
+  if (figure.shape === 'circle' && figure.colour.includes('blue')) {
+    totalArea += figure.radius * figure.radius * Math.PI
+  }
+  return totalArea
+}
 
 const addNumbers = (numbers) => {
   return numbers.reduce((sum, number) => sum + number)
