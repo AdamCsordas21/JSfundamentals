@@ -1,10 +1,7 @@
-const shapeToCirclesArea = (shape) => { }
+const shapeToCirclesArea = () => {}
 
 const addNumbers = (numbers) => {
-  return numbers.reduce((sum, number) => {
-    sum += number
-    return sum
-  }, 0)
+  return numbers.reduce((sum, number) => sum + number)
   // let sum = 0
   // for (const number of numbers) {
   //   sum += number

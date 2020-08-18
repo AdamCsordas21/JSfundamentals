@@ -30,7 +30,7 @@ test('does love/does not love', () => {
 })
 
 describe('reduce to ashes', () => {
-  const shapes = [
+  const figures = [
     { id: '1', shape: 'square', sideLength: 11, colour: 'red' },
     { id: '2', shape: 'circle', radius: 22, colour: 'blue' },
     { id: '3', shape: 'square', sideLength: 33, colour: 'green' },
@@ -43,6 +43,6 @@ describe('reduce to ashes', () => {
   ]
 
   test('calculates total area of blue circles', () => {
-    expect(shapes.reduce(shapeToCirclesArea, 0)).toEqual(25849.024353736815)
+    expect(figures.reduce(shapeToCirclesArea, 0)).toBeCloseTo(25849, 0)
   })
 })
