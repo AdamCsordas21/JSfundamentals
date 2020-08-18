@@ -1,7 +1,27 @@
-const shapeToCirclesArea = (shape) => {}
+const shapeToCirclesArea = (shape) => { }
+
+const addNumbers = (numbers) => {
+  return numbers.reduce((sum, number) => {
+    sum += number
+    return sum
+  }, 0)
+  // let sum = 0
+  // for (const number of numbers) {
+  //   sum += number
+  // }
+  // return sum
+}
+
+const doesLoveOrNot = ({ petals }) => {
+  return petals.reduce((loves) => !loves, true) ? 'loves' : 'does not'
+  // return petals.length % 2 === 0 ? 'loves' : 'does not'
+}
+
 
 module.exports = {
   shapeToCirclesArea,
+  addNumbers,
+  doesLoveOrNot
 }
 
 

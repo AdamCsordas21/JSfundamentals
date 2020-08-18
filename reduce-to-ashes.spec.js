@@ -1,5 +1,7 @@
 const {
   shapeToCirclesArea,
+  addNumbers,
+  doesLoveOrNot
 } = require('./reduce-to-ashes')
 
 /*
@@ -14,6 +16,18 @@ reduce takes 2 parameters:
 2. initial value (optional) - when it's undefined, it'll start with the second element
   and the accumulator will hold the value of the first element
 */
+
+test('adds numbers', () => {
+  const input = [1, 2, 3, 4, 5]
+  expect(addNumbers(input)).toEqual(15)
+})
+
+test('does love/does not love', () => {
+  const flower = {
+    petals: ['big', 'small', 'big', 'small']
+  }
+  expect(doesLoveOrNot(flower)).toEqual('loves')
+})
 
 describe('reduce to ashes', () => {
   const shapes = [
