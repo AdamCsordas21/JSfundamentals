@@ -1,10 +1,3 @@
-const shapeToCirclesArea = (totalArea, { shape, colour, radius }) => {
-  if (shape === 'circle' && colour.includes('blue')) {
-    totalArea += radius * radius * Math.PI
-  }
-  return totalArea
-}
-
 const addNumbers = (numbers) => {
   return numbers.reduce((sum, number) => sum + number)
   // let sum = 0
@@ -19,11 +12,25 @@ const doesLoveOrNot = ({ petals }) => {
   // return petals.length % 2 === 0 ? 'loves' : 'does not'
 }
 
+const shapeToCirclesArea = (totalArea, { shape, colour, radius }) => {
+  if (shape === 'circle' && colour.includes('blue')) {
+    totalArea += radius * radius * Math.PI
+  }
+  return totalArea
+}
+
+const totalAreaOfRedSquaresReducer = (totalArea, { shape, colour, sideLength }) => {
+  if (shape === 'square' && colour.includes('red')) {
+    totalArea += sideLength * sideLength
+  }
+  return totalArea
+}
 
 module.exports = {
-  shapeToCirclesArea,
   addNumbers,
-  doesLoveOrNot
+  doesLoveOrNot,
+  shapeToCirclesArea,
+  totalAreaOfRedSquaresReducer,
 }
 
 

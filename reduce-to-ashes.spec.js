@@ -1,7 +1,8 @@
 const {
-  shapeToCirclesArea,
   addNumbers,
-  doesLoveOrNot
+  doesLoveOrNot,
+  shapeToCirclesArea,
+  totalAreaOfRedSquaresReducer
 } = require('./reduce-to-ashes')
 
 /*
@@ -44,5 +45,11 @@ describe('reduce to ashes', () => {
 
   test('calculates total area of blue circles', () => {
     expect(figures.reduce(shapeToCirclesArea, 0)).toBeCloseTo(25849, 0)
+  })
+
+  test('calculates total area of red squares', () => {
+    const initial = 0
+    const actual = figures.reduce(totalAreaOfRedSquaresReducer, initial)
+    expect(actual).toEqual(6050)
   })
 })
