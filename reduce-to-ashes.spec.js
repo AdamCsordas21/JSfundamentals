@@ -48,8 +48,16 @@ describe('reduce to ashes', () => {
   })
 
   test('calculates total area of red squares', () => {
-    const initial = 0
-    const actual = figures.reduce(totalAreaOfRedSquaresReducer, initial)
+    expect(figures.reduce(totalAreaOfRedSquaresReducer, 0)).toEqual(6050)
+  })
+
+  test('calculates total area of red squares (alternative)', () => {
+    const actual = figures
+      .filter(({ shape }) => shape === 'square')
+      .filter(({ colour }) => colour.includes('red'))
+      .map(({ sideLength }) => sideLength)
+      .map((sideLength) => sideLength * sideLength)
+      .reduce((total, area) => total + area)
     expect(actual).toEqual(6050)
   })
 })
