@@ -27,7 +27,7 @@ describe('filter or map', () => {
   })
 
   test('round the edges to shape it to circles', () => {
-    expect(squares._(makeCircle)).toEqual([
+    expect(squares.map(makeCircle)).toEqual([
       { id: '1', shape: 'circle', radius: 2, colour: 'red' },
       { id: '2', shape: 'circle', radius: 4, colour: 'blue' },
       { id: '3', shape: 'circle', radius: 6, colour: 'green' },

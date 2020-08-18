@@ -1,5 +1,10 @@
 const isRed = (square) => square.colour === 'red'
-const makeCircle = () => {}
+const makeCircle = (square) => ({
+  id: square.id,
+  shape: 'circle',
+  colour: square.colour,
+  radius: square.sideLength / 11 * 2
+})
 const isShadeOfGreen = () => {}
 const doubleDigitId = () => {}
 const shortDescriptions = () => {}
