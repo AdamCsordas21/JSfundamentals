@@ -33,14 +33,21 @@ const isRed = (bigRedSquares, { id, shape, colour, sideLength }) => {
   return bigRedSquares
 }
 
+const roundTheEdges = (accumulator, figure) => {
+  if (figure.shape === 'square') {
+    const circle = { id: figure.id, shape: 'circle', radius: figure.sideLength * 2, colour: figure.colour}
+    accumulator.push(circle)
+  } else {
+    accumulator.push(figure)
+  }
+  return accumulator
+}
+
 module.exports = {
   addNumbers,
   doesLoveOrNot,
   shapeToCirclesArea,
   totalAreaOfRedSquaresReducer,
-  isRed
+  isRed,
+  roundTheEdges
 }
-
-
-// [0, 1, 2, 3, 4].reduce( (accumulator, currentValue, currentIndex, array) => accumulator + currentValue )
-// Area of Circle = radius * radius * PI

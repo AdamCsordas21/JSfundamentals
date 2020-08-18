@@ -3,7 +3,8 @@ const {
   doesLoveOrNot,
   shapeToCirclesArea,
   totalAreaOfRedSquaresReducer,
-  isRed
+  isRed,
+  roundTheEdges,
 } = require('./reduce-to-ashes')
 
 /*
@@ -66,6 +67,20 @@ describe('reduce to ashes', () => {
     expect(figures.reduce(isRed, [])).toEqual([
       { id: '1', shape: 'square', sideLength: 22, colour: 'red' },
       { id: '7', shape: 'square', sideLength: 154, colour: 'also red' },
+    ])
+  })
+
+  test('round the edges to shape it to circles', () => {
+    expect(figures.reduce(roundTheEdges, [])).toEqual([
+      { id: '1', shape: 'circle', radius: 22, colour: 'red' },
+      { id: '2', shape: 'circle', radius: 22, colour: 'blue' },
+      { id: '3', shape: 'circle', radius: 66, colour: 'green' },
+      { id: '4', shape: 'circle', radius: 44, colour: 'dark red' },
+      { id: '5', shape: 'circle', radius: 110, colour: 'sky blue' },
+      { id: '6', shape: 'circle', radius: 66, colour: 'grass green' },
+      { id: '7', shape: 'circle', radius: 154, colour: 'also red' },
+      { id: '8', shape: 'circle', radius: 88, colour: 'not so blue' },
+      { id: '9', shape: 'circle', radius: 198, colour: 'definitely not green' },
     ])
   })
 })
