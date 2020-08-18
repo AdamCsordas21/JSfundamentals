@@ -1,6 +1,6 @@
-const shapeToCirclesArea = (totalArea, figure) => {
-  if (figure.shape === 'circle' && figure.colour.includes('blue')) {
-    totalArea += figure.radius * figure.radius * Math.PI
+const shapeToCirclesArea = (totalArea, { shape, colour, radius }) => {
+  if (shape === 'circle' && colour.includes('blue')) {
+    totalArea += radius * radius * Math.PI
   }
   return totalArea
 }
