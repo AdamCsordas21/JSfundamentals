@@ -63,7 +63,7 @@ describe('filter or map', () => {
   })
 
   test('short descriptions', () => {
-    expect(squares._(shortDescriptions)).toEqual([
+    expect(squares.map(shortDescriptions)).toEqual([
       'red',
       'blue',
       'green',
