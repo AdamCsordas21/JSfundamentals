@@ -1,24 +1,25 @@
-const isRed = (square) => square.colour === 'red'
+const isRed = ({ colour }) => colour === 'red'
 
-const makeCircle = (square) => ({
-  id: square.id,
+const makeCircle = ({ id, colour, sideLength }) => ({
+  id,
+  colour,
   shape: 'circle',
-  colour: square.colour,
-  radius: square.sideLength / 11 * 2
+  radius: sideLength / 11 * 2
 })
 
-const isShadeOfGreen = (square) => square.colour.includes('green')
 
-const doubleDigitId = (square) => ({
-  id: square.id.padStart(2, '0'),
+const isShadeOfGreen = ({ colour }) => colour.includes('green')
+
+const doubleDigitId = ({ id, sideLength, colour }) => ({
+  id: id.padStart(2, '0'),
   shape: 'square',
-  sideLength: square.sideLength,
-  colour: square.colour
+  sideLength,
+  colour
 })
 
-const shortDescriptions = (square) => square.colour.length >= 8 ? `${square.colour.substring(0, 5)}...` : square.colour
+const shortDescriptions = ({ colour }) => colour.length >= 8 ? `${colour.substring(0, 5)}...` : colour
 
-const longDescriptions = (square) => square.colour.length > 8
+const longDescriptions = ({ colour }) => colour.length > 8
 
 module.exports = {
   isRed,
