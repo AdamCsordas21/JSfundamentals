@@ -6,6 +6,7 @@ const {
   isRed,
   roundTheEdges,
   roundTheEdges2,
+  countEvenAndOdd
 } = require('./reduce-to-ashes')
 
 /*
@@ -85,5 +86,10 @@ describe('reduce to ashes', () => {
     ]
     expect(figures.reduce(roundTheEdges, [])).toEqual(expected)
     expect(figures.map(roundTheEdges2)).toEqual(expected)
+  })
+
+  it('counts even and odd numbers', () => {
+    const myNumbers = [1, 2, 3, 4, 5, 234, 2345, 2345, 25, 34534, 53, 45, 36, 657345, 3, 45, 345]
+    expect(countEvenAndOdd(myNumbers)).toEqual('There was 5 even and 12 odd numbers')
   })
 })

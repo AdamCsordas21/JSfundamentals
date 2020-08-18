@@ -47,6 +47,16 @@ const roundTheEdges2 = ({ id, colour, shape, sideLength, radius }) => ({
   radius: shape === 'square' ? sideLength * 2 : radius,
 })
 
+const countEvenAndOdd = (numbers) => {
+  // const even = numbers.filter((n) => n % 2 === 0).length
+  // const odd = numbers.length - even
+  const { even, odd } = numbers.reduce((acc, number) => {
+    acc[number % 2 === 0 ? 'even' : 'odd']++
+    return acc
+  }, { even: 0, odd: 0 })
+  return `There was ${even} even and ${odd} odd numbers`
+}
+
 
 module.exports = {
   addNumbers,
@@ -56,4 +66,5 @@ module.exports = {
   isRed,
   roundTheEdges,
   roundTheEdges2,
+  countEvenAndOdd
 }
