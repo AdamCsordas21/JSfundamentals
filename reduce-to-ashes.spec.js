@@ -5,6 +5,7 @@ const {
   totalAreaOfRedSquaresReducer,
   isRed,
   roundTheEdges,
+  roundTheEdges2,
 } = require('./reduce-to-ashes')
 
 /*
@@ -71,7 +72,7 @@ describe('reduce to ashes', () => {
   })
 
   test('round the edges to shape it to circles', () => {
-    expect(figures.reduce(roundTheEdges, [])).toEqual([
+    const expected = [
       { id: '1', shape: 'circle', radius: 22, colour: 'red' },
       { id: '2', shape: 'circle', radius: 22, colour: 'blue' },
       { id: '3', shape: 'circle', radius: 66, colour: 'green' },
@@ -81,6 +82,8 @@ describe('reduce to ashes', () => {
       { id: '7', shape: 'circle', radius: 154, colour: 'also red' },
       { id: '8', shape: 'circle', radius: 88, colour: 'not so blue' },
       { id: '9', shape: 'circle', radius: 198, colour: 'definitely not green' },
-    ])
+    ]
+    expect(figures.reduce(roundTheEdges, [])).toEqual(expected)
+    expect(figures.map(roundTheEdges2)).toEqual(expected)
   })
 })

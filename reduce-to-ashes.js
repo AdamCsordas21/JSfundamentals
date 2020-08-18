@@ -33,15 +33,20 @@ const isRed = (bigRedSquares, { id, shape, colour, sideLength }) => {
   return bigRedSquares
 }
 
-const roundTheEdges = (accumulator, figure) => {
-  if (figure.shape === 'square') {
-    const circle = { id: figure.id, shape: 'circle', radius: figure.sideLength * 2, colour: figure.colour}
-    accumulator.push(circle)
-  } else {
-    accumulator.push(figure)
-  }
-  return accumulator
-}
+const roundTheEdges = (accumulator, { id, colour, shape, sideLength, radius }) => accumulator.concat({
+  id,
+  colour,
+  shape: 'circle',
+  radius: shape === 'square' ? sideLength * 2 : radius,
+})
+
+const roundTheEdges2 = ({ id, colour, shape, sideLength, radius }) => ({
+  id,
+  colour,
+  shape: 'circle',
+  radius: shape === 'square' ? sideLength * 2 : radius,
+})
+
 
 module.exports = {
   addNumbers,
@@ -49,5 +54,6 @@ module.exports = {
   shapeToCirclesArea,
   totalAreaOfRedSquaresReducer,
   isRed,
-  roundTheEdges
+  roundTheEdges,
+  roundTheEdges2,
 }
