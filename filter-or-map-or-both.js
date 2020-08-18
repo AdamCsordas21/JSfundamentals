@@ -16,7 +16,7 @@ const doubleDigitId = (square) => ({
   colour: square.colour
 })
 
-const shortDescriptions = (square) => square.colour.length <= 5 ? square.colour : square.colour.substring(0, 5) + '...'
+const shortDescriptions = (square) => square.colour.length >= 8 ? `${square.colour.substring(0, 5)}...` : square.colour
 
 const longDescriptions = () => {}
 
