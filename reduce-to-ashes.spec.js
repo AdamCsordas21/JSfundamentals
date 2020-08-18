@@ -2,7 +2,8 @@ const {
   addNumbers,
   doesLoveOrNot,
   shapeToCirclesArea,
-  totalAreaOfRedSquaresReducer
+  totalAreaOfRedSquaresReducer,
+  isRed
 } = require('./reduce-to-ashes')
 
 /*
@@ -59,5 +60,12 @@ describe('reduce to ashes', () => {
       .map((sideLength) => sideLength * sideLength)
       .reduce((total, area) => total + area)
     expect(actual).toEqual(6050)
+  })
+
+  test('get red squares and double its sides', () => {
+    expect(figures.reduce(isRed, [])).toEqual([
+      { id: '1', shape: 'square', sideLength: 22, colour: 'red' },
+      { id: '7', shape: 'square', sideLength: 154, colour: 'also red' },
+    ])
   })
 })

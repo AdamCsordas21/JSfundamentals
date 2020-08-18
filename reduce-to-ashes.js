@@ -26,11 +26,20 @@ const totalAreaOfRedSquaresReducer = (totalArea, { shape, colour, sideLength }) 
   return totalArea
 }
 
+const isRed = (accumulator, { id, shape, colour, sideLength }) => {
+  if (shape === 'square' && colour.includes('red')) {
+    const bigRedSquare = { id, shape, colour, sideLength: sideLength * 2 }
+    accumulator.push(bigRedSquare)
+  }
+  return accumulator
+}
+
 module.exports = {
   addNumbers,
   doesLoveOrNot,
   shapeToCirclesArea,
   totalAreaOfRedSquaresReducer,
+  isRed
 }
 
 
