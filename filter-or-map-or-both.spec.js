@@ -21,7 +21,7 @@ describe('filter or map', () => {
   ]
 
   test('only red ones', () => {
-    expect(squares._(isRed)).toEqual([
+    expect(squares.filter(isRed)).toEqual([
       { id: '1', shape: 'square', sideLength: 11, colour: 'red' },
     ])
   })

@@ -1,4 +1,4 @@
-const isRed = () => {}
+const isRed = (square) => square.colour === 'red'
 const makeCircle = () => {}
 const isShadeOfGreen = () => {}
 const doubleDigitId = () => {}
