@@ -40,8 +40,8 @@ describe('filter or map', () => {
     ])
   })
 
-  test('only shades of red ones', () => {
-    expect(squares._(isShadeOfGreen)).toEqual([
+  test('only shades of green ones', () => {
+    expect(squares.filter(isShadeOfGreen)).toEqual([
       { id: '3', shape: 'square', sideLength: 33, colour: 'green' },
       { id: '6', shape: 'square', sideLength: 66, colour: 'grass green' },
       { id: '9', shape: 'square', sideLength: 99, colour: 'definitely not green' },
