@@ -49,7 +49,7 @@ describe('filter or map', () => {
   })
 
   test('correct ids', () => {
-    expect(squares._(doubleDigitId)).toEqual([
+    expect(squares.map(doubleDigitId)).toEqual([
       { id: '01', shape: 'square', sideLength: 11, colour: 'red' },
       { id: '02', shape: 'square', sideLength: 22, colour: 'blue' },
       { id: '03', shape: 'square', sideLength: 33, colour: 'green' },
