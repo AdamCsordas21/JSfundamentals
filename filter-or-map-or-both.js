@@ -18,7 +18,7 @@ const doubleDigitId = (square) => ({
 
 const shortDescriptions = (square) => square.colour.length >= 8 ? `${square.colour.substring(0, 5)}...` : square.colour
 
-const longDescriptions = () => {}
+const longDescriptions = (square) => square.colour.length > 8
 
 module.exports = {
   isRed,

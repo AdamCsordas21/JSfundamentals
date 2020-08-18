@@ -77,10 +77,10 @@ describe('filter or map', () => {
   })
 
   test('long descriptions', () => {
-    expect(squares._(longDescriptions)).toEqual([
-      { id: '06', shape: 'square', sideLength: 66, colour: 'grass green' },
-      { id: '08', shape: 'square', sideLength: 88, colour: 'not so blue' },
-      { id: '09', shape: 'square', sideLength: 99, colour: 'definitely not green' },
+    expect(squares.filter(longDescriptions)).toEqual([
+      { id: '6', shape: 'square', sideLength: 66, colour: 'grass green' },
+      { id: '8', shape: 'square', sideLength: 88, colour: 'not so blue' },
+      { id: '9', shape: 'square', sideLength: 99, colour: 'definitely not green' },
     ])
   })
 })
