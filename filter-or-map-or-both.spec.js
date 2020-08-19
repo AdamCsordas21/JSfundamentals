@@ -1,5 +1,6 @@
 const {
   isRed,
+  isBlue,
   makeCircle,
   isShadeOfGreen,
   doubleDigitId,
@@ -23,6 +24,12 @@ describe('filter or map', () => {
   test('only red ones', () => {
     expect(squares.filter(isRed)).toEqual([
       { id: '1', shape: 'square', sideLength: 11, colour: 'red' },
+    ])
+  })
+  
+  test('only blue ones', () => {
+    expect(squares.filter(isBlue)).toEqual([
+      { id: '2', shape: 'square', sideLength: 22, colour: 'blue' },
     ])
   })
 
