@@ -3,6 +3,7 @@ const {
   isBlue,
   makeCircle,
   isShadeOfGreen,
+  isShadeOfBlue,
   doubleDigitId,
   shortDescriptions,
   longDescriptions,
@@ -52,6 +53,14 @@ describe('filter or map', () => {
       { id: '3', shape: 'square', sideLength: 33, colour: 'green' },
       { id: '6', shape: 'square', sideLength: 66, colour: 'grass green' },
       { id: '9', shape: 'square', sideLength: 99, colour: 'definitely not green' },
+    ])
+  })
+  
+  test('only shades of blue ones', () => {
+    expect(squares.filter(isShadeOfBlue)).toEqual([
+      { id: '2', shape: 'square', sideLength: 22, colour: 'blue' },
+      { id: '5', shape: 'square', sideLength: 55, colour: 'sky blue' },
+      { id: '8', shape: 'square', sideLength: 88, colour: 'not so blue' },
     ])
   })
 

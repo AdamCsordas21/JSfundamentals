@@ -1,3 +1,5 @@
+const { totalAreaOfRedSquaresReducer } = require("./reduce-to-ashes")
+
 const isRed = ({ colour }) => colour === 'red'
 
 const isBlue = ({ colour }) => colour === 'blue'
@@ -10,6 +12,8 @@ const makeCircle = ({ id, colour, sideLength }) => ({
 })
 
 const isShadeOfGreen = ({ colour }) => colour.includes('green')
+
+const isShadeOfBlue = ({ colour }) => colour.includes('blue')
 
 const doubleDigitId = ({ id, sideLength, colour }) => ({
   id: id.padStart(2, '0'),
@@ -27,6 +31,7 @@ module.exports = {
   isBlue,
   makeCircle,
   isShadeOfGreen,
+  isShadeOfBlue,
   doubleDigitId,
   shortDescriptions,
   longDescriptions,
