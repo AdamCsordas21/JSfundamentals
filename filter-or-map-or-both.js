@@ -1,5 +1,3 @@
-const { totalAreaOfRedSquaresReducer } = require("./reduce-to-ashes")
-
 const isRed = ({ colour }) => colour === 'red'
 
 const isBlue = ({ colour }) => colour === 'blue'
