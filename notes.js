@@ -503,6 +503,18 @@ they are evaluated from left to right.
 
 Strict mode
 
+Strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicity opting-out of
+sloppy mode. (The normal, non-strict mode of JavaScript is sometimes referred to as sloppy mode.) alters
+the semantics of JavaScript in several ways to improve its resiliency and which make it easier to understand
+what's going on when there are problems.
+- Browsers don't support strict mode, so don't rely on strict mode without feature-testing.
+- Strict mode nad non-strict mode code can coexist, so scripts can opt into strict mode incrementally.
+
+Strict mode makes several changes to normal JavaScript semantics:
+
+1.: Eliminates some JavaScript silent errors by changing them to throw errors.
+2.: Fixes mistakes that make it difficult for JavaScript engines to perform optimizations.
+3.: Prohibits some syntax likely to be defined in future versions of ECMAScript.
 
 
 */
