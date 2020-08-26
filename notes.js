@@ -498,3 +498,11 @@ Expressions with higher-precedence operators are evaluated first. Where several 
 they are evaluated from left to right.
 
 */
+
+/*
+
+Strict mode
+
+
+
+*/
