@@ -611,5 +611,98 @@ false.true = '';         // TypeError
 'with'.you = 'far away'; // TypeError
 })();
 
+----------------------------
 
+Strict mode
+
+What is 'use strict'?
+'use strict' is a directive that came out with ECMAScript 5 and what it does is change the way that 
+JavaScript is executed.
+It changes to use a strict operating context.
+Strict mode eliminates some JavaScript silent errors by changing them to throw errors.
+It supposed to help us to write more secure JavaScript. 
+Sometimes JavaScript let us get away with things that we shouldn't. Usually code that could have side-effects
+like using variables that hasn't been defined.
+x = 'Hello!'
+console.log(x) --> Hello!
+
+'use strict'
+
+x = 'Hello!'
+console.log(x) --> error X is not defined
+
+function example
+without strict mode X will end up as a global variable and that's not we want.
+Using 'use strict' prevents this
+
+function doWork() {                  
+  x = 'world'
+  console.log(x)
+}
+
+consolo.log(x)
+
+'use strict'
+function doWork() {
+  var x = 'world'
+  console.log(x)
+}
+
+consolo.log(x)
+
+We can set entire program to strict mode, or function or functions with just addig 'use strict' at the top of
+the file or at the top of the function
+
+examples:
+
+'use strict'
+x = 21                          // This will cause an error (if x has not been declared)
+
+'use strict'
+x = 21
+delete x                        // This will cause an error
+Deleting a variable, a function or an argument is not allowed
+
+'use strict'
+const x = {p1: 10, p1: 21}      // This will cause an error
+Defining a property more than once is not allowed
+
+'use strict'
+function x(p1, p1) {}           // This will cause an error
+Duplicating a parameter name is not allowed
+
+'use strict'
+var x = 010                     // This will cause an error
+var y = \010                    // This will cause an error
+Octal numeric literals and escape characters are not allowed
+
+'use strict'
+var obj = {}
+obj.defineProperty(obj, 'x', {value:0, writable:false})
+obj.x = 21                      // This will cause an error
+Writing to a read-only property is not allowed
+
+'use strict'
+var obj = {get x() {return 0}}
+obj.x = 21                      // This will cause an error
+Writing to a get-only property is not allowed
+
+'use strict'
+delete Object.prototype         // This will cause an error
+Deleting an undeletable property is not allowed
+
+'use strict'
+with (Math) {x = cos(2)}
+The with statement is not allowed
+
+The string 'eval' and the string 'arguments' cannot be used as a variable
+
+Because 'use strict' is a literal expression and not a statement, it'll be backwards
+compatible with older browsers so in worst case it'll simply be ignored and the script will
+run normally.
+
+Should you use 'use strict'?
+
+If your existing script is working then leave them alone but overall it's a good idea to use
+strict mode.
 */
