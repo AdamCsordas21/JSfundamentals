@@ -503,6 +503,10 @@ they are evaluated from left to right.
 
 Strict mode
 
+Strict Mode was a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict”
+operating context. This strict context prevents certain actions from being taken and throws more exceptions. ... 
+Strict mode eliminates some JavaScript silent errors by changing them to throw errors.
+
 Strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicity opting-out of
 sloppy mode. (The normal, non-strict mode of JavaScript is sometimes referred to as sloppy mode.) alters
 the semantics of JavaScript in several ways to improve its resiliency and which make it easier to understand
@@ -515,6 +519,97 @@ Strict mode makes several changes to normal JavaScript semantics:
 1.: Eliminates some JavaScript silent errors by changing them to throw errors.
 2.: Fixes mistakes that make it difficult for JavaScript engines to perform optimizations.
 3.: Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+Invoking Strict mode
+
+Strict mode applies to entire scripts os to invidual functions. It doesn't apply to block statemenst enclosed
+in { } braces. Attempting to apply it to such contexts does nothing.
+Function code, event handler attributes, strings passed to WindowTimers.setTimeout(), and related functions
+are entire scripts, and invoking strict mode in them works as expected.
+
+
+Strict mode for scripts
+
+To invoke strict mode for an entire script, put the exact statement "use strict"; (or 'use strict';)
+before any other statements.
+
+// Whole-script strict mode syntax
+'use strict';
+var v = "Hi! I'm a strict mode script!";
+
+
+Strict mode for functions
+
+"use strict"; (or 'use strict';) in the function's body before any other statements.
+
+function strict() {
+  // Function-level strict mode syntax
+  'use strict';
+  function nested() { return 'And so am I!'; }
+  return "Hi!  I'm a strict mode function!  " + nested();
+}
+function notStrict() { return "I'm not strict."; }
+
+
+Strict mode for modules
+
+ECMAScript 2015 introduced JavaScript modules and therefore a 3rd way to enter strict mode.
+The entire contents of JavaScript modules are automatically in strict mode, with no statement needed
+to initiate it.
+
+function strict() {
+    // because this is a module, I'm strict by default
+}
+export default strict;
+
+
+Changes in strict mode
+
+Strict mode changes both syntax and runtime behavior.
+Changes converting mistakes into errors.
+Changes simplifying how the particular variable for a given use of a name is computed.
+Changes simplifying eval and arguments.
+Changes making it easier to write "secure" JavaScript.
+
+
+Converting mistakes into errors
+
+Strict mode changes some previously-accepted mistakes into errors.
+JavaScript was designed to be easy for novice developers, and sometimesit gives operations
+which should be errors non-error semantics. Sometimes this fixes the immediate problem, but sometimes
+this creates worse problems in the future. Strict mode treats these mistakes as errors so that they're
+discovered and promptly fixed.
+
+1.: strict mode makes it impossible to accidentally create global variables. In normal JavaScript mistyping
+a variable in an assignment creates a new property on the global object and continues to "work", although future
+failure is possible.
+
+2.: strict mode makes assignments which would otherwise silently fail to throw an exception. For example,
+NaN is a non-writable global variable. In normal code assigning to NaN does nothing; the developer receives
+no failure feedback. In strict mode assigning to NaN throws an exception. 
+
+3.: strict mode makes attempts to delete undeletable properties throw (where before the attempt would simply
+  have no effect)
+  
+4.: strict mode prior to Gecko 34 requires that all properties named in an object literal be unique.
+
+5.: strict mode requires that function parameter names be unique.
+
+6.: strict mode in ECMAScript 5 forbids octal syntax. The octal syntax isn't part of ECMAScript 5, but
+it's supported in all browsers by prefixing the octal number with a zero: 0644 === 420 and "\045" === "%".
+In ECMAScript 2015 Octal number is supported by prefixing a number with "0o". i.e. 
+var a = 0o10; // ES2015: Octal
+
+7.: strict mode in ECMAScript 2015 forbids setting properties on primitive values. Without strict mode,
+setting properties is simply ignored (no-op), with strict mode, however, a TypeError is thrown.
+
+(function() {
+'use strict';
+
+false.true = '';         // TypeError
+(14).sailing = 'home';   // TypeError
+'with'.you = 'far away'; // TypeError
+})();
 
 
 */
