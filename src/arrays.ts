@@ -1,33 +1,33 @@
-function prependElement(arr, newElement) {
+export function prependElement(arr, newElement) {
   arr.unshift(newElement)
   return arr
 }
 
-function prependElementPure(arr, newElement) {
+export function prependElementPure(arr, newElement) {
   const copy = [...arr]
   return prependElement(copy, newElement)
 }
 
-function prepend2Elements(arr, newElement, newElement2) {
+export function prepend2Elements(arr, newElement, newElement2) {
   arr.unshift(newElement, newElement2)
   return arr
 }
 
-function appendElement(arr, element) {
+export function appendElement(arr, element) {
   arr.push(element)
   return arr
 }
 
-function append2Elements(arr, element, element2) {
+export function append2Elements(arr, element, element2) {
   arr.push(element, element2)
   return arr
 }
 
-function joinArrays(arr, addArr) {
+export function joinArrays(arr, addArr) {
   return arr.concat(addArr)
 }
 
-function dequeueArray(arr) {
+export function dequeueArray(arr) {
   return [arr.shift()]
   // const oneItemArray = []
   // firstElement = arr.shift()
@@ -35,12 +35,12 @@ function dequeueArray(arr) {
   // return oneItemArray
 }
 
-function dequeue2FromArray(arr) {
+export function dequeue2FromArray(arr) {
   return arr.splice(0, 2)
   // return [arr.shift(), arr.shift()]
 }
 
-function truncateArray(arr) {
+export function truncateArray(arr) {
   return [arr.pop()]
   // const oneItemArray = []
   // lastElement = arr.pop()
@@ -48,55 +48,55 @@ function truncateArray(arr) {
   // return oneItemArray
 }
 
-function truncate2FromArray(arr) {
+export function truncate2FromArray(arr) {
   return arr.splice(arr.length - 2, 2)
   // return [arr.pop(), arr.pop()].reverse()
 }
 
-function areAllElementsBig(array, n) {
+export function areAllElementsBig(array, n) {
   return array.every((element) => element > n)
 }
 
-function hasBigElement(array, n) {
+export function hasBigElement(array, n) {
   return array.some((element) => element > n)
 }
 
-function oshifyArray(array) {
+export function oshifyArray(array) {
   return array.fill('osh')
   // return array.map(() => 'osh')
 }
 
-function oshifyArrayFromIndex(array, from) {
+export function oshifyArrayFromIndex(array, from) {
   return array.fill('osh', from)
   // return array.map((element, index) => index >= from ? 'osh' : element)
 }
 
-function oshifyArrayInRange(array, from, end) {
+export function oshifyArrayInRange(array, from, end) {
   return array.fill('osh', from, end)
   // return array.map((element, index) => index >= from && end > index ? 'osh' : element)
 }
 
-function shortlistAmazingElements(array) {
+export function shortlistAmazingElements(array) {
   return array.filter((element) => element === 'osh')
 }
 
-function shortlistAmazingElementsWhichAreEven(array) {
+export function shortlistAmazingElementsWhichAreEven(array) {
   return array.filter((element, index) => element === 'osh' && index % 2 === 0)
 }
 
-function shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement(array) {
+export function shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement(array) {
   return array.filter((element, index, array) => element === 'osh' && array[index + 1] === 'adam')
 }
 
-function trimArray(array) {
+export function trimArray(array) {
   return array.map((element) => element.trim())
 }
 
-function dashArray(array) {
+export function dashArray(array) {
   return array.map((currentValue, index) => index % 2 === 0 ? `-${currentValue}-` : currentValue)
 }
 
-function shoutAroundOsh(array) {
+export function shoutAroundOsh(array) {
   return [...array].map((currentValue, i, array) => {
     if (array[i + 1] === 'osh') {
       return `${currentValue} !`
@@ -123,66 +123,66 @@ function shoutAroundOsh(array) {
   // return newArray
 }
 
-const sortNumbersAscending = (numbers) => void numbers.sort((a, b) => a - b)
+export const sortNumbersAscending = (numbers) => void numbers.sort((a, b) => a - b)
 
-const sortNumbersDescending = (numbers) => void numbers.sort((a, b) => b - a)
+export const sortNumbersDescending = (numbers) => void numbers.sort((a, b) => b - a)
 
-const sortStringsAscending = (strings) => void strings.sort((a, b) => a.localeCompare(b))
+export const sortStringsAscending = (strings) => void strings.sort((a, b) => a.localeCompare(b))
 
-const sortStringsDescending = (strings) => void strings.sort((a, b) => b.localeCompare(a))
+export const sortStringsDescending = (strings) => void strings.sort((a, b) => b.localeCompare(a))
 
-const sortPlayersByTopScoreDescending = (players) => void players.sort((a, b) => b.topScore - a.topScore)
+export const sortPlayersByTopScoreDescending = (players) => void players.sort((a, b) => b.topScore - a.topScore)
 
-const sortPlayersByAvgScoreAscending = (players) => void players.sort((a, b) => a.avgScore - b.avgScore)
+export const sortPlayersByAvgScoreAscending = (players) => void players.sort((a, b) => a.avgScore - b.avgScore)
 
-const sortPlayersByWorstPerforming = (players) => void players.sort((a, b) =>
+export const sortPlayersByWorstPerforming = (players) => void players.sort((a, b) =>
   a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
 )
 
-const sortPlayersByTopScoreAscending = (players) => {
+export const sortPlayersByTopScoreAscending = (players) => {
   sortPlayersByTopScoreDescending(players)
   players.reverse()
 }
 
-const sortPlayersByAvgScoreDescending = (players) => {
+export const sortPlayersByAvgScoreDescending = (players) => {
   sortPlayersByAvgScoreAscending(players)
   players.reverse()
 }
 
 // pure functions
-function sortNumbersAscendingPure(numbers) {
+export function sortNumbersAscendingPure(numbers) {
   return [...numbers].sort((a, b) => a - b)
 }
 
-function sortNumbersDescendingPure(numbers) {
+export function sortNumbersDescendingPure(numbers) {
   return [...numbers].sort((a, b) => b - a)
 }
 
-function sortStringsAscendingPure(strings) {
+export function sortStringsAscendingPure(strings) {
   return [...strings].sort((a, b) => a.localeCompare(b))
 }
 
-function sortStringsDescendingPure(strings) {
+export function sortStringsDescendingPure(strings) {
   return [...strings].sort((a, b) => b.localeCompare(a))
 }
 
-function sortPlayersByTopScoreDescendingPure(players) {
+export function sortPlayersByTopScoreDescendingPure(players) {
   return [...players].sort((a, b) => b.topScore - a.topScore)
 }
 
-function sortPlayersByTopScoreAscendingPure(players) {
+export function sortPlayersByTopScoreAscendingPure(players) {
   return [...players].sort((a, b) => a.topScore - b.topScore)
 }
 
-function sortPlayersByAvgScoreAscendingPure(players) {
+export function sortPlayersByAvgScoreAscendingPure(players) {
   return [...players].sort((a, b) => a.avgScore - b.avgScore)
 }
 
-function sortPlayersByAvgScoreDescendingPure(players) {
+export function sortPlayersByAvgScoreDescendingPure(players) {
   return [...players].sort((a, b) => b.avgScore - a.avgScore)
 }
 
-function sortPlayersByWorstPerformingPure(players) {
+export function sortPlayersByWorstPerformingPure(players) {
   return [...players].sort((a, b) =>
     a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
   )
@@ -218,13 +218,13 @@ Advatanges of pure functions
 Advatages of mutating functions
 - memory efficient, particularly visible on big data sets like sorting arrays
 
-In JavaScript, it's not immediately clean if a function is mutating the input or not.
+In JavaScript, it's not immediately clean if a export function is mutating the input or not.
 Requires knowledge of the implementation
 When creating mutating functions, if you don't return the result of the operation,
 it's clear that the input was mutated, e.g.:
-sorting requires changing order, when a function does not return the sorted input,
+sorting requires changing order, when a export function does not return the sorted input,
 it becomes obvious that the input was mutated.
-When a function returns a result of operation, it's easy to assume that the input was not mutated,
+When a export function returns a result of operation, it's easy to assume that the input was not mutated,
 but this is not necessarily true. e.g.: the built in Array.prototype.sort function
 mutates the input to be memory efficient, but on top of that it returns the result for convenience.
 
@@ -236,14 +236,14 @@ slice(start, end)
 splice(start[, deleteCount[, itemToAdd1[, [itemToAdd2[, ...]]]]])
 */
 
-function removeAllFromIndex(array, index) {
+export function removeAllFromIndex(array, index) {
   return array.slice(0, index)
   // const copy = [...array]
   // copy.splice(index)
   // return copy
 }
 
-function removeAllFromElementNumberCountingFromEnd(array, elementFromTheEnd) {
+export function removeAllFromElementNumberCountingFromEnd(array, elementFromTheEnd) {
   return array.slice(0, array.length - elementFromTheEnd)
   // const copy = [...array]
   // copy.splice(array.length - elementFromTheEnd)
@@ -257,76 +257,28 @@ const adamsSlice = cake.slice(1, 2)
 const nelasSlice = cake.slice(2, 3)
 */
 
-function removeSomeFromIndex(array, index, elementsToRemoveCount) {
+export function removeSomeFromIndex(array, index, elementsToRemoveCount) {
   const copy = [...array]
   copy.splice(index, elementsToRemoveCount)
   return copy
   // return array.slice(0, index).concat(array.slice(index + elementsToRemoveCount))
 }
 
-function removeSomeFromElementNumberCountingFromEnd(array, elementFromTheEnd, elementCount) {
+export function removeSomeFromElementNumberCountingFromEnd(array, elementFromTheEnd, elementCount) {
   const copy = [...array]
   copy.splice(array.length - elementFromTheEnd, elementCount)
   return copy
   // return array.slice(0, array.length - elementFromTheEnd).concat(array.slice(array.length - elementFromTheEnd + elementCount))
 }
 
-function removeSomeElementsFromIndexToIndex(input, from, to) {
+export function removeSomeElementsFromIndexToIndex(input, from, to) {
   const copy = [...input]
   copy.splice(from, to - from)
   return copy
 }
 
-function removeSomeElementsFromIndexToIndex2(input, from, to) {
+export function removeSomeElementsFromIndexToIndex2(input, from, to) {
   const copy = [...input]
   copy.splice(from, to - from + 1)
   return copy
-}
-
-module.exports = {
-  prependElement,
-  prependElementPure,
-  prepend2Elements,
-  appendElement,
-  append2Elements,
-  joinArrays,
-  dequeueArray,
-  dequeue2FromArray,
-  truncateArray,
-  truncate2FromArray,
-  areAllElementsBig,
-  hasBigElement,
-  oshifyArray,
-  oshifyArrayFromIndex,
-  oshifyArrayInRange,
-  shortlistAmazingElements,
-  shortlistAmazingElementsWhichAreEven,
-  shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement,
-  trimArray,
-  dashArray,
-  shoutAroundOsh,
-  sortNumbersAscending,
-  sortNumbersDescending,
-  sortStringsAscending,
-  sortStringsDescending,
-  sortPlayersByTopScoreDescending,
-  sortPlayersByAvgScoreAscending,
-  sortPlayersByWorstPerforming,
-  sortPlayersByTopScoreAscending,
-  sortPlayersByAvgScoreDescending,
-  sortNumbersAscendingPure,
-  sortNumbersDescendingPure,
-  sortStringsAscendingPure,
-  sortStringsDescendingPure,
-  sortPlayersByTopScoreDescendingPure,
-  sortPlayersByTopScoreAscendingPure,
-  sortPlayersByAvgScoreAscendingPure,
-  sortPlayersByAvgScoreDescendingPure,
-  sortPlayersByWorstPerformingPure,
-  removeAllFromIndex,
-  removeAllFromElementNumberCountingFromEnd,
-  removeSomeFromIndex,
-  removeSomeFromElementNumberCountingFromEnd,
-  removeSomeElementsFromIndexToIndex,
-  removeSomeElementsFromIndexToIndex2
 }

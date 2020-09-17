@@ -1,4 +1,4 @@
-const {
+import {
   prependElement,
   prependElementPure,
   prepend2Elements,
@@ -44,7 +44,7 @@ const {
   removeSomeFromElementNumberCountingFromEnd,
   removeSomeElementsFromIndexToIndex,
   removeSomeElementsFromIndexToIndex2
-} = require('./arrays')
+} from './arrays'
 
 describe('arrays simple functions', () => {
   it('adds an element to the beginning of an array and returns the resulting array', () => {
