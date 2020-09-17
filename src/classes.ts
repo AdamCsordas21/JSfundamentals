@@ -64,7 +64,7 @@ export class Item {
 }
 
 export class Letter {
-  static template: string = `
+  private static readonly template = `
 Dear {{PERSON}}
 
 {{BODY}}
