@@ -39,9 +39,9 @@ export class FoodShop extends Shop {
 }
 
 export class Item {
-  #name
-  #price
-  #description
+  #name: string
+  #price: string
+  #description: string | undefined
   
   // constructor(name: string, price: string, description?: string) {
   constructor(name: string, price: string, description: string | undefined = undefined) {
@@ -50,15 +50,15 @@ export class Item {
     this.#description = description
   }
   
-  get name() {
+  get name(): string {
     return this.#name
   }
   
-  get price() {
+  get price(): string {
     return this.#price
   }
   
-  get description() {
+  get description(): string | undefined {
     return this.#description
   }
 }
