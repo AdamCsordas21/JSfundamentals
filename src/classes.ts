@@ -1,30 +1,30 @@
-// interface Dispatcher {
-//   /*
-//    * Dispatch provided items
-//    */
-//   dispatch(items)
-// }
+interface Dispatcher {
+  /*
+   * Dispatch provided items
+   */
+  dispatch(items: any): void
+}
 
-class ConsoleDispatcher /* implements Dispatcher */ {
-  dispatch(items) {
+class ConsoleDispatcher implements Dispatcher {
+  dispatch(items: any): void {
     console.log(items)
   }
 }
 
 export class Shop {
-  #dispatcher
-  #items
+  #dispatcher: Dispatcher
+  #items: Item[]
 
-  constructor(dispatcher, items) {
+  constructor(dispatcher: Dispatcher, items: Item[]) {
     this.#dispatcher = dispatcher
     this.#items = items
   }
 
-  get items() {
+  get items(): Item[] {
     return this.#items
   }
 
-  dispatch() {
+  dispatch(): void {
     this.#dispatcher.dispatch(this.#items)
   }
 }
