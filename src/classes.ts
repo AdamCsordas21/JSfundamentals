@@ -64,7 +64,7 @@ export class Item {
 }
 
 export class Letter {
-  static template = `
+  static template: string = `
 Dear {{PERSON}}
 
 {{BODY}}
@@ -73,17 +73,17 @@ Regards,
 {{AUTHOR}}
 `
 
-  #person
-  #body
-  #author
+  #person: string
+  #body: string
+  #author: string
 
-  constructor(person, body, author) {
+  constructor(person: string, body: string, author: string) {
     this.#person = person
     this.#body = body
     this.#author = author
   }
 
-  get formated() {
+  get formated(): string {
     return Letter.template
       .replace('{{PERSON}}', this.#person)
       .replace('{{BODY}}', this.#body)
