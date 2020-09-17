@@ -30,8 +30,8 @@ export class Shop {
 }
 
 export class FoodShop extends Shop {
-  constructor(dispatcher, items) {
-    const alwaysInStock = [
+  constructor(dispatcher: Dispatcher, items: Item[]) {
+    const alwaysInStock: Item[] = [
       new Item('candies', '£9')
     ]
     super(dispatcher, alwaysInStock.concat(items)) // <- new Shop()
