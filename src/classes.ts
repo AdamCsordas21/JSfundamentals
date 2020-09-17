@@ -11,7 +11,7 @@ class ConsoleDispatcher /* implements Dispatcher */ {
   }
 }
 
-class Shop {
+export class Shop {
   #dispatcher
   #items
 
@@ -29,7 +29,7 @@ class Shop {
   }
 }
 
-class FoodShop extends Shop {
+export class FoodShop extends Shop {
   constructor(dispatcher, items) {
     const alwaysInStock = [
       new Item('candies', '£9')
@@ -38,12 +38,13 @@ class FoodShop extends Shop {
   }
 }
 
-class Item {
+export class Item {
   #name
   #price
   #description
   
-  constructor(name, price, description) {
+  // constructor(name: string, price: string, description?: string) {
+  constructor(name: string, price: string, description: string | undefined = undefined) {
     this.#name = name
     this.#price = price
     this.#description = description
@@ -62,7 +63,7 @@ class Item {
   }
 }
 
-class Letter {
+export class Letter {
   static template = `
 Dear {{PERSON}}
 
@@ -90,7 +91,7 @@ Regards,
   }
 }
 
-class Player {
+export class Player {
   #name
   #level
   #games
