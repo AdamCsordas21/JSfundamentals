@@ -3,8 +3,8 @@ export function prependElement(arr: any[], newElement: any): any[] {
   return arr
 }
 
-export function prependElementPure(arr, newElement) {
-  const copy = [...arr]
+export function prependElementPure(arr: any[], newElement: any): any[] {
+  const copy: any[] = [...arr]
   return prependElement(copy, newElement)
 }
 
