@@ -48,7 +48,7 @@ import {
 
 describe('arrays simple functions', () => {
   it('adds an element to the beginning of an array and returns the resulting array', () => {
-    const input = ['osh', 'was', 'here']
+    const input: any[] = ['osh', 'was', 'here']
     expect(prependElement(input, 'great')).toEqual(['great', 'osh', 'was', 'here'])
     expect(input).toEqual(['great', 'osh', 'was', 'here'])
   })

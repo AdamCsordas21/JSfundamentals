@@ -1,4 +1,4 @@
-export function prependElement(arr, newElement) {
+export function prependElement(arr: any[], newElement: any): any[] {
   arr.unshift(newElement)
   return arr
 }
