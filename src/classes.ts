@@ -92,17 +92,17 @@ Regards,
 }
 
 export class Player {
-  #name
-  #level
-  #games
+  #name: string
+  #level: number
+  #games: any
 
-  constructor(name, level, games) {
+  constructor(name: string, level: number, games: any) {
     this.#name = name
     this.#level = level
     this.#games = games
   }
 
-  get name() {
+  get name(): string {
     return this.#name
   }
 
@@ -110,15 +110,15 @@ export class Player {
     this.#name = name
   }
 
-  get level() {
+  get level(): number {
     return this.#level
   }
 
-  get games() {
+  get games(): any {
     return this.#games
   }
 
-  get lastWin() {
+  get lastWin(): any {
     return this.#games
       .filter((game) => game.result === 'win') 
       .sort((a, b) => b.date.localeCompare(a.date))
