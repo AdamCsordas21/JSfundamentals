@@ -1,4 +1,4 @@
-export function strToNumber(input) {
+export function strToNumber(input: any): number {
   return isNaN(input) ? 0 : Number(input)
 }
 
