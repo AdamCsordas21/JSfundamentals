@@ -1,4 +1,4 @@
-const {
+import {
   strToNumber,
   strToInteger,
   numberToString,
@@ -7,7 +7,7 @@ const {
   numberToLongCompactForm,
   numberToAccounting,
   hexCodeToDecimalCode
-} = require('./numbers')
+} from './numbers'
 
 describe('numbers', () => {
   it(`converts a string to a number

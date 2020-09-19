@@ -1,8 +1,8 @@
-function strToNumber(input) {
+export function strToNumber(input) {
   return isNaN(input) ? 0 : Number(input)
 }
 
-function getListOfValidDigits(base) {
+export function getListOfValidDigits(base) {
   if (base === 2) {
     return '01'.split('')
   }
@@ -15,7 +15,7 @@ function getListOfValidDigits(base) {
   return '0123456789abcdef'.split('')
 }
 
-function filterBaseFormatting(input, base) {
+export function filterBaseFormatting(input, base) {
   if (base === 16) {
     const lowerCased = input.toLowerCase()
     return lowerCased.startsWith('0x') ? lowerCased.substring(2) : lowerCased
@@ -23,7 +23,7 @@ function filterBaseFormatting(input, base) {
   return input
 }
 
-function isValid(input, base) {
+export function isValid(input, base) {
   for (const char of input) {
     if (!getListOfValidDigits(base).includes(char)) {
       return false
@@ -32,13 +32,13 @@ function isValid(input, base) {
   return true
 }
 
-function strToInteger(input, base) {
+export function strToInteger(input, base) {
   const filtered = filterBaseFormatting(input, base)
   return isValid(filtered, base) ? parseInt(filtered, base) : 0
 }
 
 
-function numberToString(input, base) {
+export function numberToString(input, base) {
   const converted = input.toString(base)
   // if (base === 2) {
   //   return converted.padStart(8, 0)
@@ -58,25 +58,25 @@ function numberToString(input, base) {
   }
 }
 
-function numberToCurrency(number, currency) {
+export function numberToCurrency(number, currency) {
   return number.toLocaleString('en-US', {
     style: 'currency',
     currency,
   });
 }
 
-function numberToShortCompactForm(number) {
+export function numberToShortCompactForm(number) {
   return number.toLocaleString('en-GB', { notation: "compact" });
 }
 
-function numberToLongCompactForm(number) {
+export function numberToLongCompactForm(number) {
   return number.toLocaleString('en-GB', {
     notation: "compact",
     compactDisplay: "long"
   })
 }
 
-function numberToAccounting(number) {
+export function numberToAccounting(number) {
   return number.toLocaleString('en-GB', {
     style: 'currency',
     currency: 'GBP',
@@ -84,7 +84,7 @@ function numberToAccounting(number) {
   })
 }
 
-function hexCodeToDecimalCode(h) {
+export function hexCodeToDecimalCode(h) {
   //    0 12 34 56
   //    # 01 02 03
   //     /   |   \

@@ -5,7 +5,7 @@ interface Dispatcher {
   dispatch(items: any): void
 }
 
-class ConsoleDispatcher implements Dispatcher {
+export class ConsoleDispatcher implements Dispatcher {
   dispatch(items: any): void {
     console.log(items)
   }
