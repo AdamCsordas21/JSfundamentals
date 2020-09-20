@@ -39,7 +39,7 @@ export function strToInteger(input: any, base: any): number {
 
 
 export function numberToString(input: any, base: any): any {
-  const converted = input.toString(base)
+  const converted: any = input.toString(base)
   // if (base === 2) {
   //   return converted.padStart(8, 0)
   // }
@@ -99,9 +99,9 @@ export function hexCodeToDecimalCode(h: any): string {
   if (h.length === 4) {
     h = '#' + h[1] + h[1] + h[2] + h[2] + h[3] + h[3]
   }
-  const red = parseInt(h.slice(1, 3), 16)
-  const green = parseInt(h.slice(3, 5), 16)
-  const blue = parseInt(h.slice(5), 16)
+  const red: number = parseInt(h.slice(1, 3), 16)
+  const green: number = parseInt(h.slice(3, 5), 16)
+  const blue: number = parseInt(h.slice(5), 16)
   return `rgb(${red}, ${green}, ${blue})`
 }
 
