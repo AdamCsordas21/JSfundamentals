@@ -80,7 +80,7 @@ export function checkForAmazingString(string: string): string {
   return `the '${string}' sentence ${isStringImportant(string) ? 'is' : 'is not'} amazing`
 }
 
-export function getIndexOfFirstOccurrence(string, searchString) {
+export function getIndexOfFirstOccurrence(string: string, searchString: string): string {
   return `First occurrence of '${searchString}' is at index ${string.indexOf(searchString)}.`
 }
 
