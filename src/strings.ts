@@ -136,7 +136,7 @@ export function splitStringIntoArrayConsisting(string: string): string[] {
   return string.split('')
 }
 
-export function checkStringStartAndEnd(string) {
+export function checkStringStartAndEnd(string: string): boolean {
   return string.startsWith('osh') && string.endsWith('osh')
 }
 
