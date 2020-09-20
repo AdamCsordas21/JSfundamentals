@@ -162,7 +162,7 @@ export function removesExclamationPointsFromBeginningAndEndButNotMiddle(string: 
   return trimChar(string, '!')
 }
 
-export function removeAllHyphensFromTheBeginningOfString(string) {
+export function removeAllHyphensFromTheBeginningOfString(string: string): string {
   return trimCharLeft(string, '-')
 }
 
