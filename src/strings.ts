@@ -128,7 +128,7 @@ export function splitStringFrom4thCharFromTheEndToTheEnd(string: string): string
   return string.slice(-4)
 }
 
-export function splitStringFrom8thCharFromTheEndToThe6thChar(string) {
+export function splitStringFrom8thCharFromTheEndToThe6thChar(string: string): string {
   return string.slice(-8, -5)
 }
 
