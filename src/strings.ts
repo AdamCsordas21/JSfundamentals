@@ -31,7 +31,7 @@ Kind regards,
 ${author}`
 }
 
-export function describeIntegerDivisionRemainder(divident, divisor) {
+export function describeIntegerDivisionRemainder(divident: number, divisor: number): string {
   return `The remainder of ${divident} divided by ${divisor} is ${divident % divisor}.`
 }
 /*
