@@ -100,7 +100,7 @@ export function replaceAll(string: string, search: any, replacement: any): strin
   return string.replace(new RegExp(search, 'g'), replacement)
 }
 
-export function convertEveryOccurrenceForGivenString(string) {
+export function convertEveryOccurrenceForGivenString(string: string): string {
   return replaceAll(string, 'osh', 'OSH')
 }
 
