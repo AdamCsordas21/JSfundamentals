@@ -42,7 +42,7 @@ export function describeIntegerDivisionRemainder(divident: number, divisor: numb
 4 - reminder
 */
 
-export function getFirstAndLastLetterOfString(str) {
+export function getFirstAndLastLetterOfString(str: string): string {
   return `'osh was here' has '${str.charAt(0)}' as the first letter and '${str.charAt(str.length - 1)}' as the last one.`
 }
 
