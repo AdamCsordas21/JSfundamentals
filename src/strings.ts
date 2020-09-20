@@ -96,7 +96,7 @@ export function prependWithZeros(string: string): string {
   return string.padStart(5, '0')
 }
 
-export function replaceAll(string, search, replacement) {
+export function replaceAll(string: string, search: any, replacement: any): string {
   return string.replace(new RegExp(search, 'g'), replacement)
 }
 
