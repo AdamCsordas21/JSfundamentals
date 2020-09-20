@@ -92,7 +92,7 @@ export function appendWithUnderscores(string: string, number: number): string {
   return `${string.padEnd(30, '_')}${number}`
 }
 
-export function prependWithZeros(string) {
+export function prependWithZeros(string: string): string {
   return string.padStart(5, '0')
 }
 
