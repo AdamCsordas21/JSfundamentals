@@ -45,7 +45,7 @@ describe('date', () => {
   })
 
   it('parties on Friday', () => {
-    const testCases = [
+    const testCases: string[][] = [
       ['Friday', '🎉'],
       ['any other day', '😞'],
     ]
