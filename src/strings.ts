@@ -72,7 +72,7 @@ export function getSentenceType(string: string): string {
 }
 
 // s1 ? s2 : s3
-export function isStringImportant(string) {
+export function isStringImportant(string: string): boolean {
   return string.includes('osh')
 }
 
