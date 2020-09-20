@@ -8,7 +8,7 @@ import {
 describe('date', () => {
 
   it('tells day of the week', () => {
-    const testCases = [
+    const testCases: (string | number)[][] = [
       [0, 'Sunday'],
       [1, 'Monday'],
       [2, 'Tuesday'],
@@ -23,14 +23,14 @@ describe('date', () => {
   })
 
   it('translates weekday number', () => {
-    const number = 123
+    const number: number = 123
     const translator = () => 'abc'
-    const expected = 'abc'
+    const expected: string = 'abc'
     expect(getWeekDay(number, translator)).toEqual(expected)
   })
 
   it('tells day of the week in Hungarian', () => {
-    const testCases = [
+    const testCases: (string | number)[][] = [
       [0, 'vasárnap'],
       [1, 'hétfő'],
       [2, 'kedd'],

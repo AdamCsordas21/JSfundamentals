@@ -22,7 +22,7 @@ export function dayNumberToNameInHungarian(number: any): string | undefined {
   }
 }
 
-export function getWeekDay(weekDayNumber, numberTranslator) {
+export function getWeekDay(weekDayNumber: any, numberTranslator: any): any {
   return numberTranslator(weekDayNumber)
 }
 
