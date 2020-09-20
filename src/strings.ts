@@ -147,7 +147,7 @@ export function trimCharLeft(string: string, char: string): string {
   return string
 }
 
-export function trimCharRight(string, char) {
+export function trimCharRight(string: string, char: string): string {
   while (string.charAt(string.length - 1) === char) {
     string = string.substring(0, string.length - 1)
   }
