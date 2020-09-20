@@ -23,7 +23,7 @@ export function filterBaseFormatting(input: any, base: any): any {
   return input
 }
 
-export function isValid(input, base) {
+export function isValid(input: any, base: any): boolean {
   for (const char of input) {
     if (!getListOfValidDigits(base).includes(char)) {
       return false
