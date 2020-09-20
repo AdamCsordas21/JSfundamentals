@@ -58,7 +58,7 @@ export function numberToString(input: any, base: any): any {
   }
 }
 
-export function numberToCurrency(number, currency) {
+export function numberToCurrency(number: any, currency: any): any {
   return number.toLocaleString('en-US', {
     style: 'currency',
     currency,
