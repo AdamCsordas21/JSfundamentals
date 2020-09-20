@@ -76,7 +76,7 @@ export function numberToLongCompactForm(number: any): any {
   })
 }
 
-export function numberToAccounting(number) {
+export function numberToAccounting(number: any): any {
   return number.toLocaleString('en-GB', {
     style: 'currency',
     currency: 'GBP',
