@@ -132,7 +132,7 @@ export function splitStringFrom8thCharFromTheEndToThe6thChar(string: string): st
   return string.slice(-8, -5)
 }
 
-export function splitStringIntoArrayConsisting(string) {
+export function splitStringIntoArrayConsisting(string: string): string[] {
   return string.split('')
 }
 
