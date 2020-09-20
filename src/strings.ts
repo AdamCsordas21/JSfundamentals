@@ -108,8 +108,8 @@ export function convertFirstOccurenceForGivenString(string: string): string {
   return string.replace('osh', 'OSH')
 }
 
-export function convertEveryOtherOccurrenceForGivenString(string) {
-  let replace = false
+export function convertEveryOtherOccurrenceForGivenString(string: string): string {
+  let replace: boolean = false
   return replaceAll(string, 'osh', () => {
     replace = !replace
     return replace ? 'OSH' : 'osh'
