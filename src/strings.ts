@@ -84,7 +84,7 @@ export function getIndexOfFirstOccurrence(string: string, searchString: string):
   return `First occurrence of '${searchString}' is at index ${string.indexOf(searchString)}.`
 }
 
-export function getIndexOfSecondOccurrence(string, searchString) {
+export function getIndexOfSecondOccurrence(string: string, searchString: string): string {
   return `Second occurrence of '${searchString}' is at index ${string.indexOf(searchString, string.indexOf(searchString) + 1)}.`
 }
 
