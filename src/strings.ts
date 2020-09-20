@@ -116,7 +116,7 @@ export function convertEveryOtherOccurrenceForGivenString(string: string): strin
   })
 }
 
-export function splitStringFrom5thChar(string) {
+export function splitStringFrom5thChar(string: string): string {
   return string.slice(4)
 }
 
