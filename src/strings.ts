@@ -76,7 +76,7 @@ export function isStringImportant(string: string): boolean {
   return string.includes('osh')
 }
 
-export function checkForAmazingString(string) {
+export function checkForAmazingString(string: string): string {
   return `the '${string}' sentence ${isStringImportant(string) ? 'is' : 'is not'} amazing`
 }
 
