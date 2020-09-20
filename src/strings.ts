@@ -2,7 +2,7 @@ export function shoutWithExclamationPoints(string: string, count: number): strin
   return string + '!'.repeat(count)
 }
 
-export function shoutWithUpperCase(string) {
+export function shoutWithUpperCase(string: string): string {
   return string.toUpperCase()
 }
 
