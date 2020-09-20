@@ -124,7 +124,7 @@ export function splitStringFrom5thCharToTheEndBut3AtMost(string: string): string
   return string.slice(4, 7)
 }
 
-export function splitStringFrom4thCharFromTheEndToTheEnd(string) {
+export function splitStringFrom4thCharFromTheEndToTheEnd(string: string): string {
   return string.slice(-4)
 }
 
