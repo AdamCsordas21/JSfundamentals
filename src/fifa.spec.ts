@@ -1,4 +1,4 @@
-const {
+import {
   ratePlayersSkills,
   isScoreHigh,
   filterOutLowLevelPlayers,
@@ -11,7 +11,7 @@ const {
   playerToString,
   stringToListElement,
   listElementsToOrderedList
-} = require('./fifa')
+} from './fifa'
 
 describe('fifa rating', () => {
   it("rates players' skills", () => {

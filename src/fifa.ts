@@ -2,7 +2,7 @@
 
 const playerScoreTooHigh = 1400
 
-function ratePlayersSkills(players) {
+export function ratePlayersSkills(players) {
   return players.map(scoreRating)
 
   // return players.map((player) => isScoreHigh(player) ? 'High skill level - Avoid!' : 'Low skill level - Play!')
@@ -18,12 +18,12 @@ function ratePlayersSkills(players) {
   // return highSkilled
 }
 
-function scoreRating(player) {
+export function scoreRating(player) {
   return isScoreHigh(player) ? `High skill level - Avoid ${player.name}!` : `Low skill level - Play with ${player.name}!`
 }
 
 
-function isScoreHigh(player) {
+export function isScoreHigh(player) {
   return player.score > playerScoreTooHigh
 
   // return playerScore > 1400
@@ -42,42 +42,42 @@ function isScoreHigh(player) {
   // }
 }
 
-function filterOutLowLevelPlayers(players) {
+export function filterOutLowLevelPlayers(players) {
   return players.filter(isScoreHigh)
 };
 
 
-function createMonthlyRankingOfPlayers(players) {
+export function createMonthlyRankingOfPlayers(players) {
   const [first, second, third] = top3Players(players)
   return `This month ${first.name} was number one. Second place belongs to ${second.name} and last but not least ${third.name}.`
 };
 
-function top3Players(players) {
+export function top3Players(players) {
   return sortPlayersDescendingPure(players).slice(0,3);
 };
 
-function top5Players(players) {
+export function top5Players(players) {
   return sortPlayersDescending(players).slice(0,5);
 };
 
-function sortPlayersDescending(players) {
+export function sortPlayersDescending(players) {
   return players.sort((a, b) => b.score.current - a.score.current);
 };
 
-function sortPlayersDescendingPure(players) {
+export function sortPlayersDescendingPure(players) {
   return sortPlayersDescending([...players])
 };
 
-function sortPlayersAscending(players) {
+export function sortPlayersAscending(players) {
   return players.sort((a, b) => a.score.current - b.score.current);
 };
 
-function createMonthlyMessageOfPlayerThatWillDropOut(players) {
+export function createMonthlyMessageOfPlayerThatWillDropOut(players) {
   const [firstPlayer] = sortPlayersAscending(players)
   return `This month ${firstPlayer.player.first} ${firstPlayer.player.last} will drop out. With score of ${firstPlayer.score.current} was the last one in the league.`
 };
 
-function createAlphabeticallyOrderedPlayerDetailsList(players) {
+export function createAlphabeticallyOrderedPlayerDetailsList(players) {
   const sortedPlayers = players.sort((a, b) => a.firstName.localeCompare(b.firstName));
   const playersList = sortedPlayers
     .map(playerToString)
@@ -87,18 +87,18 @@ function createAlphabeticallyOrderedPlayerDetailsList(players) {
   return listElementsToOrderedList(playersList)
 }
 
-function stringToListElement(string) {
+export function stringToListElement(string) {
   return `<li>${string}</li>`
 }
 
-function listElementsToOrderedList(string) {
+export function listElementsToOrderedList(string) {
   return `<ol>\n${string}\n</ol>`
 }
 
 
 
 
-function playerToString(player) {
+export function playerToString(player) {
   if (undefined === player.title && undefined === player.midName) {
     return `${player.firstName} ${player.lastName}: ${player.highScore}`
   }
