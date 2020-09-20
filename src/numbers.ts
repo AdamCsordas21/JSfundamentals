@@ -15,7 +15,7 @@ export function getListOfValidDigits(base: any): string[] {
   return '0123456789abcdef'.split('')
 }
 
-export function filterBaseFormatting(input, base) {
+export function filterBaseFormatting(input: any, base: any): any {
   if (base === 16) {
     const lowerCased = input.toLowerCase()
     return lowerCased.startsWith('0x') ? lowerCased.substring(2) : lowerCased
