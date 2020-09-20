@@ -14,7 +14,7 @@ export function shoutToSomeoneWithUpperCase(string: string, name: string): strin
   return `HEY ${name.toUpperCase()}, ${string.toUpperCase()}`
 }
 
-export function whisperWithLowerCase(string) {
+export function whisperWithLowerCase(string: string): string {
   return string.toLowerCase()
 }
 
