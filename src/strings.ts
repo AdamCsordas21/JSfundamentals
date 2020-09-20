@@ -46,7 +46,7 @@ export function getFirstAndLastLetterOfString(str: string): string {
   return `'osh was here' has '${str.charAt(0)}' as the first letter and '${str.charAt(str.length - 1)}' as the last one.`
 }
 
-export function getSentenceType(string) {
+export function getSentenceType(string: string): string {
   if (string.endsWith('?')) return 'It was a question.'
   if (string.endsWith('!')) return 'It was an exclamation.'
   if (string.endsWith('.')) return 'It was a statement.'
