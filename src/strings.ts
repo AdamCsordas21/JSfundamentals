@@ -120,7 +120,7 @@ export function splitStringFrom5thChar(string: string): string {
   return string.slice(4)
 }
 
-export function splitStringFrom5thCharToTheEndBut3AtMost(string) {
+export function splitStringFrom5thCharToTheEndBut3AtMost(string: string): string {
   return string.slice(4, 7)
 }
 
