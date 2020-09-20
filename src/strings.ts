@@ -1,4 +1,4 @@
-export function shoutWithExclamationPoints(string, count) {
+export function shoutWithExclamationPoints(string: string, count: number): string {
   return string + '!'.repeat(count)
 }
 
