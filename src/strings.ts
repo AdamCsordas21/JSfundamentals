@@ -22,7 +22,7 @@ export function whisperToSomeoneWithLowerCase(string: string, name: string): str
   return `hey ${name.toLowerCase()}, ${string.toLowerCase()}`
 }
 
-export function writeFormalLetter(person, author, message) {
+export function writeFormalLetter(person: string, author: string, message: string): string {
   return `Dear ${person},
 
 ${message}
