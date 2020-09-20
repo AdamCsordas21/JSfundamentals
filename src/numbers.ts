@@ -32,13 +32,13 @@ export function isValid(input: any, base: number): boolean {
   return true
 }
 
-export function strToInteger(input: string, base: number): number {
+export function strToInteger(input: any, base: any): number {
   const filtered: string = filterBaseFormatting(input, base)
   return isValid(filtered, base) ? parseInt(filtered, base) : 0
 }
 
 
-export function numberToString(input, base) {
+export function numberToString(input: any, base: any): any {
   const converted = input.toString(base)
   // if (base === 2) {
   //   return converted.padStart(8, 0)
