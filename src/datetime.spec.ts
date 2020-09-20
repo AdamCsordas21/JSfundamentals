@@ -1,9 +1,9 @@
-const {
+import {
   getWeekDay,
   dayNumberToName,
   dayNumberToNameInHungarian,
   getPartyIndicator,
-} = require('./datetime')
+} from './datetime'
 
 describe('date', () => {
 

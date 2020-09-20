@@ -1,4 +1,4 @@
-function dayNumberToName(number) {
+export function dayNumberToName(number) {
   switch (number) {
     case 0: return 'Sunday'
     case 1: return 'Monday'
@@ -10,7 +10,7 @@ function dayNumberToName(number) {
   }
 }
 
-function dayNumberToNameInHungarian(number) {
+export function dayNumberToNameInHungarian(number) {
   switch (number) {
     case 0: return 'vasárnap'
     case 1: return 'hétfő'
@@ -22,11 +22,11 @@ function dayNumberToNameInHungarian(number) {
   }
 }
 
-function getWeekDay(weekDayNumber, numberTranslator) {
+export function getWeekDay(weekDayNumber, numberTranslator) {
   return numberTranslator(weekDayNumber)
 }
 
-function getPartyIndicator(currentDay) {
+export function getPartyIndicator(currentDay) {
   return currentDay === 'Friday' ? '🎉' : '😞'
 }
 
