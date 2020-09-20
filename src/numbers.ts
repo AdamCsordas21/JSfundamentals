@@ -69,7 +69,7 @@ export function numberToShortCompactForm(number: any): any {
   return number.toLocaleString('en-GB', { notation: "compact" });
 }
 
-export function numberToLongCompactForm(number) {
+export function numberToLongCompactForm(number: any): any {
   return number.toLocaleString('en-GB', {
     notation: "compact",
     compactDisplay: "long"
