@@ -140,7 +140,7 @@ export function checkStringStartAndEnd(string: string): boolean {
   return string.startsWith('osh') && string.endsWith('osh')
 }
 
-export function trimCharLeft(string, char) {
+export function trimCharLeft(string: string, char: string): string {
   while (string.charAt(0) === char) {
     string = string.substring(1)
   }
