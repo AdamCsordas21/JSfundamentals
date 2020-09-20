@@ -154,7 +154,7 @@ export function trimCharRight(string: string, char: string): string {
   return string
 }
 
-export function trimChar(string, char) {
+export function trimChar(string: string, char: string): string {
   return trimCharLeft(trimCharRight(string, char), char)
 }
 
