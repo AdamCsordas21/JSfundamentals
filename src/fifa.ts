@@ -1,8 +1,8 @@
 // HOMEWORK 3.
 
-const playerScoreTooHigh = 1400
+const playerScoreTooHigh: number = 1400
 
-export function ratePlayersSkills(players) {
+export function ratePlayersSkills(players: any): any {
   return players.map(scoreRating)
 
   // return players.map((player) => isScoreHigh(player) ? 'High skill level - Avoid!' : 'Low skill level - Play!')

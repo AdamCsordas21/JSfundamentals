@@ -24,15 +24,15 @@ describe('fifa rating', () => {
       score: number
     }
     */
-    const players = [
+    const players: { name: string, score: number }[] = [
       { name: 'p1', score: 1455 },
       { name: 'p2', score: 1235 },
       { name: 'p3', score: 1085 },
       { name: 'p4', score: 2210 },
       { name: 'p5', score: 1565 },
     ];
-    const actual = ratePlayersSkills(players);
-    const expected = [
+    const actual: any = ratePlayersSkills(players);
+    const expected: string[] = [
       'High skill level - Avoid p1!',
       'Low skill level - Play with p2!',
       'Low skill level - Play with p3!',
