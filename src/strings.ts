@@ -158,7 +158,7 @@ export function trimChar(string: string, char: string): string {
   return trimCharLeft(trimCharRight(string, char), char)
 }
 
-export function removesExclamationPointsFromBeginningAndEndButNotMiddle(string) {
+export function removesExclamationPointsFromBeginningAndEndButNotMiddle(string: string): string {
   return trimChar(string, '!')
 }
 
