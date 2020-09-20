@@ -104,7 +104,7 @@ export function convertEveryOccurrenceForGivenString(string: string): string {
   return replaceAll(string, 'osh', 'OSH')
 }
 
-export function convertFirstOccurenceForGivenString(string) {
+export function convertFirstOccurenceForGivenString(string: string): string {
   return string.replace('osh', 'OSH')
 }
 
