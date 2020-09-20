@@ -65,7 +65,7 @@ export function numberToCurrency(number: any, currency: any): any {
   });
 }
 
-export function numberToShortCompactForm(number) {
+export function numberToShortCompactForm(number: any): any {
   return number.toLocaleString('en-GB', { notation: "compact" });
 }
 
