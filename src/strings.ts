@@ -88,7 +88,7 @@ export function getIndexOfSecondOccurrence(string: string, searchString: string)
   return `Second occurrence of '${searchString}' is at index ${string.indexOf(searchString, string.indexOf(searchString) + 1)}.`
 }
 
-export function appendWithUnderscores(string, number) {
+export function appendWithUnderscores(string: string, number: number): string {
   return `${string.padEnd(30, '_')}${number}`
 }
 
