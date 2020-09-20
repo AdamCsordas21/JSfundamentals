@@ -6,7 +6,7 @@ export function shoutWithUpperCase(string: string): string {
   return string.toUpperCase()
 }
 
-export function shoutToSomeoneWithExclamationPoints(string, count, name) {
+export function shoutToSomeoneWithExclamationPoints(string: string, count: number, name: string): string {
   return `Hey ${name}, ${string}${'!'.repeat(count)}`
 }
 
