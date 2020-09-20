@@ -84,7 +84,7 @@ export function numberToAccounting(number: any): any {
   })
 }
 
-export function hexCodeToDecimalCode(h) {
+export function hexCodeToDecimalCode(h: any): string {
   //    0 12 34 56
   //    # 01 02 03
   //     /   |   \
