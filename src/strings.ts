@@ -1,28 +1,28 @@
-function shoutWithExclamationPoints(string, count) {
+export function shoutWithExclamationPoints(string, count) {
   return string + '!'.repeat(count)
 }
 
-function shoutWithUpperCase(string) {
+export function shoutWithUpperCase(string) {
   return string.toUpperCase()
 }
 
-function shoutToSomeoneWithExclamationPoints(string, count, name) {
+export function shoutToSomeoneWithExclamationPoints(string, count, name) {
   return `Hey ${name}, ${string}${'!'.repeat(count)}`
 }
 
-function shoutToSomeoneWithUpperCase(string, name) {
+export function shoutToSomeoneWithUpperCase(string, name) {
   return `HEY ${name.toUpperCase()}, ${string.toUpperCase()}`
 }
 
-function whisperWithLowerCase(string) {
+export function whisperWithLowerCase(string) {
   return string.toLowerCase()
 }
 
-function whisperToSomeoneWithLowerCase(string, name) {
+export function whisperToSomeoneWithLowerCase(string, name) {
   return `hey ${name.toLowerCase()}, ${string.toLowerCase()}`
 }
 
-function writeFormalLetter(person, author, message) {
+export function writeFormalLetter(person, author, message) {
   return `Dear ${person},
 
 ${message}
@@ -31,7 +31,7 @@ Kind regards,
 ${author}`
 }
 
-function describeIntegerDivisionRemainder(divident, divisor) {
+export function describeIntegerDivisionRemainder(divident, divisor) {
   return `The remainder of ${divident} divided by ${divisor} is ${divident % divisor}.`
 }
 /*
@@ -42,11 +42,11 @@ function describeIntegerDivisionRemainder(divident, divisor) {
 4 - reminder
 */
 
-function getFirstAndLastLetterOfString(str) {
+export function getFirstAndLastLetterOfString(str) {
   return `'osh was here' has '${str.charAt(0)}' as the first letter and '${str.charAt(str.length - 1)}' as the last one.`
 }
 
-function getSentenceType(string) {
+export function getSentenceType(string) {
   if (string.endsWith('?')) return 'It was a question.'
   if (string.endsWith('!')) return 'It was an exclamation.'
   if (string.endsWith('.')) return 'It was a statement.'
@@ -72,43 +72,43 @@ function getSentenceType(string) {
 }
 
 // s1 ? s2 : s3
-function isStringImportant(string) {
+export function isStringImportant(string) {
   return string.includes('osh')
 }
 
-function checkForAmazingString(string) {
+export function checkForAmazingString(string) {
   return `the '${string}' sentence ${isStringImportant(string) ? 'is' : 'is not'} amazing`
 }
 
-function getIndexOfFirstOccurrence(string, searchString) {
+export function getIndexOfFirstOccurrence(string, searchString) {
   return `First occurrence of '${searchString}' is at index ${string.indexOf(searchString)}.`
 }
 
-function getIndexOfSecondOccurrence(string, searchString) {
+export function getIndexOfSecondOccurrence(string, searchString) {
   return `Second occurrence of '${searchString}' is at index ${string.indexOf(searchString, string.indexOf(searchString) + 1)}.`
 }
 
-function appendWithUnderscores(string, number) {
+export function appendWithUnderscores(string, number) {
   return `${string.padEnd(30, '_')}${number}`
 }
 
-function prependWithZeros(string) {
+export function prependWithZeros(string) {
   return string.padStart(5, '0')
 }
 
-function replaceAll(string, search, replacement) {
+export function replaceAll(string, search, replacement) {
   return string.replace(new RegExp(search, 'g'), replacement)
 }
 
-function convertEveryOccurrenceForGivenString(string) {
+export function convertEveryOccurrenceForGivenString(string) {
   return replaceAll(string, 'osh', 'OSH')
 }
 
-function convertFirstOccurenceForGivenString(string) {
+export function convertFirstOccurenceForGivenString(string) {
   return string.replace('osh', 'OSH')
 }
 
-function convertEveryOtherOccurrenceForGivenString(string) {
+export function convertEveryOtherOccurrenceForGivenString(string) {
   let replace = false
   return replaceAll(string, 'osh', () => {
     replace = !replace
@@ -116,57 +116,57 @@ function convertEveryOtherOccurrenceForGivenString(string) {
   })
 }
 
-function splitStringFrom5thChar(string) {
+export function splitStringFrom5thChar(string) {
   return string.slice(4)
 }
 
-function splitStringFrom5thCharToTheEndBut3AtMost(string) {
+export function splitStringFrom5thCharToTheEndBut3AtMost(string) {
   return string.slice(4, 7)
 }
 
-function splitStringFrom4thCharFromTheEndToTheEnd(string) {
+export function splitStringFrom4thCharFromTheEndToTheEnd(string) {
   return string.slice(-4)
 }
 
-function splitStringFrom8thCharFromTheEndToThe6thChar(string) {
+export function splitStringFrom8thCharFromTheEndToThe6thChar(string) {
   return string.slice(-8, -5)
 }
 
-function splitStringIntoArrayConsisting(string) {
+export function splitStringIntoArrayConsisting(string) {
   return string.split('')
 }
 
-function checkStringStartAndEnd(string) {
+export function checkStringStartAndEnd(string) {
   return string.startsWith('osh') && string.endsWith('osh')
 }
 
-function trimCharLeft(string, char) {
+export function trimCharLeft(string, char) {
   while (string.charAt(0) === char) {
     string = string.substring(1)
   }
   return string
 }
 
-function trimCharRight(string, char) {
+export function trimCharRight(string, char) {
   while (string.charAt(string.length - 1) === char) {
     string = string.substring(0, string.length - 1)
   }
   return string
 }
 
-function trimChar(string, char) {
+export function trimChar(string, char) {
   return trimCharLeft(trimCharRight(string, char), char)
 }
 
-function removesExclamationPointsFromBeginningAndEndButNotMiddle(string) {
+export function removesExclamationPointsFromBeginningAndEndButNotMiddle(string) {
   return trimChar(string, '!')
 }
 
-function removeAllHyphensFromTheBeginningOfString(string) {
+export function removeAllHyphensFromTheBeginningOfString(string) {
   return trimCharLeft(string, '-')
 }
 
-function removeAllZsFromTheEndOfString(string) {
+export function removeAllZsFromTheEndOfString(string) {
   return trimCharRight(string, 'z')
 }
 
@@ -191,7 +191,7 @@ module.exports = {
   splitStringFrom5thChar,
   splitStringFrom5thCharToTheEndBut3AtMost,
   splitStringFrom4thCharFromTheEndToTheEnd,
-  splitStringFrom8thCharFromTheEndToThe6thChara: splitStringFrom8thCharFromTheEndToThe6thChar,
+  splitStringFrom8thCharFromTheEndToThe6thChar,
   checkStringStartAndEnd,
   splitStringIntoArrayConsisting,
   removesExclamationPointsFromBeginningAndEndButNotMiddle,

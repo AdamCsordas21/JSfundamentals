@@ -1,4 +1,4 @@
-const {
+import {
   shoutWithExclamationPoints,
   shoutWithUpperCase,
   shoutToSomeoneWithExclamationPoints,
@@ -19,7 +19,7 @@ const {
   splitStringFrom5thChar,
   splitStringFrom5thCharToTheEndBut3AtMost,
   splitStringFrom4thCharFromTheEndToTheEnd,
-  splitStringFrom8thCharFromTheEndToThe6thChara,
+  splitStringFrom8thCharFromTheEndToThe6thChar,
   checkStringStartAndEnd,
   splitStringIntoArrayConsisting,
   removesExclamationPointsFromBeginningAndEndButNotMiddle,
@@ -30,7 +30,7 @@ const {
   trimCharLeft,
   trimCharRight,
   trimChar,
-} = require('./strings')
+} from './strings'
 
 describe('communicating', () => {
   it('shouts with exclamation points', () => {
@@ -195,7 +195,7 @@ The Villagers`
   // splits a string from 8th character from the end, to the 6 character from the end inclusive (all strings will be 10 characters or longer)
   // for input of "osh was here" it returns "was"
   it('splits a string from 8th character from the end to the 6th characther from the end inclusive', () => {
-    expect(splitStringFrom8thCharFromTheEndToThe6thChara('osh was here')).toEqual('was')
+    expect(splitStringFrom8thCharFromTheEndToThe6thChar('osh was here')).toEqual('was')
   })
 
   // splits a string into array consisting of single characters
