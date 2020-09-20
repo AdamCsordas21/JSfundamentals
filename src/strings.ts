@@ -18,7 +18,7 @@ export function whisperWithLowerCase(string: string): string {
   return string.toLowerCase()
 }
 
-export function whisperToSomeoneWithLowerCase(string, name) {
+export function whisperToSomeoneWithLowerCase(string: string, name: string): string {
   return `hey ${name.toLowerCase()}, ${string.toLowerCase()}`
 }
 
