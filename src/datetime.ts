@@ -10,7 +10,7 @@ export function dayNumberToName(number: any): string | undefined {
   }
 }
 
-export function dayNumberToNameInHungarian(number) {
+export function dayNumberToNameInHungarian(number: any): string | undefined {
   switch (number) {
     case 0: return 'vasárnap'
     case 1: return 'hétfő'
