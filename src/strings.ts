@@ -166,7 +166,7 @@ export function removeAllHyphensFromTheBeginningOfString(string: string): string
   return trimCharLeft(string, '-')
 }
 
-export function removeAllZsFromTheEndOfString(string) {
+export function removeAllZsFromTheEndOfString(string: string): string {
   return trimCharRight(string, 'z')
 }
 
