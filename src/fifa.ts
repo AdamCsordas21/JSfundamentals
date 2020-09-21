@@ -87,11 +87,11 @@ export function createAlphabeticallyOrderedPlayerDetailsList(players: any): stri
   return listElementsToOrderedList(playersList)
 }
 
-export function stringToListElement(string) {
+export function stringToListElement(string: any): string {
   return `<li>${string}</li>`
 }
 
-export function listElementsToOrderedList(string) {
+export function listElementsToOrderedList(string: any): string {
   return `<ol>\n${string}\n</ol>`
 }
 

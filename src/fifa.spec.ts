@@ -210,16 +210,16 @@ describe('fifa rating', () => {
 
   describe('list creator', () => {
     it('creates a single list element out of a string', () => {
-      const someString = 'adam csordas 222222'
-      const actual = stringToListElement(someString)
-      const expected = '<li>adam csordas 222222</li>'
+      const someString: string = 'adam csordas 222222'
+      const actual: string = stringToListElement(someString)
+      const expected: string = '<li>adam csordas 222222</li>'
       expect(actual).toEqual(expected)
     })
 
     it('creates an ordered list out of a string representing list items', () => {
-      const someString = '<li>adam csordas 222222</li>\n<li>osh was here</li>'
-      const actual = listElementsToOrderedList(someString)
-      const expected = '<ol>\n<li>adam csordas 222222</li>\n<li>osh was here</li>\n</ol>'
+      const someString: string = '<li>adam csordas 222222</li>\n<li>osh was here</li>'
+      const actual: string = listElementsToOrderedList(someString)
+      const expected: string = '<ol>\n<li>adam csordas 222222</li>\n<li>osh was here</li>\n</ol>'
       expect(actual).toEqual(expected)
     })
   })
