@@ -22,15 +22,8 @@ describe('date', () => {
     }
   })
 
-  it('translates weekday number', () => {
-    const number: number = 123
-    const translator = () => 'abc'
-    const expected: string = 'abc'
-    expect(getWeekDay(number, translator)).toEqual(expected)
-  })
-
   it('tells day of the week in Hungarian', () => {
-    const testCases: (string | number)[][] = [
+    const testCases: [0 | 1 | 2 | 3 | 4 | 5 | 6, string][] = [
       [0, 'vasárnap'],
       [1, 'hétfő'],
       [2, 'kedd'],
@@ -42,6 +35,13 @@ describe('date', () => {
     for (const [dayNumber, day] of testCases) {
       expect(dayNumberToNameInHungarian(dayNumber)).toEqual(day)
     }
+  })
+  
+  it('translates weekday number', () => {
+    const number: number = 123
+    const translator = () => 'abc'
+    const expected: string = 'abc'
+    expect(getWeekDay(number, translator)).toEqual(expected)
   })
 
   it('parties on Friday', () => {
