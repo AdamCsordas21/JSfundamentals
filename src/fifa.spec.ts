@@ -65,7 +65,7 @@ describe('fifa rating', () => {
     expect(actual).toEqual(expected)
   })
 
-  const players = [
+  const players: { name: string, score: { current: number, averageInLastWeek: number } }[] = [
     { name: 'p1', score: { current: 1455, averageInLastWeek: 1300 } },
     { name: 'p2', score: { current: 1235, averageInLastWeek: 1400 } },
     { name: 'p3', score: { current: 1085, averageInLastWeek: 1100 } },
