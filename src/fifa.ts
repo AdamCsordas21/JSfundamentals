@@ -72,8 +72,8 @@ export function sortPlayersAscending(players: any): any {
   return players.sort((a: any, b: any) => a.score.current - b.score.current);
 };
 
-export function createMonthlyMessageOfPlayerThatWillDropOut(players) {
-  const [firstPlayer] = sortPlayersAscending(players)
+export function createMonthlyMessageOfPlayerThatWillDropOut(players: any): any {
+  const [firstPlayer]: any = sortPlayersAscending(players)
   return `This month ${firstPlayer.player.first} ${firstPlayer.player.last} will drop out. With score of ${firstPlayer.score.current} was the last one in the league.`
 };
 

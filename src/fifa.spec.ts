@@ -123,13 +123,13 @@ describe('fifa rating', () => {
 
   it('produces monthly message of the player that will drop out', () => {
     // player to drop out is the player from the current rooster that has the lowest current points
-    const players = [
+    const players: { player: { first: string, last: string }, score: { top: number, current: number } }[] = [
       { player: { first: 'Osh', last: 'Sama' }, score: { top: 500, current: 123 }},
       { player: { first: 'Adam', last: 'Csordas' }, score: { top: 999, current: 501 }},
       { player: { first: 'Nati', last: 'Fati' }, score: { top: 1000000, current: -12 }},
       { player: { first: 'Nela', last: 'Trela' }, score: { top: 10, current: 10 }},
     ]
-    const actual = createMonthlyMessageOfPlayerThatWillDropOut(players)
+    const actual: string = createMonthlyMessageOfPlayerThatWillDropOut(players)
     const expected = 'This month Nati Fati will drop out. With score of -12 was the last one in the league.'
 
     expect(actual).toEqual(expected)
