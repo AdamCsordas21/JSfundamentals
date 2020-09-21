@@ -3,7 +3,8 @@ import {
   dayNumberToName,
   dayNumberToNameInHungarian,
   getPartyIndicator,
-  DayNumber
+  DayNumber,
+  NumberTranslator
 } from './datetime'
 
 describe('date', () => {
@@ -37,12 +38,12 @@ describe('date', () => {
       expect(dayNumberToNameInHungarian(dayNumber)).toEqual(day)
     }
   })
-  
+
   it('translates weekday number', () => {
     const number: number = 123
-    const translator = () => 'abc'
+    const fakeTranslator: NumberTranslator = () => 'abc'
     const expected: string = 'abc'
-    expect(getWeekDay(number, translator)).toEqual(expected)
+    expect(getWeekDay(number, fakeTranslator)).toEqual(expected)
   })
 
   it('parties on Friday', () => {

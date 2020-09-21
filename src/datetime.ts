@@ -24,7 +24,9 @@ export function dayNumberToNameInHungarian(number: DayNumber): string {
   }
 }
 
-export function getWeekDay(weekDayNumber: any, numberTranslator: any): any {
+export type NumberTranslator = (weekDayNumber: number) => string
+
+export function getWeekDay(weekDayNumber: number, numberTranslator: NumberTranslator): string {
   return numberTranslator(weekDayNumber)
 }
 
