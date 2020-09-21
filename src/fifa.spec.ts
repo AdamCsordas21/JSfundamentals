@@ -11,7 +11,10 @@ import {
   playerToString,
   stringToListElement,
   listElementsToOrderedList,
-  Player
+  Player,
+  Player2,
+  Player3,
+  Player4
 } from './fifa'
 
 describe('fifa rating', () => {
@@ -124,7 +127,7 @@ describe('fifa rating', () => {
 
   it('produces monthly message of the player that will drop out', () => {
     // player to drop out is the player from the current rooster that has the lowest current points
-    const players: { player: { first: string, last: string }, score: { top: number, current: number } }[] = [
+    const players: Player3[]= [
       { player: { first: 'Osh', last: 'Sama' }, score: { top: 500, current: 123 }},
       { player: { first: 'Adam', last: 'Csordas' }, score: { top: 999, current: 501 }},
       { player: { first: 'Nati', last: 'Fati' }, score: { top: 1000000, current: -12 }},
@@ -140,25 +143,7 @@ describe('fifa rating', () => {
   // Use basic HTML <ol> ordered list
   // For each player display information in the following format <title if present>. <first name> <middle name if any> <last name>: <high score>
   it('it produces an ordered list of player details and sort them alphabetically', () => {
-    const players: ({
-      firstName: string;
-      lastName: string;
-      highScore: number;
-      title?: undefined;
-      midName?: undefined;
-    } | {
-      title: string;
-      firstName: string;
-      midName: string;
-      lastName: string;
-      highScore: number;
-    } | {
-      title: string;
-      firstName: string;
-      midName?: string;
-      lastName: string;
-      highScore: number;
-    })[] = [
+    const players: Player4[] = [
       { firstName: 'Osh', lastName: 'Sama', highScore: 5000 },
       { title: 'Ms.', firstName: 'Nati', midName: 'Werewolf', lastName: 'Fati', highScore: 4000 },
       { title: 'Mrs.', firstName: 'Nela', lastName: 'Trela', highScore: 6000 },

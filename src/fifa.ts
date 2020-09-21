@@ -23,12 +23,12 @@ export function ratePlayersSkills(players: Player[]): string[] {
   // return highSkilled
 }
 
-export function scoreRating(player: any): any {
+export function scoreRating(player: Player): string {
   return isScoreHigh(player) ? `High skill level - Avoid ${player.name}!` : `Low skill level - Play with ${player.name}!`
 }
 
 
-export function isScoreHigh(player: any): boolean {
+export function isScoreHigh(player: Player): boolean {
   return player.score > playerScoreTooHigh
 
   // return playerScore > 1400
@@ -47,44 +47,72 @@ export function isScoreHigh(player: any): boolean {
   // }
 }
 
-export function filterOutLowLevelPlayers(players: any): any {
+export function filterOutLowLevelPlayers(players: Player[]): Player[] {
   return players.filter(isScoreHigh)
 };
 
+export interface Player2 {
+  name: string
+  score: {
+    current: number
+    averageInLastWeek: number
+  }
+}
 
-export function createMonthlyRankingOfPlayers(players: any): string {
+export function createMonthlyRankingOfPlayers(players: Player2[]): string {
   const [first, second, third] = top3Players(players)
   return `This month ${first.name} was number one. Second place belongs to ${second.name} and last but not least ${third.name}.`
 };
 
-export function top3Players(players: any): any {
+export function top3Players(players: Player2[]): Player2[] {
   return sortPlayersDescendingPure(players).slice(0,3);
 };
 
-export function top5Players(players: any): any {
+export function top5Players(players: Player2[]): Player2[] {
   return sortPlayersDescending(players).slice(0,5);
 };
 
-export function sortPlayersDescending(players: any): any {
-  return players.sort((a: any, b: any) => b.score.current - a.score.current);
+export function sortPlayersDescending(players: Player2[]): Player2[] {
+  return players.sort((a: Player2, b: Player2): number => b.score.current - a.score.current);
 };
 
-export function sortPlayersDescendingPure(players: any): any {
+export function sortPlayersDescendingPure(players: Player2[]): Player2[] {
   return sortPlayersDescending([...players])
 };
 
-export function sortPlayersAscending(players: any): any {
-  return players.sort((a: any, b: any) => a.score.current - b.score.current);
+export type PlayerScore = Pick<Player2 | Player3, 'score'>
+
+export function sortPlayersAscending<P extends PlayerScore>(players: P[]): P[] {
+  return players.sort((a: P, b: P): number => a.score.current - b.score.current);
 };
 
-export function createMonthlyMessageOfPlayerThatWillDropOut(players: any): any {
-  const [firstPlayer]: any = sortPlayersAscending(players)
+export interface Player3 {
+  player: {
+    first: string;
+    last: string;
+  };
+  score: {
+    top: number;
+    current: number;
+  };
+}
+
+export function createMonthlyMessageOfPlayerThatWillDropOut(players: Player3[]): string {
+  const [firstPlayer] = sortPlayersAscending(players)
   return `This month ${firstPlayer.player.first} ${firstPlayer.player.last} will drop out. With score of ${firstPlayer.score.current} was the last one in the league.`
 };
 
-export function createAlphabeticallyOrderedPlayerDetailsList(players: any): string {
-  const sortedPlayers = players.sort((a: any, b: any) => a.firstName.localeCompare(b.firstName));
-  const playersList = sortedPlayers
+export interface Player4 {
+  title?: string;
+  firstName: string;
+  midName?: string;
+  lastName: string;
+  highScore: number;
+}
+
+export function createAlphabeticallyOrderedPlayerDetailsList(players: Player4[]): string {
+  const sortedPlayers: Player4[] = players.sort((a: Player4, b: Player4) => a.firstName.localeCompare(b.firstName));
+  const playersList: string = sortedPlayers
     .map(playerToString)
     .map(stringToListElement)
     .join('\n')
@@ -92,18 +120,15 @@ export function createAlphabeticallyOrderedPlayerDetailsList(players: any): stri
   return listElementsToOrderedList(playersList)
 }
 
-export function stringToListElement(string: any): string {
+export function stringToListElement(string: string): string {
   return `<li>${string}</li>`
 }
 
-export function listElementsToOrderedList(string: any): string {
+export function listElementsToOrderedList(string: string): string {
   return `<ol>\n${string}\n</ol>`
 }
 
-
-
-
-export function playerToString(player: any): string {
+export function playerToString(player: Player4): string {
   if (undefined === player.title && undefined === player.midName) {
     return `${player.firstName} ${player.lastName}: ${player.highScore}`
   }
@@ -115,22 +140,3 @@ export function playerToString(player: any): string {
   }
   return `${player.title} ${player.firstName} ${player.midName} ${player.lastName}: ${player.highScore}`
 }
-
-
-
-
-module.exports = {
-  ratePlayersSkills,
-  isScoreHigh,
-  filterOutLowLevelPlayers,
-  sortPlayersDescending,
-  sortPlayersAscending,
-  top3Players,
-  createMonthlyRankingOfPlayers,
-  createMonthlyMessageOfPlayerThatWillDropOut,
-  createAlphabeticallyOrderedPlayerDetailsList,
-  playerToString,
-  stringToListElement,
-  listElementsToOrderedList
-}
-
