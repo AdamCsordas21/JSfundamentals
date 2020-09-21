@@ -44,12 +44,12 @@ describe('fifa rating', () => {
   })
 
   it('rates player score as high when above 1400', () => {
-    const player = {
+    const player: { name: string, score: number } = {
       name: 'osh',
       score: 2000
     }
-    const actual = isScoreHigh(player)
-    const expected = true
+    const actual: any = isScoreHigh(player)
+    const expected: boolean = true
 
     expect(actual).toEqual(expected)
   })

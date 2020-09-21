@@ -18,12 +18,12 @@ export function ratePlayersSkills(players: any): any {
   // return highSkilled
 }
 
-export function scoreRating(player) {
+export function scoreRating(player: any): any {
   return isScoreHigh(player) ? `High skill level - Avoid ${player.name}!` : `Low skill level - Play with ${player.name}!`
 }
 
 
-export function isScoreHigh(player) {
+export function isScoreHigh(player: any): boolean {
   return player.score > playerScoreTooHigh
 
   // return playerScore > 1400
