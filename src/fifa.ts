@@ -42,7 +42,7 @@ export function isScoreHigh(player: any): boolean {
   // }
 }
 
-export function filterOutLowLevelPlayers(players) {
+export function filterOutLowLevelPlayers(players: any): any {
   return players.filter(isScoreHigh)
 };
 

@@ -55,9 +55,12 @@ describe('fifa rating', () => {
   })
 
   it('rates player score as low when below or equal to 100', () => {
-    const player = { name: 'adam', score: 1000 }
-    const actual = isScoreHigh(player)
-    const expected = false
+    const player: { name: string, score: number } = { 
+      name: 'adam', 
+      score: 1000 
+    }
+    const actual: any = isScoreHigh(player)
+    const expected: boolean = false
 
     expect(actual).toEqual(expected)
   })
