@@ -1,4 +1,4 @@
-interface Dispatcher {
+export interface Dispatcher {
   /*
    * Dispatch provided items
    */
@@ -106,7 +106,7 @@ export class Player {
     return this.#name
   }
 
-  set name(name) {
+  set name(name: string) {
     this.#name = name
   }
 

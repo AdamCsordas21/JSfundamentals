@@ -3,10 +3,11 @@ import {
   FoodShop,
   Item,
   Letter,
-  Player
+  Player,
+  Dispatcher
 } from './classes'
 
-const nullDispatcher = { dispatch() { } }
+const nullDispatcher: Dispatcher = { dispatch() { } }
 
 // const myObject = new Object() // {}
 // const myArray = new Array() // []
