@@ -77,8 +77,8 @@ export function createMonthlyMessageOfPlayerThatWillDropOut(players: any): any {
   return `This month ${firstPlayer.player.first} ${firstPlayer.player.last} will drop out. With score of ${firstPlayer.score.current} was the last one in the league.`
 };
 
-export function createAlphabeticallyOrderedPlayerDetailsList(players) {
-  const sortedPlayers = players.sort((a, b) => a.firstName.localeCompare(b.firstName));
+export function createAlphabeticallyOrderedPlayerDetailsList(players: any): string {
+  const sortedPlayers = players.sort((a: any, b: any) => a.firstName.localeCompare(b.firstName));
   const playersList = sortedPlayers
     .map(playerToString)
     .map(stringToListElement)

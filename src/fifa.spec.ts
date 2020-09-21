@@ -139,13 +139,31 @@ describe('fifa rating', () => {
   // Use basic HTML <ol> ordered list
   // For each player display information in the following format <title if present>. <first name> <middle name if any> <last name>: <high score>
   it('it produces an ordered list of player details and sort them alphabetically', () => {
-    const players = [
+    const players: ({
+      firstName: string;
+      lastName: string;
+      highScore: number;
+      title?: undefined;
+      midName?: undefined;
+    } | {
+      title: string;
+      firstName: string;
+      midName: string;
+      lastName: string;
+      highScore: number;
+    } | {
+      title: string;
+      firstName: string;
+      midName?: string;
+      lastName: string;
+      highScore: number;
+    })[] = [
       { firstName: 'Osh', lastName: 'Sama', highScore: 5000 },
       { title: 'Ms.', firstName: 'Nati', midName: 'Werewolf', lastName: 'Fati', highScore: 4000 },
       { title: 'Mrs.', firstName: 'Nela', lastName: 'Trela', highScore: 6000 },
       { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 },
     ];
-    const actual = createAlphabeticallyOrderedPlayerDetailsList(players);
+    const actual: string = createAlphabeticallyOrderedPlayerDetailsList(players);
     const expected = `<ol>
 <li>Mr. Adam Seer Csordas: 4700</li>
 <li>Ms. Nati Werewolf Fati: 4000</li>
