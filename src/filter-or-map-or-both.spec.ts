@@ -1,4 +1,4 @@
-const {
+import {
   isRed,
   isBlue,
   makeCircle,
@@ -7,7 +7,7 @@ const {
   doubleDigitId,
   shortDescriptions,
   longDescriptions,
-} = require('./filter-or-map-or-both')
+} from './filter-or-map-or-both'
 
 describe('filter or map', () => {
   const squares = [
