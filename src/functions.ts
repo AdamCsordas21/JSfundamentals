@@ -41,13 +41,13 @@ export const arrow: () => string = () => name
 
 
 // Inner function
-export function addSquares(a, b) {
-  function square(x) { return x * x; }
+export function addSquares(a: number, b: number): number {
+  function square(x: number): number { return x * x; }
   return square(a) + square(b);
 };
 
-export const addSquares2 = (a, b) => {
-  const square = (x) => x * x;
+export const addSquares2: (a: number, b: number) => number = (a, b) => {
+  const square = (x: number) => x * x;
   return square(a) + square(b);
 };
 
