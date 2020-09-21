@@ -2,7 +2,12 @@
 
 const playerScoreTooHigh: number = 1400
 
-export function ratePlayersSkills(players: any): any {
+export interface Player {
+  name: string
+  score: number
+}
+
+export function ratePlayersSkills(players: Player[]): string[] {
   return players.map(scoreRating)
 
   // return players.map((player) => isScoreHigh(player) ? 'High skill level - Avoid!' : 'Low skill level - Play!')
