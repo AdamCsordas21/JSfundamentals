@@ -1,4 +1,4 @@
-export const isRed = ({ colour }) => colour === 'red'
+export const isRed = ({ colour }: any): boolean => colour === 'red'
 
 export const isBlue = ({ colour }) => colour === 'blue'
 
