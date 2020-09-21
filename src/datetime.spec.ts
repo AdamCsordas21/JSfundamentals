@@ -4,7 +4,8 @@ import {
   dayNumberToNameInHungarian,
   getPartyIndicator,
   DayNumber,
-  NumberTranslator
+  NumberTranslator,
+  PartyIndicator
 } from './datetime'
 
 describe('date', () => {
@@ -47,7 +48,7 @@ describe('date', () => {
   })
 
   it('parties on Friday', () => {
-    const testCases: string[][] = [
+    const testCases: [string, PartyIndicator][] = [
       ['Friday', '🎉'],
       ['any other day', '😞'],
     ]

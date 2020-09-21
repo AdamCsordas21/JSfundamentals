@@ -30,6 +30,8 @@ export function getWeekDay(weekDayNumber: number, numberTranslator: NumberTransl
   return numberTranslator(weekDayNumber)
 }
 
-export function getPartyIndicator(currentDay: string): string {
+export type PartyIndicator = '🎉' | '😞'
+
+export function getPartyIndicator(currentDay: string): PartyIndicator {
   return currentDay === 'Friday' ? '🎉' : '😞'
 }
