@@ -8,7 +8,7 @@ import {
 describe('date', () => {
 
   it('tells day of the week', () => {
-    const testCases: (string | number)[][] = [
+    const testCases: [0 | 1 | 2 | 3 | 4 | 5 | 6, string][] = [
       [0, 'Sunday'],
       [1, 'Monday'],
       [2, 'Tuesday'],

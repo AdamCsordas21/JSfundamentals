@@ -1,4 +1,4 @@
-export function dayNumberToName(number: any): string | undefined {
+export function dayNumberToName(number: 0 | 1 | 2 | 3 | 4 | 5 | 6): string {
   switch (number) {
     case 0: return 'Sunday'
     case 1: return 'Monday'
