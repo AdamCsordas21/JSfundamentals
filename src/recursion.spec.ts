@@ -1,4 +1,4 @@
-const { factorial } = require('./recursion')
+import { factorial } from './recursion'
 
 describe('recursion', () => {
   const testCases = [
