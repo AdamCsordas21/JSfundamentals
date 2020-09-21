@@ -1,7 +1,7 @@
 import { factorial } from './recursion'
 
 describe('recursion', () => {
-  const testCases = [
+  const testCases: { n: number, expected: number }[] = [
     { n: 0, expected: 0 },
     { n: 1, expected: 1 },
     { n: 2, expected: 2 },
