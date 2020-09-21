@@ -31,13 +31,13 @@ export const name = 'osh'
 export const f1 = (name: string): string => f2('king', name)
 export const f2 = (title: string, name: string): string => `${title} ${name}`
 
-export function named() {
+export function named(): string {
   return name
 }
-export const anonym = function () {
+export const anonym: () => string = function () {
   return name
 }
-export const arrow = () => name
+export const arrow: () => string = () => name
 
 
 // Inner function
