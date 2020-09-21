@@ -3,12 +3,13 @@ import {
   dayNumberToName,
   dayNumberToNameInHungarian,
   getPartyIndicator,
+  DayNumber
 } from './datetime'
 
 describe('date', () => {
 
   it('tells day of the week', () => {
-    const testCases: [0 | 1 | 2 | 3 | 4 | 5 | 6, string][] = [
+    const testCases: [DayNumber, string][] = [
       [0, 'Sunday'],
       [1, 'Monday'],
       [2, 'Tuesday'],
@@ -23,7 +24,7 @@ describe('date', () => {
   })
 
   it('tells day of the week in Hungarian', () => {
-    const testCases: [0 | 1 | 2 | 3 | 4 | 5 | 6, string][] = [
+    const testCases: [DayNumber, string][] = [
       [0, 'vasárnap'],
       [1, 'hétfő'],
       [2, 'kedd'],

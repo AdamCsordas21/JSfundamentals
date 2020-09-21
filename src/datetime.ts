@@ -1,4 +1,6 @@
-export function dayNumberToName(number: 0 | 1 | 2 | 3 | 4 | 5 | 6): string {
+export type DayNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6
+
+export function dayNumberToName(number: DayNumber): string {
   switch (number) {
     case 0: return 'Sunday'
     case 1: return 'Monday'
@@ -10,7 +12,7 @@ export function dayNumberToName(number: 0 | 1 | 2 | 3 | 4 | 5 | 6): string {
   }
 }
 
-export function dayNumberToNameInHungarian(number: 0 | 1 | 2 | 3 | 4 | 5 | 6): string {
+export function dayNumberToNameInHungarian(number: DayNumber): string {
   switch (number) {
     case 0: return 'vasárnap'
     case 1: return 'hétfő'
@@ -28,11 +30,4 @@ export function getWeekDay(weekDayNumber: any, numberTranslator: any): any {
 
 export function getPartyIndicator(currentDay: string): string {
   return currentDay === 'Friday' ? '🎉' : '😞'
-}
-
-module.exports = {
-  getWeekDay,
-  dayNumberToName,
-  dayNumberToNameInHungarian,
-  getPartyIndicator,
 }
