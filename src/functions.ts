@@ -1,14 +1,14 @@
 // 1. Named function declaration - makes it a statement
-export function namedFunction() {}
+export function namedFunction(): void {}
 
 // 2. Named function expression - it's an expression, because we assign it to a variable; the whole line is still a statement
-export const namedFunctionExpression = function named() {}
+export const namedFunctionExpression: () => void = function named() {}
 
 // 3. Anonymous function expression - it's an expression, because we assign it to a variable; the whole line is still a statement
-export const anonymousFunction = function () {}
+export const anonymousFunction: () => void = function () {}
 
 // 4. Arrow function - it's an expression, because we assign it to a variable; the whole line is still a statement
-export const arrowFunction = () => {}
+export const arrowFunction: () => void = () => {}
 
 // 5. IIFE - Immediately Invoked Function Expression
 (function () {
@@ -26,7 +26,7 @@ export const arrowFunction = () => {}
 ((type) => console.log(type))('arrow');
 
 
-export const name = 'osh'
+export const name: string = 'osh'
 
 export const f1 = (name: string): string => f2('king', name)
 export const f2 = (title: string, name: string): string => `${title} ${name}`
