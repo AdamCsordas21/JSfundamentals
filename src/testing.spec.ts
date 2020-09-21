@@ -1,4 +1,4 @@
-const { howFast } = require('./testing')
+import { howFast } from './testing'
 
 describe('how fast', () => {
   it("tells it's ultra fast for speeds 200 and up", () => {
