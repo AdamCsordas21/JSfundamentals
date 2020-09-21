@@ -98,7 +98,7 @@ export function listElementsToOrderedList(string) {
 
 
 
-export function playerToString(player) {
+export function playerToString(player: any): string {
   if (undefined === player.title && undefined === player.midName) {
     return `${player.firstName} ${player.lastName}: ${player.highScore}`
   }

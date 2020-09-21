@@ -164,7 +164,7 @@ describe('fifa rating', () => {
       { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 },
     ];
     const actual: string = createAlphabeticallyOrderedPlayerDetailsList(players);
-    const expected = `<ol>
+    const expected: string = `<ol>
 <li>Mr. Adam Seer Csordas: 4700</li>
 <li>Ms. Nati Werewolf Fati: 4000</li>
 <li>Mrs. Nela Trela: 6000</li>
@@ -176,30 +176,34 @@ describe('fifa rating', () => {
 
   describe('player description', () => {
     it('converts player object to string representation', () => {
-      const player = { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
-      const actual = playerToString(player)
-      const expected = 'Mr. Adam Seer Csordas: 4700'
+      const player: { title: string, firstName: string, midName: string, lastName: string, highScore: number } = 
+      { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
+      const actual: string = playerToString(player)
+      const expected: string = 'Mr. Adam Seer Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when title is undefined', () => {
-      const player = { firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
-      const actual = playerToString(player)
-      const expected = 'Adam Seer Csordas: 4700'
+      const player: { firstName: string, midName: string, lastName: string, highScore: number } = 
+      { firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
+      const actual: string = playerToString(player)
+      const expected: string = 'Adam Seer Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when middle name is undefined', () => {
-      const player = { title: 'Mr.', firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
-      const actual = playerToString(player)
-      const expected = 'Mr. Adam Csordas: 4700'
+      const player: { title: string, firstName: string, lastName: string, highScore: number } = 
+      { title: 'Mr.', firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
+      const actual: string = playerToString(player)
+      const expected: string = 'Mr. Adam Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when title and middle name are undefined', () => {
-      const player = { firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
-      const actual = playerToString(player)
-      const expected = 'Adam Csordas: 4700'
+      const player: { firstName: string, lastName: string, highScore: number } = 
+      { firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
+      const actual: string = playerToString(player)
+      const expected: string = 'Adam Csordas: 4700'
       expect(actual).toEqual(expected)
     })
   })
