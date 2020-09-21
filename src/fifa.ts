@@ -60,11 +60,11 @@ export function top5Players(players: any): any {
   return sortPlayersDescending(players).slice(0,5);
 };
 
-export function sortPlayersDescending(players) {
-  return players.sort((a, b) => b.score.current - a.score.current);
+export function sortPlayersDescending(players: any): any {
+  return players.sort((a: any, b: any) => b.score.current - a.score.current);
 };
 
-export function sortPlayersDescendingPure(players) {
+export function sortPlayersDescendingPure(players: any): any {
   return sortPlayersDescending([...players])
 };
 

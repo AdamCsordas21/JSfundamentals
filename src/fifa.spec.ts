@@ -93,8 +93,8 @@ describe('fifa rating', () => {
   })
 
   it('sorts players by their score descending', () => {
-    const actual = sortPlayersDescending(players)
-    const expected = [
+    const actual: any = sortPlayersDescending(players)
+    const expected: { name: string, score: { current: number, averageInLastWeek: number } }[] = [
       { name: 'p6', score: { current: 3000, averageInLastWeek: 3100 } },
       { name: 'p4', score: { current: 2210, averageInLastWeek: 2100 } },
       { name: 'p5', score: { current: 1565, averageInLastWeek: 1300 } },
