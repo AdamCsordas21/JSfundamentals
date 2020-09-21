@@ -1,13 +1,15 @@
-export const isRed = ({ colour }: { colour: any }): boolean => colour === 'red'
+export const isRed = ({ colour }: { colour: string }): boolean => colour === 'red'
 
-export const isBlue = ({ colour }: { colour: any }): boolean => colour === 'blue'
+export const isBlue = ({ colour }: { colour: string }): boolean => colour === 'blue'
 
-export const makeCircle = ({ id, colour, sideLength }) => ({
-  id,
-  colour,
-  shape: 'circle',
-  radius: sideLength / 11 * 2
-})
+export const makeCircle = ({ id, colour, sideLength }:
+  { id: string, colour: string, sideLength: number })
+  : { id: string, colour: string, shape: string, radius: number } => ({
+    id,
+    colour,
+    shape: 'circle',
+    radius: sideLength / 11 * 2
+  })
 
 export const isShadeOfGreen = ({ colour }) => colour.includes('green')
 
