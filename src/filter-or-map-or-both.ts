@@ -11,9 +11,9 @@ export const makeCircle = ({ id, colour, sideLength }:
     radius: sideLength / 11 * 2
   })
 
-export const isShadeOfGreen = ({ colour }) => colour.includes('green')
+export const isShadeOfGreen = ({ colour }: { colour: string }): boolean => colour.includes('green')
 
-export const isShadeOfBlue = ({ colour }) => colour.includes('blue')
+export const isShadeOfBlue = ({ colour }: { colour: string }): boolean => colour.includes('blue')
 
 export const doubleDigitId = ({ id, sideLength, colour }) => ({
   id: id.padStart(2, '0'),
