@@ -52,11 +52,11 @@ export function createMonthlyRankingOfPlayers(players: any): string {
   return `This month ${first.name} was number one. Second place belongs to ${second.name} and last but not least ${third.name}.`
 };
 
-export function top3Players(players) {
+export function top3Players(players: any): any {
   return sortPlayersDescendingPure(players).slice(0,3);
 };
 
-export function top5Players(players) {
+export function top5Players(players: any): any {
   return sortPlayersDescending(players).slice(0,5);
 };
 
