@@ -1,6 +1,6 @@
 export const isRed = ({ colour }: any): boolean => colour === 'red'
 
-export const isBlue = ({ colour }) => colour === 'blue'
+export const isBlue = ({ colour }: any): boolean => colour === 'blue'
 
 export const makeCircle = ({ id, colour, sideLength }) => ({
   id,
