@@ -15,7 +15,9 @@ export const isShadeOfGreen = ({ colour }: { colour: string }): boolean => colou
 
 export const isShadeOfBlue = ({ colour }: { colour: string }): boolean => colour.includes('blue')
 
-export const doubleDigitId = ({ id, sideLength, colour }) => ({
+export const doubleDigitId = ({ id, sideLength, colour }: 
+  { id: string, sideLength: number, colour: string }) 
+  : { id: string, shape: string, sideLength: number, colour: string } => ({
   id: id.padStart(2, '0'),
   shape: 'square',
   sideLength,
