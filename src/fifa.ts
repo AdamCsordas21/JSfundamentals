@@ -68,8 +68,8 @@ export function sortPlayersDescendingPure(players: any): any {
   return sortPlayersDescending([...players])
 };
 
-export function sortPlayersAscending(players) {
-  return players.sort((a, b) => a.score.current - b.score.current);
+export function sortPlayersAscending(players: any): any {
+  return players.sort((a: any, b: any) => a.score.current - b.score.current);
 };
 
 export function createMonthlyMessageOfPlayerThatWillDropOut(players) {
