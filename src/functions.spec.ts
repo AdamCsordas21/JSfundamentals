@@ -1,11 +1,11 @@
-const {
+import {
   f1,
   f2,
   named,
   anonym,
   arrow,
   addSquares,
-} = require('./functions')
+} from './functions'
 
 describe('function declaration vs expression', () => {
   it('prints title and name', () => {
