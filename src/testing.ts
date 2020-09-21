@@ -1,4 +1,4 @@
-export function howFast(speed) {
+export function howFast(speed: any): string {
   if (typeof speed !== 'number') {
     throw new Error('speed needs to be a numbers!')
   }
