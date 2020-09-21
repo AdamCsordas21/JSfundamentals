@@ -47,7 +47,7 @@ export function filterOutLowLevelPlayers(players: any): any {
 };
 
 
-export function createMonthlyRankingOfPlayers(players) {
+export function createMonthlyRankingOfPlayers(players: any): string {
   const [first, second, third] = top3Players(players)
   return `This month ${first.name} was number one. Second place belongs to ${second.name} and last but not least ${third.name}.`
 };

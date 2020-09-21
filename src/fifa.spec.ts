@@ -48,7 +48,7 @@ describe('fifa rating', () => {
       name: 'osh',
       score: 2000
     }
-    const actual: any = isScoreHigh(player)
+    const actual: boolean = isScoreHigh(player)
     const expected: boolean = true
 
     expect(actual).toEqual(expected)
@@ -59,7 +59,7 @@ describe('fifa rating', () => {
       name: 'adam', 
       score: 1000 
     }
-    const actual: any = isScoreHigh(player)
+    const actual: boolean = isScoreHigh(player)
     const expected: boolean = false
 
     expect(actual).toEqual(expected)
@@ -75,8 +75,8 @@ describe('fifa rating', () => {
   ];
 
   it('produces monthly ranking of players', () => {
-    const actual = createMonthlyRankingOfPlayers(players)
-    const expected = 'This month p6 was number one. Second place belongs to p4 and last but not least p5.'
+    const actual: string = createMonthlyRankingOfPlayers(players)
+    const expected: string = 'This month p6 was number one. Second place belongs to p4 and last but not least p5.'
 
     expect(actual).toEqual(expected)
   })
