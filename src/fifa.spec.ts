@@ -59,7 +59,7 @@ describe('fifa rating', () => {
   })
 
   it('rates player score as low when below or equal to 100', () => {
-    const player: { name: string, score: number } = { 
+    const player: Player = { 
       name: 'adam', 
       score: 1000 
     }
@@ -69,7 +69,7 @@ describe('fifa rating', () => {
     expect(actual).toEqual(expected)
   })
 
-  const players: { name: string, score: { current: number, averageInLastWeek: number } }[] = [
+  const players: Player2 [] = [
     { name: 'p1', score: { current: 1455, averageInLastWeek: 1300 } },
     { name: 'p2', score: { current: 1235, averageInLastWeek: 1400 } },
     { name: 'p3', score: { current: 1085, averageInLastWeek: 1100 } },
