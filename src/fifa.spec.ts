@@ -48,7 +48,7 @@ describe('fifa rating', () => {
   })
 
   it('rates player score as high when above 1400', () => {
-    const player: { name: string, score: number } = {
+    const player: Player = {
       name: 'osh',
       score: 2000
     }
