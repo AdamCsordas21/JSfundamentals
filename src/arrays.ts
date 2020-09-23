@@ -1,10 +1,10 @@
-export function prependElement(arr: any[], newElement: any): any[] {
+export function prependElement(arr: string[], newElement: string): string[] {
   arr.unshift(newElement)
   return arr
 }
 
-export function prependElementPure(arr: any[], newElement: any): any[] {
-  const copy: any[] = [...arr]
+export function prependElementPure(arr: string[], newElement: string): string[] {
+  const copy: string[] = [...arr]
   return prependElement(copy, newElement)
 }
 

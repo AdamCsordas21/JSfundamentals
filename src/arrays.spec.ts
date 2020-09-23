@@ -48,14 +48,14 @@ import {
 
 describe('arrays simple functions', () => {
   it('adds an element to the beginning of an array and returns the resulting array', () => {
-    const input: any[] = ['osh', 'was', 'here']
+    const input: string[] = ['osh', 'was', 'here']
     expect(prependElement(input, 'great')).toEqual(['great', 'osh', 'was', 'here'])
     expect(input).toEqual(['great', 'osh', 'was', 'here'])
   })
 
   it(`adds an element to the beginning of an array and returns the resulting array
   without mutating the original array`, () => {
-    const input: any[] = ['osh', 'was', 'here']
+    const input: string[] = ['osh', 'was', 'here']
     expect(prependElementPure(input, 'great')).toEqual(['great', 'osh', 'was', 'here'])
     expect(input).toEqual(['osh', 'was', 'here'])
   })
