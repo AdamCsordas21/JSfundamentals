@@ -179,12 +179,12 @@ export function sortStringsDescendingPure(strings: string[]): string[] {
   return [...strings].sort((a: string, b: string): number => b.localeCompare(a))
 }
 
-export function sortPlayersByTopScoreDescendingPure(players) {
-  return [...players].sort((a, b) => b.topScore - a.topScore)
+export function sortPlayersByTopScoreDescendingPure(players: PlayerTopScore[]): PlayerTopScore[] {
+  return [...players].sort((a: PlayerTopScore, b: PlayerTopScore): number => b.topScore - a.topScore)
 }
 
-export function sortPlayersByTopScoreAscendingPure(players) {
-  return [...players].sort((a, b) => a.topScore - b.topScore)
+export function sortPlayersByTopScoreAscendingPure(players: PlayerTopScore[]): PlayerTopScore[] {
+  return [...players].sort((a: PlayerTopScore, b: PlayerTopScore): number => a.topScore - b.topScore)
 }
 
 export function sortPlayersByAvgScoreAscendingPure(players) {

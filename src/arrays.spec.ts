@@ -271,7 +271,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property topScore, e.g.
     { topScore: 4 }
     `, () => {
-      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      const players: PlayerTopScore[] = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
       expect(sortPlayersByTopScoreDescendingPure(players)).toEqual([{ topScore: 4 }, { topScore: 2 }, { topScore: 1 }])
       expect(players).toEqual([{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }])
     })
@@ -280,7 +280,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property topScore, e.g.
     { topScore: 4 }
     `, () => {
-      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      const players: PlayerTopScore[] = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
       expect(sortPlayersByTopScoreAscendingPure(players)).toEqual([{ topScore: 1 }, { topScore: 2 }, { topScore: 4 }])
       expect(players).toEqual([{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }])
     })
