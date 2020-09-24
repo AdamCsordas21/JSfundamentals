@@ -23,7 +23,7 @@ export function append2Elements(arr: string[], element: string, element2: string
   return arr
 }
 
-export function joinArrays(arr, addArr) {
+export function joinArrays(arr: string[], addArr: string[]): string[] {
   return arr.concat(addArr)
 }
 
