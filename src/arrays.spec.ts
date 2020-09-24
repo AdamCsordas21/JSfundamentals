@@ -244,13 +244,13 @@ describe('arrays simple functions', () => {
 
   describe('sorting (without mutation)', () => {
     it('sorts numbers ascending', () => {
-      const numbers = [-2, 2, 1, 0, -1]
+      const numbers: number[] = [-2, 2, 1, 0, -1]
       expect(sortNumbersAscendingPure(numbers)).toEqual([-2, -1, 0, 1, 2])
       expect(numbers).toEqual([-2, 2, 1, 0, -1])
     })
 
     it('sorts numbers descending', () => {
-      const numbers = [-2, 2, 1, 0, -1]
+      const numbers: number[] = [-2, 2, 1, 0, -1]
       expect(sortNumbersDescendingPure(numbers)).toEqual([2, 1, 0, -1, -2])
       expect(numbers).toEqual([-2, 2, 1, 0, -1])
     })

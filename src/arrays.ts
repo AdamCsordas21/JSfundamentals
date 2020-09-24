@@ -163,12 +163,12 @@ export const sortPlayersByAvgScoreDescending = (players: PlayerAvgScore[]) => {
 }
 
 // pure functions
-export function sortNumbersAscendingPure(numbers) {
-  return [...numbers].sort((a, b) => a - b)
+export function sortNumbersAscendingPure(numbers: number[]): number[] {
+  return [...numbers].sort((a: number, b: number): number => a - b)
 }
 
-export function sortNumbersDescendingPure(numbers) {
-  return [...numbers].sort((a, b) => b - a)
+export function sortNumbersDescendingPure(numbers: number[]): number[] {
+  return [...numbers].sort((a: number, b: number): number => b - a)
 }
 
 export function sortStringsAscendingPure(strings) {
