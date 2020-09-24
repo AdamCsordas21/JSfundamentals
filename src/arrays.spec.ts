@@ -152,7 +152,7 @@ describe('arrays simple functions', () => {
   appends " !" to the previous element and
   prepends "! " to the next element
   (array will consists of strings only, element with "osh" will never be the first one nor the last one)`, () => {
-    const input = ['the', 'great', 'osh', 'was', 'here']
+    const input: string[] = ['the', 'great', 'osh', 'was', 'here']
     expect(shoutAroundOsh(input)).toEqual(['the', 'great !', 'osh', '! was', 'here'])
     expect(input).toEqual(['the', 'great', 'osh', 'was', 'here'])
   })

@@ -96,8 +96,8 @@ export function dashArray(array: string[]): string[] {
   return array.map((currentValue: string, index: number): string => index % 2 === 0 ? `-${currentValue}-` : currentValue)
 }
 
-export function shoutAroundOsh(array) {
-  return [...array].map((currentValue, i, array) => {
+export function shoutAroundOsh(array: string[]): string[] {
+  return [...array].map((currentValue: string, i: number, array: string[]): string => {
     if (array[i + 1] === 'osh') {
       return `${currentValue} !`
     }
