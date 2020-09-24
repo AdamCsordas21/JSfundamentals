@@ -4,7 +4,8 @@ import {
   Item,
   Letter,
   Player,
-  Dispatcher
+  Dispatcher,
+  Game
 } from './classes'
 
 const nullDispatcher: Dispatcher = { dispatch() { } }
@@ -102,4 +103,10 @@ describe('players', () => {
 
   // create a class for the games and refactor above code to use it
   // suggestion: start by adding new tests for the class alone, before you try to use it in the 
+  describe('games', () => {
+    it('can get games name', () => {
+      const psStore = new Game('Call of Duty')
+      expect(psStore.name).toEqual('Call of Duty')
+    })    
+  })
 })

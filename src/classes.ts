@@ -126,10 +126,14 @@ export class Player {
   }
 }
 
-module.exports = {
-  Shop,
-  FoodShop,
-  Item,
-  Letter,
-  Player
+export class Game {
+  #name: string
+  
+  constructor(name: string) {
+    this.#name = name
+  }
+  
+  get name(): string {
+    return this.#name
+  }
 }
