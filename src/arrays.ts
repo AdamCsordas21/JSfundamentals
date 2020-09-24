@@ -187,12 +187,12 @@ export function sortPlayersByTopScoreAscendingPure(players: PlayerTopScore[]): P
   return [...players].sort((a: PlayerTopScore, b: PlayerTopScore): number => a.topScore - b.topScore)
 }
 
-export function sortPlayersByAvgScoreAscendingPure(players) {
-  return [...players].sort((a, b) => a.avgScore - b.avgScore)
+export function sortPlayersByAvgScoreAscendingPure(players: PlayerAvgScore[]): PlayerAvgScore[] {
+  return [...players].sort((a: PlayerAvgScore, b: PlayerAvgScore): number => a.avgScore - b.avgScore)
 }
 
-export function sortPlayersByAvgScoreDescendingPure(players) {
-  return [...players].sort((a, b) => b.avgScore - a.avgScore)
+export function sortPlayersByAvgScoreDescendingPure(players: PlayerAvgScore[]): PlayerAvgScore[] {
+  return [...players].sort((a: PlayerAvgScore, b: PlayerAvgScore): number => b.avgScore - a.avgScore)
 }
 
 export function sortPlayersByWorstPerformingPure(players) {

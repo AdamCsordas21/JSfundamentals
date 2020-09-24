@@ -289,7 +289,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property avgScore, e.g.
     { avgScore: 4 }
     `, () => {
-      const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
+      const players: PlayerAvgScore[] = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
       expect(sortPlayersByAvgScoreAscendingPure(players)).toEqual([{ avgScore: 1 }, { avgScore: 2 }, { avgScore: 4 }])
       expect(players).toEqual([{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }])
     })
@@ -298,7 +298,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property avgScore, e.g.
     { avgScore: 4 }
     `, () => {
-      const players = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
+      const players: PlayerAvgScore[] = [{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }]
       expect(sortPlayersByAvgScoreDescendingPure(players)).toEqual([{ avgScore: 4 }, { avgScore: 2 }, { avgScore: 1 }])
       expect(players).toEqual([{ avgScore: 1 }, { avgScore: 4 }, { avgScore: 2 }])
     })
