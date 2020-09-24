@@ -270,7 +270,7 @@ const adamsSlice = cake.slice(1, 2)
 const nelasSlice = cake.slice(2, 3)
 */
 
-export function removeSomeFromIndex(array, index, elementsToRemoveCount) {
+export function removeSomeFromIndex(array: string[], index: number, elementsToRemoveCount: number): string[] {
   const copy = [...array]
   copy.splice(index, elementsToRemoveCount)
   return copy
