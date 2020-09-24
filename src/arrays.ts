@@ -27,7 +27,7 @@ export function joinArrays(arr: string[], addArr: string[]): string[] {
   return arr.concat(addArr)
 }
 
-export function dequeueArray(arr) {
+export function dequeueArray(arr: string[]): (string | undefined)[] {
   return [arr.shift()]
   // const oneItemArray = []
   // firstElement = arr.shift()

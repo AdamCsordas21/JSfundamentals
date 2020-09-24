@@ -77,7 +77,7 @@ describe('arrays simple functions', () => {
   })
 
   it('removes an element from the beginning of an array and returns the item as a one item array', () => {
-    const input = ['the', 'great', 'osh', 'was', 'here']
+    const input: string[] = ['the', 'great', 'osh', 'was', 'here']
     expect(dequeueArray(input)).toEqual(['the'])
     expect(input).toEqual(['great', 'osh', 'was', 'here'])
   })
