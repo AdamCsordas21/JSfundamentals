@@ -88,8 +88,8 @@ export function shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement(ar
   return array.filter((element: string, index: number, array: string[]): boolean => element === 'osh' && array[index + 1] === 'adam')
 }
 
-export function trimArray(array) {
-  return array.map((element) => element.trim())
+export function trimArray(array: string[]): string[] {
+  return array.map((element: string): string => element.trim())
 }
 
 export function dashArray(array) {
