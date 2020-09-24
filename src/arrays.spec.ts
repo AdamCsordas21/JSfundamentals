@@ -171,13 +171,13 @@ describe('arrays simple functions', () => {
     })
 
     it('sorts strings alphabetically', () => {
-      const strings = ['d', 'a', 'c', 'b']
+      const strings: string[] = ['d', 'a', 'c', 'b']
       expect(sortStringsAscending(strings)).toEqual(undefined)
       expect(strings).toEqual(['a', 'b', 'c', 'd'])
     })
 
     it('sorts strings reverse alphabetically', () => {
-      const strings = ['d', 'a', 'c', 'b']
+      const strings: string[] = ['d', 'a', 'c', 'b']
       expect(sortStringsDescending(strings)).toEqual(undefined)
       expect(strings).toEqual(['d', 'c', 'b', 'a'])
     })

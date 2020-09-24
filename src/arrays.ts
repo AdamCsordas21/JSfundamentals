@@ -127,9 +127,9 @@ export const sortNumbersAscending = (numbers: number[])=> void numbers.sort((a: 
 
 export const sortNumbersDescending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => b - a)
 
-export const sortStringsAscending = (strings) => void strings.sort((a, b) => a.localeCompare(b))
+export const sortStringsAscending = (strings: string[]) => void strings.sort((a: string, b: string): number => a.localeCompare(b))
 
-export const sortStringsDescending = (strings) => void strings.sort((a, b) => b.localeCompare(a))
+export const sortStringsDescending = (strings: string[]) => void strings.sort((a: string, b: string): number => b.localeCompare(a))
 
 export const sortPlayersByTopScoreDescending = (players) => void players.sort((a, b) => b.topScore - a.topScore)
 
