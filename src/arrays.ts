@@ -57,8 +57,8 @@ export function areAllElementsBig(array: number[], n: number): boolean {
   return array.every((element: number): boolean => element > n)
 }
 
-export function hasBigElement(array, n) {
-  return array.some((element) => element > n)
+export function hasBigElement(array: number[], n: number): boolean {
+  return array.some((element: number): boolean => element > n)
 }
 
 export function oshifyArray(array) {
