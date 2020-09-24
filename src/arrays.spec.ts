@@ -107,7 +107,7 @@ describe('arrays simple functions', () => {
   })
 
   it('replaces all elements with "osh" in a given array', () => {
-    const input = ['some', 'boring', 'words', 'are', 'here']
+    const input: string[] = ['some', 'boring', 'words', 'are', 'here']
     expect(oshifyArray(input)).toEqual(['osh', 'osh', 'osh', 'osh', 'osh'])
     expect(input).toEqual(input)
   })

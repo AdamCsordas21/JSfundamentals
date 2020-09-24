@@ -61,12 +61,12 @@ export function hasBigElement(array: number[], n: number): boolean {
   return array.some((element: number): boolean => element > n)
 }
 
-export function oshifyArray(array) {
+export function oshifyArray(array: string[]): string[] {
   return array.fill('osh')
   // return array.map(() => 'osh')
 }
 
-export function oshifyArrayFromIndex(array, from) {
+export function oshifyArrayFromIndex(array: string[], from: number): string[] {
   return array.fill('osh', from)
   // return array.map((element, index) => index >= from ? 'osh' : element)
 }
