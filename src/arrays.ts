@@ -71,7 +71,7 @@ export function oshifyArrayFromIndex(array: string[], from: number): string[] {
   // return array.map((element, index) => index >= from ? 'osh' : element)
 }
 
-export function oshifyArrayInRange(array, from, end) {
+export function oshifyArrayInRange(array: string[], from: number, end: number): string[] {
   return array.fill('osh', from, end)
   // return array.map((element, index) => index >= from && end > index ? 'osh' : element)
 }
