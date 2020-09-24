@@ -13,12 +13,12 @@ export function prepend2Elements(arr: string[], newElement: string, newElement2:
   return arr
 }
 
-export function appendElement(arr, element) {
+export function appendElement(arr: string[], element: string): string[] {
   arr.push(element)
   return arr
 }
 
-export function append2Elements(arr, element, element2) {
+export function append2Elements(arr: string[], element: string, element2: string): string[] {
   arr.push(element, element2)
   return arr
 }
