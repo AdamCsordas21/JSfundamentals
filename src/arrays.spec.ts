@@ -43,7 +43,9 @@ import {
   removeSomeFromIndex,
   removeSomeFromElementNumberCountingFromEnd,
   removeSomeElementsFromIndexToIndex,
-  removeSomeElementsFromIndexToIndex2
+  removeSomeElementsFromIndexToIndex2,
+  PlayerTopScore,
+  PlayerAvgScore
 } from './arrays'
 
 describe('arrays simple functions', () => {
@@ -186,7 +188,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property topScore, e.g.
     { topScore: 4 }
     `, () => {
-      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      const players: PlayerTopScore[] = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
       expect(sortPlayersByTopScoreDescending(players)).toEqual(undefined)
       expect(players).toEqual([{ topScore: 4 }, { topScore: 2 }, { topScore: 1 }])
     })
@@ -195,7 +197,7 @@ describe('arrays simple functions', () => {
     player is an object with a number property topScore, e.g.
     { topScore: 4 }
     `, () => {
-      const players = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
+      const players: PlayerTopScore[] = [{ topScore: 1 }, { topScore: 4 }, { topScore: 2 }]
       expect(sortPlayersByTopScoreAscending(players)).toEqual(undefined)
       expect(players).toEqual([{ topScore: 1 }, { topScore: 2 }, { topScore: 4 }])
     })

@@ -131,9 +131,17 @@ export const sortStringsAscending = (strings: string[]) => void strings.sort((a:
 
 export const sortStringsDescending = (strings: string[]) => void strings.sort((a: string, b: string): number => b.localeCompare(a))
 
-export const sortPlayersByTopScoreDescending = (players) => void players.sort((a, b) => b.topScore - a.topScore)
+export interface PlayerTopScore {
+  topScore: number
+}
 
-export const sortPlayersByAvgScoreAscending = (players) => void players.sort((a, b) => a.avgScore - b.avgScore)
+export const sortPlayersByTopScoreDescending = (players: PlayerTopScore[]) => void players.sort((a: PlayerTopScore, b: PlayerTopScore): number => b.topScore - a.topScore)
+
+export interface PlayerAvgScore {
+  avgScore: number
+}
+
+export const sortPlayersByAvgScoreAscending = (players: PlayerAvgScore[]) => void players.sort((a: PlayerAvgScore, b: PlayerAvgScore): number => a.avgScore - b.avgScore)
 
 export const sortPlayersByWorstPerforming = (players) => void players.sort((a, b) =>
   a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
