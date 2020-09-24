@@ -83,7 +83,7 @@ describe('arrays simple functions', () => {
   })
 
   it('removes 2 elements from the beginning of an array and returns the item as a two item array', () => {
-    const input = ['the', 'great', 'osh', 'was', 'here']
+    const input: string[] = ['the', 'great', 'osh', 'was', 'here']
     expect(dequeue2FromArray(input)).toEqual(['the', 'great'])
     expect(input).toEqual(['osh', 'was', 'here'])
   })

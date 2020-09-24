@@ -35,7 +35,7 @@ export function dequeueArray(arr: string[]): (string | undefined)[] {
   // return oneItemArray
 }
 
-export function dequeue2FromArray(arr) {
+export function dequeue2FromArray(arr: string[]): string[] {
   return arr.splice(0, 2)
   // return [arr.shift(), arr.shift()]
 }
