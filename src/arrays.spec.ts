@@ -308,7 +308,7 @@ describe('arrays simple functions', () => {
     player is an object with number properties topScore and avgScore, e.g.
     { topScore: 4, avgScore: 4 }
     `, () => {
-      const players = [
+      const players: PlayersByWorstPermorming[] = [
         { topScore: 5, avgScore: 2 },
         { topScore: 4, avgScore: 3 },
         { topScore: 6, avgScore: 1 },

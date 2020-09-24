@@ -195,8 +195,8 @@ export function sortPlayersByAvgScoreDescendingPure(players: PlayerAvgScore[]): 
   return [...players].sort((a: PlayerAvgScore, b: PlayerAvgScore): number => b.avgScore - a.avgScore)
 }
 
-export function sortPlayersByWorstPerformingPure(players) {
-  return [...players].sort((a, b) =>
+export function sortPlayersByWorstPerformingPure(players: PlayersByWorstPermorming[]): PlayersByWorstPermorming[] {
+  return [...players].sort((a: PlayersByWorstPermorming, b: PlayersByWorstPermorming): number =>
     a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
   )
 }
