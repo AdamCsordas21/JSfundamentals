@@ -256,7 +256,7 @@ export function removeAllFromIndex(array: string[], index: number): string[] {
   // return copy
 }
 
-export function removeAllFromElementNumberCountingFromEnd(array, elementFromTheEnd) {
+export function removeAllFromElementNumberCountingFromEnd(array: string[], elementFromTheEnd: number): string[] {
   return array.slice(0, array.length - elementFromTheEnd)
   // const copy = [...array]
   // copy.splice(array.length - elementFromTheEnd)
