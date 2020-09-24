@@ -277,7 +277,7 @@ export function removeSomeFromIndex(array: string[], index: number, elementsToRe
   // return array.slice(0, index).concat(array.slice(index + elementsToRemoveCount))
 }
 
-export function removeSomeFromElementNumberCountingFromEnd(array, elementFromTheEnd, elementCount) {
+export function removeSomeFromElementNumberCountingFromEnd(array: string[], elementFromTheEnd: number, elementCount: number): string[] {
   const copy = [...array]
   copy.splice(array.length - elementFromTheEnd, elementCount)
   return copy
