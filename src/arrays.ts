@@ -92,8 +92,8 @@ export function trimArray(array: string[]): string[] {
   return array.map((element: string): string => element.trim())
 }
 
-export function dashArray(array) {
-  return array.map((currentValue, index) => index % 2 === 0 ? `-${currentValue}-` : currentValue)
+export function dashArray(array: string[]): string[] {
+  return array.map((currentValue: string, index: number): string => index % 2 === 0 ? `-${currentValue}-` : currentValue)
 }
 
 export function shoutAroundOsh(array) {
