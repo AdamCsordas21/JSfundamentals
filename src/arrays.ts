@@ -84,8 +84,8 @@ export function shortlistAmazingElementsWhichAreEven(array: string[]): string[] 
   return array.filter((element: string, index: number): boolean => element === 'osh' && index % 2 === 0)
 }
 
-export function shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement(array) {
-  return array.filter((element, index, array) => element === 'osh' && array[index + 1] === 'adam')
+export function shortlistAmazingElementsOnlyWhenTheyAreFollowedByGreatElement(array: string[]): string[] {
+  return array.filter((element: string, index: number, array: string[]): boolean => element === 'osh' && array[index + 1] === 'adam')
 }
 
 export function trimArray(array) {
