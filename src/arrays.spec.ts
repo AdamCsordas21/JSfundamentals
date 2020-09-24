@@ -159,13 +159,13 @@ describe('arrays simple functions', () => {
 
   describe('sorting (with mutation)', () => {
     it('sorts numbers ascending', () => {
-      const numbers = [-2, 2, 1, 0, -1]
+      const numbers: number[] = [-2, 2, 1, 0, -1]
       expect(sortNumbersAscending(numbers)).toEqual(undefined)
       expect(numbers).toEqual([-2, -1, 0, 1, 2])
     })
 
     it('sorts numbers descending', () => {
-      const numbers = [-2, 2, 1, 0, -1]
+      const numbers: number[] = [-2, 2, 1, 0, -1]
       expect(sortNumbersDescending(numbers)).toEqual(undefined)
       expect(numbers).toEqual([2, 1, 0, -1, -2])
     })

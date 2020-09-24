@@ -123,9 +123,9 @@ export function shoutAroundOsh(array: string[]): string[] {
   // return newArray
 }
 
-export const sortNumbersAscending = (numbers) => void numbers.sort((a, b) => a - b)
+export const sortNumbersAscending = (numbers: number[])=> void numbers.sort((a: number, b: number): number => a - b)
 
-export const sortNumbersDescending = (numbers) => void numbers.sort((a, b) => b - a)
+export const sortNumbersDescending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => b - a)
 
 export const sortStringsAscending = (strings) => void strings.sort((a, b) => a.localeCompare(b))
 
