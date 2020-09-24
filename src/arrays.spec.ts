@@ -256,13 +256,13 @@ describe('arrays simple functions', () => {
     })
 
     it('sorts strings alphabetically', () => {
-      const strings = ['d', 'a', 'c', 'b']
+      const strings: string[] = ['d', 'a', 'c', 'b']
       expect(sortStringsAscendingPure(strings)).toEqual(['a', 'b', 'c', 'd'])
       expect(strings).toEqual(['d', 'a', 'c', 'b'])
     })
 
     it('sorts strings reverse alphabetically', () => {
-      const strings = ['d', 'a', 'c', 'b']
+      const strings: string[] = ['d', 'a', 'c', 'b']
       expect(sortStringsDescendingPure(strings)).toEqual(['d', 'c', 'b', 'a'])
       expect(strings).toEqual(['d', 'a', 'c', 'b'])
     })

@@ -171,12 +171,12 @@ export function sortNumbersDescendingPure(numbers: number[]): number[] {
   return [...numbers].sort((a: number, b: number): number => b - a)
 }
 
-export function sortStringsAscendingPure(strings) {
-  return [...strings].sort((a, b) => a.localeCompare(b))
+export function sortStringsAscendingPure(strings: string[]): string[] {
+  return [...strings].sort((a: string, b: string): number => a.localeCompare(b))
 }
 
-export function sortStringsDescendingPure(strings) {
-  return [...strings].sort((a, b) => b.localeCompare(a))
+export function sortStringsDescendingPure(strings: string[]): string[] {
+  return [...strings].sort((a: string, b: string): number => b.localeCompare(a))
 }
 
 export function sortPlayersByTopScoreDescendingPure(players) {
