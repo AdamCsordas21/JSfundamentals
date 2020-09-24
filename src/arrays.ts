@@ -53,8 +53,8 @@ export function truncate2FromArray(arr: string[]): string[] {
   // return [arr.pop(), arr.pop()].reverse()
 }
 
-export function areAllElementsBig(array, n) {
-  return array.every((element) => element > n)
+export function areAllElementsBig(array: number[], n: number): boolean {
+  return array.every((element: number): boolean => element > n)
 }
 
 export function hasBigElement(array, n) {
