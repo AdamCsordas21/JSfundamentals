@@ -152,7 +152,7 @@ export const sortPlayersByWorstPerforming = (players: PlayersByWorstPermorming[]
   a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
 )
 
-export const sortPlayersByTopScoreAscending = (players) => {
+export const sortPlayersByTopScoreAscending = (players: PlayerTopScore[]) => {
   sortPlayersByTopScoreDescending(players)
   players.reverse()
 }
