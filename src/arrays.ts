@@ -8,7 +8,7 @@ export function prependElementPure(arr: string[], newElement: string): string[] 
   return prependElement(copy, newElement)
 }
 
-export function prepend2Elements(arr, newElement, newElement2) {
+export function prepend2Elements(arr: string[], newElement: string, newElement2: string): string[] {
   arr.unshift(newElement, newElement2)
   return arr
 }
