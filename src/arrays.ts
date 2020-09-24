@@ -40,7 +40,7 @@ export function dequeue2FromArray(arr: string[]): string[] {
   // return [arr.shift(), arr.shift()]
 }
 
-export function truncateArray(arr) {
+export function truncateArray(arr: string[]): (string | undefined)[] {
   return [arr.pop()]
   // const oneItemArray = []
   // lastElement = arr.pop()
@@ -48,7 +48,7 @@ export function truncateArray(arr) {
   // return oneItemArray
 }
 
-export function truncate2FromArray(arr) {
+export function truncate2FromArray(arr: string[]): string[] {
   return arr.splice(arr.length - 2, 2)
   // return [arr.pop(), arr.pop()].reverse()
 }
