@@ -249,7 +249,7 @@ slice(start, end)
 splice(start[, deleteCount[, itemToAdd1[, [itemToAdd2[, ...]]]]])
 */
 
-export function removeAllFromIndex(array, index) {
+export function removeAllFromIndex(array: string[], index: number): string[] {
   return array.slice(0, index)
   // const copy = [...array]
   // copy.splice(index)

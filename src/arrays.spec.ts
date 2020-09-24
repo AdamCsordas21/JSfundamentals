@@ -333,7 +333,7 @@ describe('arrays simple functions', () => {
     it(`removes all elements to the end
     starting from a given element index (starting from zero and including)
     (assume the index will be within valid range)`, () => {
-      const input = ['a', 'b', 'c', 'd', 'e']
+      const input: string[] = ['a', 'b', 'c', 'd', 'e']
       expect(removeAllFromIndex(input, 3)).toEqual(['a', 'b', 'c'])
       expect(input).toEqual(['a', 'b', 'c', 'd', 'e'])
     })
