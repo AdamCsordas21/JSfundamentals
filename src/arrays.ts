@@ -143,7 +143,12 @@ export interface PlayerAvgScore {
 
 export const sortPlayersByAvgScoreAscending = (players: PlayerAvgScore[]) => void players.sort((a: PlayerAvgScore, b: PlayerAvgScore): number => a.avgScore - b.avgScore)
 
-export const sortPlayersByWorstPerforming = (players) => void players.sort((a, b) =>
+export interface PlayersByWorstPermorming {
+  topScore: number
+  avgScore: number
+}
+
+export const sortPlayersByWorstPerforming = (players: PlayersByWorstPermorming[]) => void players.sort((a: PlayersByWorstPermorming, b: PlayersByWorstPermorming): number =>
   a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
 )
 
