@@ -78,12 +78,12 @@ export function numberToLongCompactForm(number: number): string {
   })
 }
 
-export function numberToAccounting(number) {
+export function numberToAccounting(number: number): string {
   return number.toLocaleString('en-GB', {
     style: 'currency',
     currency: 'GBP',
     currencySign: 'accounting'
-  })
+  } as Intl.NumberFormatOptions)
 }
 
 export function hexCodeToDecimalCode(h: string): string {

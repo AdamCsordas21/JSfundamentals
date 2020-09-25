@@ -133,7 +133,7 @@ describe('numbers', () => {
   })
 
   it('converts numbers to format that Nela understands (accounting; GBP)', () => {
-    const testCases = [
+    const testCases: [number, string][] = [
       [1, '£1.00'],
       [12, '£12.00'],
       [123, '£123.00'],
@@ -153,7 +153,7 @@ describe('numbers', () => {
   it(`converts CSS colour written in hexadecimal form
   eg. "#ffffff" -> "rgb(255, 255, 255)"
   accepts short form as well, e.g. #fff`, () => {
-    const testCases = [
+    const testCases: [string, string][] = [
       ["#FF0000", "rgb(255, 0, 0)"],
       ["#008000", "rgb(0, 128, 0)"],
       ["#0000FF", "rgb(0, 0, 255)"],
