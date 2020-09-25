@@ -13,7 +13,7 @@ describe('numbers', () => {
   it(`converts a string to a number
     if input is not a valid number, returns 0 instead
     (regular JS precision applies)`, () => {
-    const testCases = [
+    const testCases: [string, number][] = [
       ['0', 0],
       ['1', 1],
       ['-123', -123],

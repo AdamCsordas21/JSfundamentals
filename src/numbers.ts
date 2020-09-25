@@ -1,5 +1,5 @@
-export function strToNumber(input) {
-  return isNaN(input) ? 0 : Number(input)
+export function strToNumber(input: string): number {
+  return isNaN(Number(input)) ? 0 : Number(input)
 }
 
 export function getListOfValidDigits(base: number): string[] {
