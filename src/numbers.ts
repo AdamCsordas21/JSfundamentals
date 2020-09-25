@@ -65,18 +65,18 @@ export function numberToCurrency(number: number, currency: string): string {
   });
 }
 
-export function numberToShortCompactForm(number: any): any {
+export function numberToShortCompactForm(number) {
   return number.toLocaleString('en-GB', { notation: "compact" });
 }
 
-export function numberToLongCompactForm(number: any): any {
+export function numberToLongCompactForm(number) {
   return number.toLocaleString('en-GB', {
     notation: "compact",
     compactDisplay: "long"
   })
 }
 
-export function numberToAccounting(number: any): any {
+export function numberToAccounting(number) {
   return number.toLocaleString('en-GB', {
     style: 'currency',
     currency: 'GBP',
@@ -84,7 +84,7 @@ export function numberToAccounting(number: any): any {
   })
 }
 
-export function hexCodeToDecimalCode(h: any): string {
+export function hexCodeToDecimalCode(h: string): string {
   //    0 12 34 56
   //    # 01 02 03
   //     /   |   \
