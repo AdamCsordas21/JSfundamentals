@@ -77,8 +77,8 @@ export function oshifyArrayInRange(array: string[], from: number, end: number): 
   // return array.map((element, index) => index >= from && end > index ? 'osh' : element)
 }
 
-export function shortlistAmazingElements(array: string[]): string[] {
-  return array.filter((element: string): boolean => element === 'osh')
+export function shortlistAmazingElements(array: string[]): 'osh'[] {
+  return array.filter((element: string): element is 'osh' => element === 'osh')
 }
 
 export function shortlistAmazingElementsWhichAreEven(array: string[]): string[] {
