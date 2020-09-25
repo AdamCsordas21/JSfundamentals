@@ -31,7 +31,11 @@ describe('numbers', () => {
   the number will be positive integer < 256
   if the input is not a valid number, returns 0 instead
   if the base is not one of the supported, returns 0 instead`, () => {
-    const testCases = [
+    const testCases: {
+      input: string
+      base: number
+      expected: number
+    }[] = [
       { input: '123', base: 10, expected: 123 },
       { input: '123abc', base: 10, expected: 0 },
       { input: '01111011', base: 2, expected: 123 },
@@ -53,7 +57,11 @@ describe('numbers', () => {
   prefix binary numbers with 0 up to a length of 8 digits
   prefix octal values with 0
   prefix hexadecimal values with 0x`, () => {
-    const testCases = [
+    const testCases: {
+      input: number
+      base: number
+      expected: string
+    }[] = [
       { input: 123, base: 10, expected: '123' },
       { input: 123, base: 2, expected: '01111011' },
       { input: 123, base: 8, expected: '0173' },

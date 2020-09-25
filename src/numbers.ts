@@ -38,8 +38,8 @@ export function strToInteger(input: string, base: number): number {
 }
 
 
-export function numberToString(input, base) {
-  const converted = input.toString(base)
+export function numberToString(input: number, base: number): string {
+  const converted: string = input.toString(base)
   // if (base === 2) {
   //   return converted.padStart(8, 0)
   // }
@@ -51,7 +51,7 @@ export function numberToString(input, base) {
   // }
   // return converted
   switch (base) {
-    case 2: return converted.padStart(8, 0)
+    case 2: return converted.padStart(8, '0')
     case 8: return `0${converted}`
     case 16: return `0x${converted}`
     default: return converted
