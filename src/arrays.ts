@@ -27,8 +27,9 @@ export function joinArrays(arr: string[], addArr: string[]): string[] {
   return arr.concat(addArr)
 }
 
-export function dequeueArray(arr: string[]): (string | undefined)[] {
-  return [arr.shift()]
+export function dequeueArray(arr: string[]): string[] {
+  return arr.length === 0 ? [] : [arr.shift() as string]
+
   // const oneItemArray = []
   // firstElement = arr.shift()
   // oneItemArray.push(firstElement)
@@ -123,7 +124,7 @@ export function shoutAroundOsh(array: string[]): string[] {
   // return newArray
 }
 
-export const sortNumbersAscending = (numbers: number[])=> void numbers.sort((a: number, b: number): number => a - b)
+export const sortNumbersAscending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => a - b)
 
 export const sortNumbersDescending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => b - a)
 
