@@ -124,13 +124,13 @@ export function shoutAroundOsh(array: string[]): string[] {
   // return newArray
 }
 
-export const sortNumbersAscending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => a - b)
+export const sortNumbersAscending = (numbers: number[]): void => void numbers.sort((a: number, b: number): number => a - b)
 
-export const sortNumbersDescending = (numbers: number[]) => void numbers.sort((a: number, b: number): number => b - a)
+export const sortNumbersDescending = (numbers: number[]): void => void numbers.sort((a: number, b: number): number => b - a)
 
-export const sortStringsAscending = (strings: string[]) => void strings.sort((a: string, b: string): number => a.localeCompare(b))
+export const sortStringsAscending = (strings: string[]): void => void strings.sort((a: string, b: string): number => a.localeCompare(b))
 
-export const sortStringsDescending = (strings: string[]) => void strings.sort((a: string, b: string): number => b.localeCompare(a))
+export const sortStringsDescending = (strings: string[]): void => void strings.sort((a: string, b: string): number => b.localeCompare(a))
 
 export interface PlayerTopScore {
   topScore: number
