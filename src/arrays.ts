@@ -136,29 +136,29 @@ export interface PlayerTopScore {
   topScore: number
 }
 
-export const sortPlayersByTopScoreDescending = (players: PlayerTopScore[]) => void players.sort((a: PlayerTopScore, b: PlayerTopScore): number => b.topScore - a.topScore)
+export const sortPlayersByTopScoreDescending = (players: PlayerTopScore[]): void => void players.sort((a: PlayerTopScore, b: PlayerTopScore): number => b.topScore - a.topScore)
 
 export interface PlayerAvgScore {
   avgScore: number
 }
 
-export const sortPlayersByAvgScoreAscending = (players: PlayerAvgScore[]) => void players.sort((a: PlayerAvgScore, b: PlayerAvgScore): number => a.avgScore - b.avgScore)
+export const sortPlayersByAvgScoreAscending = (players: PlayerAvgScore[]): void => void players.sort((a: PlayerAvgScore, b: PlayerAvgScore): number => a.avgScore - b.avgScore)
 
 export interface PlayersByWorstPermorming {
   topScore: number
   avgScore: number
 }
 
-export const sortPlayersByWorstPerforming = (players: PlayersByWorstPermorming[]) => void players.sort((a: PlayersByWorstPermorming, b: PlayersByWorstPermorming): number =>
+export const sortPlayersByWorstPerforming = (players: PlayersByWorstPermorming[]): void => void players.sort((a: PlayersByWorstPermorming, b: PlayersByWorstPermorming): number =>
   a.topScore === b.topScore ? b.avgScore - a.avgScore : a.topScore - b.topScore
 )
 
-export const sortPlayersByTopScoreAscending = (players: PlayerTopScore[]) => {
+export const sortPlayersByTopScoreAscending = (players: PlayerTopScore[]): void => {
   sortPlayersByTopScoreDescending(players)
   players.reverse()
 }
 
-export const sortPlayersByAvgScoreDescending = (players: PlayerAvgScore[]) => {
+export const sortPlayersByAvgScoreDescending: (players : PlayerAvgScore[]) => void = (players: PlayerAvgScore[]): void => {
   sortPlayersByAvgScoreAscending(players)
   players.reverse()
 }
