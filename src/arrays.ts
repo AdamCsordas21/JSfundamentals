@@ -62,8 +62,8 @@ export function hasBigElement(array: number[], n: number): boolean {
   return array.some((element: number): boolean => element > n)
 }
 
-export function oshifyArray(array: string[]): string[] {
-  return array.fill('osh')
+export function oshifyArray(array: string[]): 'osh'[] {
+  return array.fill('osh') as 'osh'[]
   // return array.map(() => 'osh')
 }
 
