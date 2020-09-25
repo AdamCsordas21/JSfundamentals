@@ -38,8 +38,8 @@ export function strToInteger(input: string, base: number): number {
 }
 
 
-export function numberToString(input: any, base: any): any {
-  const converted: any = input.toString(base)
+export function numberToString(input, base) {
+  const converted = input.toString(base)
   // if (base === 2) {
   //   return converted.padStart(8, 0)
   // }
@@ -58,7 +58,7 @@ export function numberToString(input: any, base: any): any {
   }
 }
 
-export function numberToCurrency(number: any, currency: any): any {
+export function numberToCurrency(number: number, currency: string): string {
   return number.toLocaleString('en-US', {
     style: 'currency',
     currency,
