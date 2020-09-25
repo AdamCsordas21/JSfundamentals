@@ -65,8 +65,10 @@ export function numberToCurrency(number: number, currency: string): string {
   });
 }
 
-export function numberToShortCompactForm(number) {
-  return number.toLocaleString('en-GB', { notation: "compact" });
+export function numberToShortCompactForm(number: number): string {
+  return number.toLocaleString('en-GB', {
+    notation: "compact"
+  } as Intl.NumberFormatOptions);
 }
 
 export function numberToLongCompactForm(number) {

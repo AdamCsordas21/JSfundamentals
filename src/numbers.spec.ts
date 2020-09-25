@@ -75,7 +75,11 @@ describe('numbers', () => {
   })
 
   it('converts number to currency', () => {
-    const testCases = [
+    const testCases: {
+      number: number
+      currency: string
+      expected: string
+    }[] = [
       { number: 1000, currency: 'GBP', expected: '£1,000.00' },
       { number: 9999.99, currency: 'USD', expected: '$9,999.99' },
       { number: 9999.99, currency: 'EUR', expected: '€9,999.99' },
@@ -91,7 +95,7 @@ describe('numbers', () => {
 
   it(`converts number to short compact form, e.g. thousands (K), millions (M), etc... (in British English)
   the numbers will always be valid positive integers`, () => {
-    const testCases = [
+    const testCases: [number, string][] = [
       [1, '1'],
       [12, '12'],
       [123, '123'],
