@@ -1,4 +1,4 @@
-export function strToNumber(input: any): number {
+export function strToNumber(input) {
   return isNaN(input) ? 0 : Number(input)
 }
 
@@ -103,15 +103,4 @@ export function hexCodeToDecimalCode(h: any): string {
   const green: number = parseInt(h.slice(3, 5), 16)
   const blue: number = parseInt(h.slice(5), 16)
   return `rgb(${red}, ${green}, ${blue})`
-}
-
-module.exports = {
-  strToNumber,
-  strToInteger,
-  numberToString,
-  numberToCurrency,
-  numberToShortCompactForm,
-  numberToLongCompactForm,
-  numberToAccounting,
-  hexCodeToDecimalCode
 }
