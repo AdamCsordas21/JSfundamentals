@@ -15,7 +15,7 @@ export function getListOfValidDigits(base: number): string[] {
   return '0123456789abcdef'.split('')
 }
 
-export function filterBaseFormatting(input: any, base: any): string {
+export function filterBaseFormatting(input, base) {
   if (base === 16) {
     const lowerCased: any = input.toLowerCase()
     return lowerCased.startsWith('0x') ? lowerCased.substring(2) : lowerCased
@@ -32,8 +32,8 @@ export function isValid(input: any, base: number): boolean {
   return true
 }
 
-export function strToInteger(input: any, base: any): number {
-  const filtered: string = filterBaseFormatting(input, base)
+export function strToInteger(input: string, base: number): number {
+  const filtered = filterBaseFormatting(input, base)
   return isValid(filtered, base) ? parseInt(filtered, base) : 0
 }
 
