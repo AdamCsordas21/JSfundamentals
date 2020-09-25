@@ -2,7 +2,7 @@ export function strToNumber(input) {
   return isNaN(input) ? 0 : Number(input)
 }
 
-export function getListOfValidDigits(base: any): string[] {
+export function getListOfValidDigits(base: number): string[] {
   if (base === 2) {
     return '01'.split('')
   }
