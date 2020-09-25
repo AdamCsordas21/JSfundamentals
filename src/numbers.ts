@@ -23,7 +23,7 @@ function filterBaseFormatting(input: string, base: number): string {
   return input
 }
 
-function isValid(input: any, base: number): boolean {
+function isValid(input: string, base: number): boolean {
   for (const char of input) {
     if (!getListOfValidDigits(base).includes(char)) {
       return false
@@ -33,7 +33,7 @@ function isValid(input: any, base: number): boolean {
 }
 
 export function strToInteger(input: string, base: number): number {
-  const filtered = filterBaseFormatting(input, base)
+  const filtered: string = filterBaseFormatting(input, base)
   return isValid(filtered, base) ? parseInt(filtered, base) : 0
 }
 
