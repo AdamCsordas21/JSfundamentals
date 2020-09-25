@@ -2,7 +2,7 @@ export function strToNumber(input: string): number {
   return isNaN(Number(input)) ? 0 : Number(input)
 }
 
-export function getListOfValidDigits(base: number): string[] {
+function getListOfValidDigits(base: number): string[] {
   if (base === 2) {
     return '01'.split('')
   }
@@ -15,15 +15,15 @@ export function getListOfValidDigits(base: number): string[] {
   return '0123456789abcdef'.split('')
 }
 
-export function filterBaseFormatting(input, base) {
+function filterBaseFormatting(input: string, base: number): string {
   if (base === 16) {
-    const lowerCased: any = input.toLowerCase()
+    const lowerCased: string = input.toLowerCase()
     return lowerCased.startsWith('0x') ? lowerCased.substring(2) : lowerCased
   }
   return input
 }
 
-export function isValid(input: any, base: number): boolean {
+function isValid(input: any, base: number): boolean {
   for (const char of input) {
     if (!getListOfValidDigits(base).includes(char)) {
       return false
