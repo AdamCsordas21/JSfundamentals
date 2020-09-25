@@ -114,7 +114,7 @@ describe('numbers', () => {
   })
 
   it('converts number to long compact form, e.g. thousands, millions, etc... (in British English)', () => {
-    const testCases = [
+    const testCases: [number, string][] = [
       [1, '1'],
       [12, '12'],
       [123, '123'],

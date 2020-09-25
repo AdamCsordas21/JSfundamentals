@@ -71,11 +71,11 @@ export function numberToShortCompactForm(number: number): string {
   } as Intl.NumberFormatOptions);
 }
 
-export function numberToLongCompactForm(number) {
+export function numberToLongCompactForm(number: number): string {
   return number.toLocaleString('en-GB', {
     notation: "compact",
     compactDisplay: "long"
-  })
+  } as Intl.NumberFormatOptions)
 }
 
 export function numberToAccounting(number) {
