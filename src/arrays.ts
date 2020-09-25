@@ -41,8 +41,8 @@ export function dequeue2FromArray(arr: string[]): string[] {
   // return [arr.shift(), arr.shift()]
 }
 
-export function truncateArray(arr: string[]): (string | undefined)[] {
-  return [arr.pop()]
+export function truncateArray(arr: string[]): string[] {
+  return arr.length === 0 ? [] : [arr.pop() as string]
   // const oneItemArray = []
   // lastElement = arr.pop()
   // oneItemArray.push(lastElement)
