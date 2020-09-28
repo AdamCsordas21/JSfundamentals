@@ -50,7 +50,14 @@ export function createShallowCopy(myObj: ShallowCopy): ShallowCopy {
   return { ...myObj }
 }
 
-export function createDeepCopy(myObj) {
+export interface DeepCopy {
+  name: string
+  address: {
+    street: string
+  }
+}
+
+export function createDeepCopy(myObj: DeepCopy): DeepCopy {
   return { ...myObj, address: { ...myObj.address } }
 }
 

@@ -13,7 +13,8 @@ import {
   describeObject,
   quote,
   checkValueForNumber,
-  ShallowCopy
+  ShallowCopy,
+  DeepCopy
 } from './objects'
 
 describe('objects', () => {
@@ -32,7 +33,7 @@ describe('objects', () => {
   })
 
   it('creates deep copy of object with name and address', () => {
-    const myObj = { name: 'osh', address: { street: 'long' } }
+    const myObj: DeepCopy = { name: 'osh', address: { street: 'long' } }
     const actual = createDeepCopy(myObj)
     expect(actual.name).toEqual('osh')
     expect(actual.address.street).toEqual('long')
