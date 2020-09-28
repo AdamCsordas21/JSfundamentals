@@ -1,6 +1,6 @@
 import {
-  createShallowCopy,
-  createDeepCopy,
+  createShallowCopyOfPerson,
+  createDeepCopyOfPerson,
   listProperties,
   describeProps,
   doubleProps,
@@ -13,14 +13,13 @@ import {
   describeObject,
   quote,
   checkValueForNumber,
-  ShallowCopy,
-  DeepCopy
+  Person
 } from './objects'
 
 describe('objects', () => {
   it('creates shallow copy of object with name and address', () => {
-    const myObj: ShallowCopy = { name: 'osh', address: { street: 'long' } }
-    const actual = createShallowCopy(myObj)
+    const myObj: Person = { name: 'osh', address: { street: 'long' } }
+    const actual = createShallowCopyOfPerson(myObj)
     expect(actual.name).toEqual('osh')
     expect(actual.address.street).toEqual('long')
     actual.name = 'copied'
@@ -33,8 +32,8 @@ describe('objects', () => {
   })
 
   it('creates deep copy of object with name and address', () => {
-    const myObj: DeepCopy = { name: 'osh', address: { street: 'long' } }
-    const actual = createDeepCopy(myObj)
+    const myObj: Person = { name: 'osh', address: { street: 'long' } }
+    const actual = createDeepCopyOfPerson(myObj)
     expect(actual.name).toEqual('osh')
     expect(actual.address.street).toEqual('long')
     actual.name = 'copied'

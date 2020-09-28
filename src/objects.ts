@@ -39,26 +39,19 @@ test.age = 12
 
 */
 
-export interface ShallowCopy {
+export interface Person {
   name: string
   address: {
     street: string
   }
 }
 
-export function createShallowCopy(myObj: ShallowCopy): ShallowCopy {
-  return { ...myObj }
+export function createShallowCopyOfPerson(person: Person): Person {
+  return { ...person }
 }
 
-export interface DeepCopy {
-  name: string
-  address: {
-    street: string
-  }
-}
-
-export function createDeepCopy(myObj: DeepCopy): DeepCopy {
-  return { ...myObj, address: { ...myObj.address } }
+export function createDeepCopyOfPerson(person: Person): Person {
+  return { ...person, address: { ...person.address } }
 }
 
 export function listProperties(object: { a: 1, b: 2 }): string[] {
