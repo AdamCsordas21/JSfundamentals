@@ -1,4 +1,4 @@
-const {
+import {
   createShallowCopy,
   createDeepCopy,
   listProperties,
@@ -13,7 +13,7 @@ const {
   describeObject,
   quote,
   checkValueForNumber
-} = require('./objects')
+} from './objects'
 
 describe('objects', () => {
   it('creates shallow copy of object with name and address', () => {
@@ -121,5 +121,4 @@ describe('objects', () => {
       expect(checkValueForNumber(input)).toEqual(expected)
     }
   })
-  
 })
