@@ -54,21 +54,21 @@ export function createDeepCopyOfPerson(person: Person): Person {
   return { ...person, address: { ...person.address } }
 }
 
-export function listProperties(object: { a: 1, b: 2 }): string[] {
+export function listProperties(object: {}): string[] {
   // @see https://stackoverflow.com/a/22658584/4514601 for the difference
   return Object.keys(object)
   // return Object.getOwnPropertyNames(object)
 }
 
-export function describeProps(object: { a: 1, b: 2, c: 3 }): string {
+export function describeProps(object: {}): string {
   const keys = Object.keys(object)
   return `This object has ${keys.length} props: ${keys.join(', ')}`
 }
 
-export function doubleProps(object) {
-  const doubled = {}
+export function doubleProps<T extends Record<string, number>>(object: T): T {
+  const doubled = {} as T
   for (const key in object) {
-    doubled[key] = object[key] * 2
+    doubled[key] = object[key] * 2 as T[Extract<keyof T, string>]
   }
   // for (const key of Object.keys(object)) {
   //   object[key] = object[key] * 2
