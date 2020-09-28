@@ -147,9 +147,9 @@ export function describeObjectPropsAndValues(input: Record<string, number>): str
   return `The object props are ${keysString} and the values are "${valuesString}"`
 }
 
-export function describeObject(object, q) {
-  const pairs = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
-  const descriptions = pairs.map(([key, value]) => `${q(key)}: ${q(value)}`)
+export function describeObject(object: {}, q: (maybeString: any) => any): string {
+  const pairs: [string, unknown][] = Object.entries(object) // pairs = [["a", 1], ["b", "2"], ["c", false], ["d", null]]
+  const descriptions: string[] = pairs.map(([key, value]) => `${q(key)}: ${q(value)}`)
   return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 

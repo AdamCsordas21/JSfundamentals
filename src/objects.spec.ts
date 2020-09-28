@@ -102,7 +102,7 @@ describe('objects', () => {
   }
 
   it('describes all props and values as pairs', () => {
-    const testCases = [
+    const testCases: [{}, string][] = [
       [{ a: 1, b: '2', c: false, d: null }, 'The object has 4 properties: { "a": 1, "b": "2", "c": false, "d": null }'],
       [{ a: 1 }, 'The object has 1 property: { "a": 1 }'],
     ]
