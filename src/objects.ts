@@ -153,9 +153,12 @@ export function describeObject(object: {}, q: (maybeString: any) => any): string
   return `The object has ${pairs.length} ${pairs.length === 1 ? 'property' : 'properties'}: { ${descriptions.join(", ")} }`
 }
 
-export function checkValueForNumber(input) {
-  const isValidNumber = ([, value]) => typeof value === 'number' && !isNaN(value) && isFinite(value)
-  const describeAndDoubleNumber = ([key, value]) => `${key}: ${value} -> ${(value * 2)}`
+export function checkValueForNumber(input: {}): string {
+  const isValidNumber = (tuple: [string, unknown]): tuple is [string, number] => {
+    const [, value] = tuple
+    return typeof value === 'number' && !isNaN(value) && isFinite(value)
+  }
+  const describeAndDoubleNumber = ([key, value]: [string, number]): string => `${key}: ${value} -> ${(value * 2)}`
   const numbersDescription = Object.entries(input)
     .filter(isValidNumber)
     .map(describeAndDoubleNumber)

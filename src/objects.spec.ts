@@ -112,7 +112,7 @@ describe('objects', () => {
   })
 
   it("checks the object property value, if it's a number, doubles it and returns a message.", () => {
-    const testCases = [
+    const testCases: [{}, string][] = [
       [{ a: 1, b: '2', c: false, d: null, e: undefined, f: 5, g: NaN },
         "I found these values as numbers and doubled them: { a: 1 -> 2, f: 5 -> 10 }"],
       [{ a: true, b: 4, c: 'JavaScript', d: 21, e: 1/0, f: -1/0 },
