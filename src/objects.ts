@@ -61,7 +61,7 @@ export function createDeepCopy(myObj: DeepCopy): DeepCopy {
   return { ...myObj, address: { ...myObj.address } }
 }
 
-export function listProperties(object) {
+export function listProperties(object: { a: 1, b: 2 }): string[] {
   // @see https://stackoverflow.com/a/22658584/4514601 for the difference
   return Object.keys(object)
   // return Object.getOwnPropertyNames(object)
