@@ -67,7 +67,7 @@ export function listProperties(object: { a: 1, b: 2 }): string[] {
   // return Object.getOwnPropertyNames(object)
 }
 
-export function describeProps(object) {
+export function describeProps(object: { a: 1, b:2, c: 3 }): string {
   const keys = Object.keys(object)
   return `This object has ${keys.length} props: ${keys.join(', ')}`
 }
