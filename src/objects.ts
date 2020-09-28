@@ -95,7 +95,7 @@ export function listPropertyValues(object: { a: 1, b: 2, c: 3 }): number[] {
   return Object.values(object)
 }
 
-export function describePropValues(object) {
+export function describePropValues(object: { a: 4, b: 6, c: 0 }): string {
   const values = Object.values(object)
   const count = values.length
   const lastValue = values.pop() // const lastValue = values[values.length - 1]
