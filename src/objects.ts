@@ -97,13 +97,7 @@ export function describePropValues(object: Record<string, any>): string {
   return `This object has ${count} props, with values: ${valuesList}`
 }
 
-interface SumDoubledOrTripledValues {
-  a: number
-  b: number
-  c?: number
-}
-
-export function sumDoubledValues(object: SumDoubledOrTripledValues): number {
+export function sumDoubledValues(object: Record<any, number>): number {
   let sum = 0
   // for (const value in object) {
   //   sum += value * 2
@@ -114,7 +108,7 @@ export function sumDoubledValues(object: SumDoubledOrTripledValues): number {
   return sum
 }
 
-export function sumTripleProps(object: SumDoubledOrTripledValues): number {
+export function sumTripleProps(object: Record<any, number>): number {
   let sum = 0
   for (const value of Object.values(object)) {
     sum += value * 3
