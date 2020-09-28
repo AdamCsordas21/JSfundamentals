@@ -116,16 +116,20 @@ export function sumTripleProps(object: Record<any, number>): number {
   return sum
 }
 
-function joinRestWithLast(rest, last, restJoiner, lastJoiner) {
+function joinRestWithLast(rest: string[] | number[], last: string[] | number[], restJoiner: string, lastJoiner: string): string {
   return [rest.join(restJoiner), last].filter((e) => e !== '').join(lastJoiner)
 }
 
-function joinItems(items, restJoiner, lastJoiner) {
+function joinItems(items: string[] | number[], restJoiner: string, lastJoiner: string) {
   const lastIndex = items.length - 1
   return joinRestWithLast(items.slice(0, lastIndex), items.slice(lastIndex), restJoiner, lastJoiner)
 }
 
-export function describeObjectPropsAndValues(input) {
+export function quote(maybeString: any): any {
+  return typeof maybeString === "string" ? `"${maybeString}"` : maybeString
+}
+
+export function describeObjectPropsAndValues(input: Record<string, number>): string {
   // const keys = Object.keys(input).map((key) => `"${key}"`)
   // const lastKey = keys.pop()
   // const keysString = [keys.join(', '), lastKey].filter((key) => key !== '').join(' and ')
@@ -134,17 +138,13 @@ export function describeObjectPropsAndValues(input) {
   // const lastValue = values.pop()
   // const valuesString = [values.join('", "'), lastValue].filter((value) => value !== '').join('" and "')
 
-  const keys = Object.keys(input).map(quote)
+  const keys: string[] = Object.keys(input).map(quote)
   const keysString = joinItems(keys, ', ', ' and ')
 
-  const values = Object.values(input)
+  const values: number[] = Object.values(input)
   const valuesString = joinItems(values, '", "', '" and "')
 
   return `The object props are ${keysString} and the values are "${valuesString}"`
-}
-
-export function quote(maybeString) {
-  return typeof maybeString === "string" ? `"${maybeString}"` : maybeString
 }
 
 export function describeObject(object, q) {

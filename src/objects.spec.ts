@@ -90,7 +90,7 @@ describe('objects', () => {
     expect(sumTripleProps({ a: 1, b: 2, c: 3 })).toEqual(18)
   })
 
-  const testCases = [
+  const testCases: [Record<string, number>, string][] = [
       [{ a: 1, b: 2, c: 3, d: 4 }, 'The object props are "a", "b", "c" and "d" and the values are "1", "2", "3" and "4"'],
       [{ a: 1, b: 2 }, 'The object props are "a" and "b" and the values are "1" and "2"'],
       [{ a: 1 }, 'The object props are "a" and the values are "1"'],
