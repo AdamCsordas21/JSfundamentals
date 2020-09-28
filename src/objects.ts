@@ -76,7 +76,7 @@ export function doubleProps<T extends Record<string, number>>(object: T): T {
   return doubled
 }
 
-export function tripleProps(object) {
+export function tripleProps(object: Record<string, number>): Record<string, number> {
   const copy = { ...object }
   for (const key in object) {
     copy[key] = object[key] * 3
@@ -84,11 +84,11 @@ export function tripleProps(object) {
   return copy
 }
 
-export function listPropertyValues(object: { a: 1, b: 2, c: 3 }): number[] {
+export function listPropertyValues<T>(object: Record<any, T>): T[] {
   return Object.values(object)
 }
 
-export function describePropValues(object: { a: 4, b: 6, c: 0 }): string {
+export function describePropValues(object: Record<string, any>): string {
   const values = Object.values(object)
   const count = values.length
   const lastValue = values.pop() // const lastValue = values[values.length - 1]
