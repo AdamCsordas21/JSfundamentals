@@ -12,12 +12,13 @@ import {
   describeObjectPropsAndValues,
   describeObject,
   quote,
-  checkValueForNumber
+  checkValueForNumber,
+  ShallowCopy
 } from './objects'
 
 describe('objects', () => {
   it('creates shallow copy of object with name and address', () => {
-    const myObj = { name: 'osh', address: { street: 'long' } }
+    const myObj: ShallowCopy = { name: 'osh', address: { street: 'long' } }
     const actual = createShallowCopy(myObj)
     expect(actual.name).toEqual('osh')
     expect(actual.address.street).toEqual('long')

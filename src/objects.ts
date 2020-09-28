@@ -39,7 +39,14 @@ test.age = 12
 
 */
 
-export function createShallowCopy(myObj) {
+export interface ShallowCopy {
+  name: string
+  address: {
+    street: string
+  }
+}
+
+export function createShallowCopy(myObj: ShallowCopy): ShallowCopy {
   return { ...myObj }
 }
 
@@ -154,7 +161,7 @@ export function describeObject(object, q) {
 
 export function checkValueForNumber(input) {
   const isValidNumber = ([, value]) => typeof value === 'number' && !isNaN(value) && isFinite(value)
-  const describeAndDoubleNumber = ([key, value]) => `${key}: ${value} -> ${(value * 2 )}`
+  const describeAndDoubleNumber = ([key, value]) => `${key}: ${value} -> ${(value * 2)}`
   const numbersDescription = Object.entries(input)
     .filter(isValidNumber)
     .map(describeAndDoubleNumber)
