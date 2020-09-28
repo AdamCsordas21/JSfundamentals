@@ -92,10 +92,10 @@ describe('objects', () => {
   })
 
   const testCases = [
-    [{ a: 1, b: 2, c: 3, d: 4 }, 'The object props are "a", "b", "c" and "d" and the values are "1", "2", "3" and "4"'],
-    [{ a: 1, b: 2 }, 'The object props are "a" and "b" and the values are "1" and "2"'],
-    [{ a: 1 }, 'The object props are "a" and the values are "1"'],
-  ]
+      [{ a: 1, b: 2, c: 3, d: 4 }, 'The object props are "a", "b", "c" and "d" and the values are "1", "2", "3" and "4"'],
+      [{ a: 1, b: 2 }, 'The object props are "a" and "b" and the values are "1" and "2"'],
+      [{ a: 1 }, 'The object props are "a" and the values are "1"'],
+    ]
   for (const [input, expected] of testCases) {
     it('describes all props and all values: ' + expected, () => {
       expect(describeObjectPropsAndValues(input)).toEqual(expected)
@@ -111,13 +111,13 @@ describe('objects', () => {
       expect(describeObject(input, quote)).toEqual(expected)
     }
   })
-  
+
   it("checks the object property value, if it's a number, doubles it and returns a message.", () => {
     const testCases = [
       [{ a: 1, b: '2', c: false, d: null, e: undefined, f: 5, g: NaN },
-      "I found these values as numbers and doubled them: { a: 1 -> 2, f: 5 -> 10 }"],
-      [{ a: true, b: 4, c: 'JavaScript', d: 21, e: 1/0, f: -1/0 }, 
-      "I found these values as numbers and doubled them: { b: 4 -> 8, d: 21 -> 42 }"],
+        "I found these values as numbers and doubled them: { a: 1 -> 2, f: 5 -> 10 }"],
+      [{ a: true, b: 4, c: 'JavaScript', d: 21, e: 1/0, f: -1/0 },
+        "I found these values as numbers and doubled them: { b: 4 -> 8, d: 21 -> 42 }"],
     ]
     for (const [input, expected] of testCases) {
       expect(checkValueForNumber(input)).toEqual(expected)

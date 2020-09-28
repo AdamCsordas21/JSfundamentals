@@ -121,7 +121,7 @@ export function sumDoubledValues(object: SumDoubledOrTripledValues): number {
   return sum
 }
 
-export function sumTripleProps(object: SumDoubledOrTripledValues) {
+export function sumTripleProps(object: SumDoubledOrTripledValues): number {
   let sum = 0
   for (const value of Object.values(object)) {
     sum += value * 3
