@@ -42,9 +42,9 @@ describe('filtering', () => {
   })
 
   it('returns result of my condition', () => {
-    const stringArray = ['osh', 'adam', 'nela']
-    const actual = filter(stringArray, (s) => s === 'osh')
-    const expected = ['osh']
+    const stringArray: string[] = ['osh', 'adam', 'nela']
+    const actual = filter(stringArray, (s: string): boolean => s === 'osh')
+    const expected: string[] = ['osh']
 
     expect(actual).toEqual(expected)
   })

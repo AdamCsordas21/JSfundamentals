@@ -260,8 +260,8 @@ export function filterOutOddNumbers(arr: number[]): number[] {
   return filter(arr, (element: number): boolean => element % 2 === 0)
 }
 
-export function filter(arr, predicament) {
-  const filtered: number[] = [];
+export function filter(arr: any[], predicament: any): any[] {
+  const filtered: any[] = [];
   for (const element of arr) {
     if (predicament(element)) {
       filtered.push(element)
