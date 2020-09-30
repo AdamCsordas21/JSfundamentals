@@ -104,8 +104,8 @@ export function oshWasHere(arr) {
   return message
 }
 
-export function fizzBuzz(arr) {
-  const fizzbuzzed: string[] = [];
+export function fizzBuzz(arr: number[]): (string | number)[] {
+  const fizzbuzzed: (string | number)[] = [];
   for (const number of arr) {
     if (number % 3 === 0 && number % 5 === 0) {
       fizzbuzzed.push("fizzbuzz")
