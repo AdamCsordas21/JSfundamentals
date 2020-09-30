@@ -130,7 +130,7 @@ export function fizzBuzz(arr) {
 // 4 % 5  -> 0.__   -> 5 x 0 = 0  -> 4 - 0 = 4
 // 8 % 5  -> 1.__   -> 5 x 1 = 5  -> 8 - 5 = 3
 
-export function _tripleEach(arr) {
+export function _tripleEach(arr: number[]): number[] {
   const tripled: number[] = [];
   for (const number of arr) {
     tripled.push(number * 3)
@@ -138,8 +138,8 @@ export function _tripleEach(arr) {
   return tripled
 }
 
-export function tripleEach(arr) {
-  return map(arr, (number) => number * 3)
+export function tripleEach(arr: number[]): number[] {
+  return map(arr, (number: number): number => number * 3)
 }
 
 export function _doubleEach(arr: number[]): number[] {

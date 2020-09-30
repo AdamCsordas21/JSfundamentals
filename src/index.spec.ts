@@ -93,9 +93,9 @@ describe('map', () => {
   })
 
   it('triples each number', () => {
-    const testInput = [0, 1, 2, 3]
-    const actual = tripleEach(testInput)
-    const expected = [0, 3, 6, 9]
+    const testInput: number[] = [0, 1, 2, 3]
+    const actual: number[] = tripleEach(testInput)
+    const expected: number[] = [0, 3, 6, 9]
 
     expect(actual).toEqual(expected)
   })
