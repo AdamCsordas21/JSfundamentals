@@ -50,9 +50,9 @@ describe('filtering', () => {
   })
 
   it('returns multiples of three', () => {
-    const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    const actual = filterMultiplesOf3(testArray)
-    const expected = [3, 6, 9, 12]
+    const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    const actual: number[] = filterMultiplesOf3(testArray)
+    const expected: number[] = [3, 6, 9, 12]
 
     expect(actual).toEqual(expected)
   })

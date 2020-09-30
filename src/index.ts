@@ -200,7 +200,7 @@ export function _filterHigherOrEqualTo10(arr) {
 
 export const filterHigherOrEqualTo10 = (arr) => arr.filter((element) => element >= 10)
 
-export function _filterMultiplesOf3(arr) {
+export function _filterMultiplesOf3(arr: number[]): number[] {
   const filtered: number[] = [];
   for (const element of arr) {
     if (element % 3 === 0) {
@@ -210,8 +210,8 @@ export function _filterMultiplesOf3(arr) {
   return filtered
 }
 
-export function filterMultiplesOf3(arr) {
-  return filter(arr, (element) => element % 3 === 0)
+export function filterMultiplesOf3(arr: number[]): number[] {
+  return filter(arr, (element: number): boolean => element % 3 === 0)
 }
 
 export function _filterHigherThan2(arr: number[]): number[] {
