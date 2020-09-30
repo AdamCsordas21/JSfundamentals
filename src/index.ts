@@ -16,7 +16,7 @@ export function isScoreHigh() {
 }
 
 
-export function __integerDescriptorOfList(arr) {
+export function __integerDescriptorOfList(arr: number[]): string[] {
   const integers: string[] = [];
   for (const i of arr) {
     integers.push(integerDescriptor(i))
@@ -24,7 +24,7 @@ export function __integerDescriptorOfList(arr) {
   return integers
 }
 
-export function integerDescriptorOfList(arr) {
+export function integerDescriptorOfList(arr: number[]): string[] {
   return arr.map(integerDescriptor)
 }
 

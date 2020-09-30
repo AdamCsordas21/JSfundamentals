@@ -141,7 +141,7 @@ describe('map', () => {
     // example 2: -1 -> small negative odd number
     // example 3: 101 -> big positive odd number
 
-    const testArray = [
+    const testArray: number[] = [
       0,
       1,
       -1,
@@ -155,7 +155,7 @@ describe('map', () => {
       -102
     ]
 
-    const expected = [
+    const expected: string[] = [
       "small even number",
       "small positive odd number",
       "small negative odd number",
