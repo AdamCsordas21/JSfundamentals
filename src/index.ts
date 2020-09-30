@@ -179,7 +179,7 @@ export function subtract2FromEach(arr: number[]): number[] {
   return map(arr, (element: number): number => element - 2)
 }
 
-export function map(arr, mapper) {
+export function map(arr: any[], mapper: any): any[] {
   const mapped: any[] = [];
   for (const element of arr) {
     mapped.push(mapper(element))
