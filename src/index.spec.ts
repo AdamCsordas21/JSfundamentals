@@ -28,8 +28,8 @@ describe('filtering', () => {
   })
 
   it('returns number lower than 2', () => {
-    const actual = filterLowerThan2(testArray)
-    const expected = [1]
+    const actual: number[] = filterLowerThan2(testArray)
+    const expected: number[] = [1]
 
     expect(actual).toEqual(expected)
   })
