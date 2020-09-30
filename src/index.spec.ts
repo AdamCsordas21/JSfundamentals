@@ -77,9 +77,9 @@ describe('map', () => {
   })
 
   it('subtracts 2 from each element', () => {
-    const testInput = [1, 2, 3]
-    const actual = subtract2FromEach(testInput)
-    const expected = [-1, 0, 1]
+    const testInput: number[] = [1, 2, 3]
+    const actual: number[] = subtract2FromEach(testInput)
+    const expected: number[] = [-1, 0, 1]
 
     expect(actual).toEqual(expected)
   })

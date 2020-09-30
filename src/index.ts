@@ -167,7 +167,7 @@ export function add1ToEach(arr: number[]): number[] {
   return map(arr, (element: number): number => element + 1)
 }
 
-export function _subtract2FromEach(arr) {
+export function _subtract2FromEach(arr: number[]): number[] {
   const mapped: number[] = [];
   for (const element of arr) {
     mapped.push(element - 2)
@@ -175,8 +175,8 @@ export function _subtract2FromEach(arr) {
   return mapped
 }
 
-export function subtract2FromEach(arr) {
-  return map(arr, (element) => element - 2)
+export function subtract2FromEach(arr: number[]): number[] {
+  return map(arr, (element: number): number => element - 2)
 }
 
 export function map(arr, mapper) {
