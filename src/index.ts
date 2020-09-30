@@ -29,8 +29,8 @@ export function integerDescriptorOfList(arr: number[]): string[] {
 }
 
 
-export function integerDescriptor(integer) {
-  let description = ""
+export function integerDescriptor(integer: number): string {
+  let description: string = ""
   if (Math.abs(integer) > 100) {
     description += "big"
   } else {

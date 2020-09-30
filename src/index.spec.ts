@@ -36,7 +36,7 @@ describe('filtering', () => {
 
   it('returns even numbers', () => {
     const actual: number[] = filterOutOddNumbers(testArray)
-    const expected = [2, 4]
+    const expected: number[] = [2, 4]
 
     expect(actual).toEqual(expected)
   })
