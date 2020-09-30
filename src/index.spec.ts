@@ -58,9 +58,9 @@ describe('filtering', () => {
   })
 
   it('returns numbers higher or equal to 10', () => {
-    const testArray = [-20, -10, -1, 0, 1, 10, 20]
-    const actual = filterHigherOrEqualTo10(testArray)
-    const expected = [10, 20]
+    const testArray: number[] = [-20, -10, -1, 0, 1, 10, 20]
+    const actual: number[] = filterHigherOrEqualTo10(testArray)
+    const expected: number[] = [10, 20]
 
     expect(actual).toEqual(expected)
   })

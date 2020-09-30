@@ -188,7 +188,7 @@ export function map(arr, mapper) {
 }
 
 
-export function _filterHigherOrEqualTo10(arr) {
+export function _filterHigherOrEqualTo10(arr: number[]): number[] {
   const filtered: number[] = [];
   for (const element of arr) {
     if (element >= 10) {
@@ -198,7 +198,7 @@ export function _filterHigherOrEqualTo10(arr) {
   return filtered
 }
 
-export const filterHigherOrEqualTo10 = (arr) => arr.filter((element) => element >= 10)
+export const filterHigherOrEqualTo10 = (arr: number[]): number[] => arr.filter((element: number): boolean => element >= 10)
 
 export function _filterMultiplesOf3(arr: number[]): number[] {
   const filtered: number[] = [];
