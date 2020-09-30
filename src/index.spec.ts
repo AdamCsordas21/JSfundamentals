@@ -169,7 +169,7 @@ describe('map', () => {
       "big negative even number"
     ]
 
-    const actual = integerDescriptorOfList(testArray)
+    const actual: string[] = integerDescriptorOfList(testArray)
     expect(actual).toEqual(expected)
   })
 })
