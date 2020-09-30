@@ -69,9 +69,9 @@ describe('filtering', () => {
 
 describe('map', () => {
   it('adds 1 to each of the elements', () => {
-    const testInput = [1, 2, 3]
-    const actual = add1ToEach(testInput)
-    const expected = [2, 3, 4]
+    const testInput: number[] = [1, 2, 3]
+    const actual: number[] = add1ToEach(testInput)
+    const expected: number[] = [2, 3, 4]
 
     expect(actual).toEqual(expected)
   })

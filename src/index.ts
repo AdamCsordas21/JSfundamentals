@@ -155,7 +155,7 @@ export function doubleEach(arr) {
 }
 
 
-export function _add1ToEach(arr) {
+export function _add1ToEach(arr: number[]): number[] {
   const mapped: number[] = [];
   for (const element of arr) {
     mapped.push(element + 1)
@@ -163,8 +163,8 @@ export function _add1ToEach(arr) {
   return mapped
 }
 
-export function add1ToEach(arr) {
-  return map(arr, (element) => element + 1)
+export function add1ToEach(arr: number[]): number[] {
+  return map(arr, (element: number): number => element + 1)
 }
 
 export function _subtract2FromEach(arr) {
