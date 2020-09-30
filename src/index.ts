@@ -1,5 +1,5 @@
 // HOMEWORK 3.
-export function filterHighSkillLevelPlayers(arr) {
+export function filterHighSkillLevelPlayers(arr: number[]): string[] {
   const highSkilled: string[] = [];
   for (const element of arr) {
     if (element < 1400) {
