@@ -246,7 +246,7 @@ export function filterLowerThan2(arr: number[]): number[] {
   return filter(arr, (element: number): boolean => element < 2)
 }
 
-export function _filterOutOddNumbers(arr) {
+export function _filterOutOddNumbers(arr: number[]): number[] {
   const filtered: number[] = [];
   for (const element of arr) {
     if (element % 2 === 0) {
@@ -256,8 +256,8 @@ export function _filterOutOddNumbers(arr) {
   return filtered
 }
 
-export function filterOutOddNumbers(arr) {
-  return filter(arr, (element) => element % 2 === 0)
+export function filterOutOddNumbers(arr: number[]): number[] {
+  return filter(arr, (element: number): boolean => element % 2 === 0)
 }
 
 export function filter(arr, predicament) {
