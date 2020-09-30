@@ -112,9 +112,9 @@ describe('map', () => {
     // if number is divisible by 2, replace it with "fizz"
     // if number is divisible by 3, replace it with "buzz"
     // if number is divisible by 2 and 3, replace it with "fizzbuzz"
-    const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,]
-    const actual = miniFizzBuzz(testArray)
-    const expected = [1, "fizz", "buzz", "fizz", 5, "fizzbuzz", 7, "fizz", "buzz", "fizz", 11, "fizzbuzz", 13, "fizz", "buzz", "fizz"]
+    const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,]
+    const actual: (string | number)[] = miniFizzBuzz(testArray)
+    const expected: (string | number)[] = [1, "fizz", "buzz", "fizz", 5, "fizzbuzz", 7, "fizz", "buzz", "fizz", 11, "fizzbuzz", 13, "fizz", "buzz", "fizz"]
 
     expect(actual).toEqual(expected)
   })

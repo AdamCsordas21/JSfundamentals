@@ -70,8 +70,8 @@ export function hello(a, b, c) {
 
 
 
-export function miniFizzBuzz(arr) {
-  const miniFizzBuzzed: string[] = [];
+export function miniFizzBuzz(arr: number[]): (string | number)[] {
+  const miniFizzBuzzed: (string | number)[] = [];
   for (const number of arr) {
     if (number % 2 === 0 && number % 3 === 0) {
       miniFizzBuzzed.push("fizzbuzz")
