@@ -142,7 +142,7 @@ export function tripleEach(arr) {
   return map(arr, (number) => number * 3)
 }
 
-export function _doubleEach(arr) {
+export function _doubleEach(arr: number[]): number[] {
   const doubled: number[] = [];
   for (const number of arr) {
     doubled.push(number * 2)
@@ -150,8 +150,8 @@ export function _doubleEach(arr) {
   return doubled
 }
 
-export function doubleEach(arr) {
-  return map(arr, (number) => number * 2)
+export function doubleEach(arr: number[]): number[] {
+  return map(arr, (number: number): number => number * 2)
 }
 
 

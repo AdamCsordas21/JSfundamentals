@@ -85,9 +85,9 @@ describe('map', () => {
   })
 
   it('doubles each number', () => {
-    const testInput = [0, 1, 2, 3]
-    const actual = doubleEach(testInput)
-    const expected = [0, 2, 4, 6]
+    const testInput: number[] = [0, 1, 2, 3]
+    const actual: number[] = doubleEach(testInput)
+    const expected: number[] = [0, 2, 4, 6]
 
     expect(actual).toEqual(expected)
   })
