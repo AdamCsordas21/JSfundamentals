@@ -1,4 +1,4 @@
-const {
+import {
   filterHigherThan2,
   filterLowerThan2,
   filterOutOddNumbers,
@@ -15,7 +15,7 @@ const {
   integerDescriptorOfList,
   integerDescriptor,
   isScoreHigh,
-} = require('./')
+} from './'
 
 describe('filtering', () => {
   const testArray = [1, 2, 3, 4]

@@ -1,6 +1,6 @@
 // HOMEWORK 3.
-function filterHighSkillLevelPlayers(arr) {
-  const highSkilled = [];
+export function filterHighSkillLevelPlayers(arr) {
+  const highSkilled: string[] = [];
   for (const element of arr) {
     if (element < 1400) {
       highSkilled.push('Low skill level - Play!')
@@ -11,25 +11,25 @@ function filterHighSkillLevelPlayers(arr) {
   return highSkilled
 }
 
-function isScoreHigh() {
-  return 
+export function isScoreHigh() {
+  return
 }
 
 
-function __integerDescriptorOfList(arr) {
-  const integers = [];
+export function __integerDescriptorOfList(arr) {
+  const integers: string[] = [];
   for (const i of arr) {
     integers.push(integerDescriptor(i))
   }
   return integers
 }
 
-function integerDescriptorOfList(arr) {
+export function integerDescriptorOfList(arr) {
   return arr.map(integerDescriptor)
 }
 
 
-function integerDescriptor(integer) {
+export function integerDescriptor(integer) {
   let description = ""
   if (Math.abs(integer) > 100) {
     description += "big"
@@ -51,7 +51,7 @@ function integerDescriptor(integer) {
 
 
 
-function hello(a, b, c) {
+export function hello(a, b, c) {
   if (a > 0) {
     console.log('a is bigger than zero')
   } else {
@@ -70,8 +70,8 @@ function hello(a, b, c) {
 
 
 
-function miniFizzBuzz(arr) {
-  const miniFizzBuzzed = [];
+export function miniFizzBuzz(arr) {
+  const miniFizzBuzzed: string[] = [];
   for (const number of arr) {
     if (number % 2 === 0 && number % 3 === 0) {
       miniFizzBuzzed.push("fizzbuzz")
@@ -86,8 +86,8 @@ function miniFizzBuzz(arr) {
   return miniFizzBuzzed
 }
 
-function oshWasHere(arr) {
-  const message = [];
+export function oshWasHere(arr) {
+  const message: string[] = [];
   for (const number of arr) {
     if (number > 10) {
       message.push("!")
@@ -104,8 +104,8 @@ function oshWasHere(arr) {
   return message
 }
 
-function fizzBuzz(arr) {
-  const fizzbuzzed = [];
+export function fizzBuzz(arr) {
+  const fizzbuzzed: string[] = [];
   for (const number of arr) {
     if (number % 3 === 0 && number % 5 === 0) {
       fizzbuzzed.push("fizzbuzz")
@@ -130,57 +130,57 @@ function fizzBuzz(arr) {
 // 4 % 5  -> 0.__   -> 5 x 0 = 0  -> 4 - 0 = 4
 // 8 % 5  -> 1.__   -> 5 x 1 = 5  -> 8 - 5 = 3
 
-function _tripleEach(arr) {
-  const tripled = [];
+export function _tripleEach(arr) {
+  const tripled: number[] = [];
   for (const number of arr) {
     tripled.push(number * 3)
   }
   return tripled
 }
 
-function tripleEach(arr) {
+export function tripleEach(arr) {
   return map(arr, (number) => number * 3)
 }
 
-function _doubleEach(arr) {
-  const doubled = [];
+export function _doubleEach(arr) {
+  const doubled: number[] = [];
   for (const number of arr) {
     doubled.push(number * 2)
   }
   return doubled
 }
 
-function doubleEach(arr) {
+export function doubleEach(arr) {
   return map(arr, (number) => number * 2)
 }
 
 
-function _add1ToEach(arr) {
-  const mapped = [];
+export function _add1ToEach(arr) {
+  const mapped: number[] = [];
   for (const element of arr) {
     mapped.push(element + 1)
   }
   return mapped
 }
 
-function add1ToEach(arr) {
+export function add1ToEach(arr) {
   return map(arr, (element) => element + 1)
 }
 
-function _subtract2FromEach(arr) {
-  const mapped = [];
+export function _subtract2FromEach(arr) {
+  const mapped: number[] = [];
   for (const element of arr) {
     mapped.push(element - 2)
   }
   return mapped
 }
 
-function subtract2FromEach(arr) {
+export function subtract2FromEach(arr) {
   return map(arr, (element) => element - 2)
 }
 
-function map(arr, mapper) {
-  const mapped = [];
+export function map(arr, mapper) {
+  const mapped: any[] = [];
   for (const element of arr) {
     mapped.push(mapper(element))
   }
@@ -188,8 +188,8 @@ function map(arr, mapper) {
 }
 
 
-function _filterHigherOrEqualTo10(arr) {
-  const filtered = [];
+export function _filterHigherOrEqualTo10(arr) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (element >= 10) {
       filtered.push(element)
@@ -198,10 +198,10 @@ function _filterHigherOrEqualTo10(arr) {
   return filtered
 }
 
-const filterHigherOrEqualTo10 = (arr) => arr.filter((element) => element >= 10)
+export const filterHigherOrEqualTo10 = (arr) => arr.filter((element) => element >= 10)
 
-function _filterMultiplesOf3(arr) {
-  const filtered = [];
+export function _filterMultiplesOf3(arr) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (element % 3 === 0) {
       filtered.push(element)
@@ -210,12 +210,12 @@ function _filterMultiplesOf3(arr) {
   return filtered
 }
 
-function filterMultiplesOf3(arr) {
+export function filterMultiplesOf3(arr) {
   return filter(arr, (element) => element % 3 === 0)
 }
 
-function _filterHigherThan2(arr) {
-  const filtered = [];
+export function _filterHigherThan2(arr) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (element > 2) {
       filtered.push(element)
@@ -224,16 +224,16 @@ function _filterHigherThan2(arr) {
   return filtered
 }
 
-function __filterHigherThan2(arr) {
+export function __filterHigherThan2(arr) {
   return filter(arr, (element) => element > 2)
 }
 
-function filterHigherThan2(arr) {
+export function filterHigherThan2(arr) {
   return arr.filter((element) => element > 2)
 }
 
-function _filterLowerThan2(arr) {
-  const filtered = [];
+export function _filterLowerThan2(arr) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (element < 2) {
       filtered.push(element)
@@ -242,12 +242,12 @@ function _filterLowerThan2(arr) {
   return filtered
 }
 
-function filterLowerThan2(arr) {
+export function filterLowerThan2(arr) {
   return filter(arr, (element) => element < 2)
 }
 
-function _filterOutOddNumbers(arr) {
-  const filtered = [];
+export function _filterOutOddNumbers(arr) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (element % 2 === 0) {
       filtered.push(element)
@@ -256,36 +256,16 @@ function _filterOutOddNumbers(arr) {
   return filtered
 }
 
-function filterOutOddNumbers(arr) {
+export function filterOutOddNumbers(arr) {
   return filter(arr, (element) => element % 2 === 0)
 }
 
-function filter(arr, predicament) {
-  const filtered = [];
+export function filter(arr, predicament) {
+  const filtered: number[] = [];
   for (const element of arr) {
     if (predicament(element)) {
       filtered.push(element)
     }
   }
   return filtered
-}
-
-module.exports = {
-  filterHigherThan2,
-  filterLowerThan2,
-  filterOutOddNumbers,
-  filter,
-  filterMultiplesOf3,
-  filterHigherOrEqualTo10,
-  add1ToEach,
-  subtract2FromEach,
-  doubleEach,
-  tripleEach,
-  fizzBuzz,
-  miniFizzBuzz,
-  oshWasHere,
-  integerDescriptorOfList,
-  integerDescriptor,
-  filterHighSkillLevelPlayers,
-  isScoreHigh
 }
