@@ -18,11 +18,11 @@ import {
 } from './'
 
 describe('filtering', () => {
-  const testArray = [1, 2, 3, 4]
+  const testArray: number[] = [1, 2, 3, 4]
 
   it('returns number higher than 2', () => {
-    const actual = filterHigherThan2(testArray)
-    const expected = [3, 4]
+    const actual: number[] = filterHigherThan2(testArray)
+    const expected: number[] = [3, 4]
 
     expect(actual).toEqual(expected)
   })

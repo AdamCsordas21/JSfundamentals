@@ -214,7 +214,7 @@ export function filterMultiplesOf3(arr) {
   return filter(arr, (element) => element % 3 === 0)
 }
 
-export function _filterHigherThan2(arr) {
+export function _filterHigherThan2(arr: number[]): number[] {
   const filtered: number[] = [];
   for (const element of arr) {
     if (element > 2) {
@@ -224,12 +224,12 @@ export function _filterHigherThan2(arr) {
   return filtered
 }
 
-export function __filterHigherThan2(arr) {
-  return filter(arr, (element) => element > 2)
+export function __filterHigherThan2(arr: number[]): number[] {
+  return filter(arr, (element: number): boolean => element > 2)
 }
 
-export function filterHigherThan2(arr) {
-  return arr.filter((element) => element > 2)
+export function filterHigherThan2(arr: number[]): number[] {
+  return arr.filter((element: number): boolean => element > 2)
 }
 
 export function _filterLowerThan2(arr) {
