@@ -86,8 +86,8 @@ export function miniFizzBuzz(arr: number[]): (string | number)[] {
   return miniFizzBuzzed
 }
 
-export function oshWasHere(arr) {
-  const message: string[] = [];
+export function oshWasHere(arr: number[]): (string | number)[] {
+  const message: (string | number)[] = [];
   for (const number of arr) {
     if (number > 10) {
       message.push("!")

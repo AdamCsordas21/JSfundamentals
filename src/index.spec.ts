@@ -124,9 +124,9 @@ describe('map', () => {
     // if number is divisible by 4, replace it with "was"
     // if number is divisible by 8, replace it with "here"
     // if number is bigger than 10, replace it with "!"
-    const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    const actual = oshWasHere(testArray)
-    const expected = [1, "osh", 3, "was", 5, "osh", 7, "here", 9, "osh", "!", "!", "!", "!", "!", "!"]
+    const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    const actual: (string | number)[] = oshWasHere(testArray)
+    const expected: (string | number)[] = [1, "osh", 3, "was", 5, "osh", 7, "here", 9, "osh", "!", "!", "!", "!", "!", "!"]
 
     expect(actual).toEqual(expected)
   })
