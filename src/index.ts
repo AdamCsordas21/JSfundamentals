@@ -51,7 +51,7 @@ export function integerDescriptor(integer: number): string {
 
 
 
-export function hello(a, b, c) {
+export function hello(a: number, b: number, c: string): void {
   if (a > 0) {
     console.log('a is bigger than zero')
   } else {
