@@ -12,9 +12,9 @@ import {
   fizzBuzz,
   miniFizzBuzz,
   oshWasHere,
-  integerDescriptorOfList,
-  integerDescriptor,
-  isScoreHigh,
+  integerDescriptorOfList, 
+  FizzBuzz, 
+  Osh
 } from './'
 
 describe('filtering', () => {
@@ -43,7 +43,7 @@ describe('filtering', () => {
 
   it('returns result of my condition', () => {
     const stringArray: string[] = ['osh', 'adam', 'nela']
-    const actual = filter(stringArray, (s: string): boolean => s === 'osh')
+    const actual: string[] = filter(stringArray, (s: string): boolean => s === 'osh')
     const expected: string[] = ['osh']
 
     expect(actual).toEqual(expected)
@@ -102,8 +102,8 @@ describe('map', () => {
 
   it('fizz buzz', () => {
     const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    const actual: (string | number)[] = fizzBuzz(testArray)
-    const expected: (string | number)[] = [1, 2, "fizz", 4, "buzz", "fizz", 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", 16]
+    const actual: FizzBuzz[] = fizzBuzz(testArray)
+    const expected: FizzBuzz[] = [1, 2, "fizz", 4, "buzz", "fizz", 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", 16]
 
     expect(actual).toEqual(expected)
   })
@@ -113,8 +113,8 @@ describe('map', () => {
     // if number is divisible by 3, replace it with "buzz"
     // if number is divisible by 2 and 3, replace it with "fizzbuzz"
     const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,]
-    const actual: (string | number)[] = miniFizzBuzz(testArray)
-    const expected: (string | number)[] = [1, "fizz", "buzz", "fizz", 5, "fizzbuzz", 7, "fizz", "buzz", "fizz", 11, "fizzbuzz", 13, "fizz", "buzz", "fizz"]
+    const actual: FizzBuzz[] = miniFizzBuzz(testArray)
+    const expected: FizzBuzz[] = [1, "fizz", "buzz", "fizz", 5, "fizzbuzz", 7, "fizz", "buzz", "fizz", 11, "fizzbuzz", 13, "fizz", "buzz", "fizz"]
 
     expect(actual).toEqual(expected)
   })
@@ -125,8 +125,8 @@ describe('map', () => {
     // if number is divisible by 8, replace it with "here"
     // if number is bigger than 10, replace it with "!"
     const testArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    const actual: (string | number)[] = oshWasHere(testArray)
-    const expected: (string | number)[] = [1, "osh", 3, "was", 5, "osh", 7, "here", 9, "osh", "!", "!", "!", "!", "!", "!"]
+    const actual: Osh[] = oshWasHere(testArray)
+    const expected: Osh[] = [1, "osh", 3, "was", 5, "osh", 7, "here", 9, "osh", "!", "!", "!", "!", "!", "!"]
 
     expect(actual).toEqual(expected)
   })
@@ -168,8 +168,7 @@ describe('map', () => {
       "big positive even number",
       "big negative even number"
     ]
-
-    const actual: string[] = integerDescriptorOfList(testArray)
-    expect(actual).toEqual(expected)
+    
+    expect(integerDescriptorOfList(testArray)).toEqual(expected)
   })
 })
