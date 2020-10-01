@@ -96,7 +96,10 @@ export function prependWithZeros(string: string): string {
   return string.padStart(5, '0')
 }
 
-export function replaceAll(string: string, search: any, replacement: any): string {
+type Replacer = Parameters<typeof String.prototype.replace>[1]
+function replaceAll(string: string, search: string, replacement: string): string
+function replaceAll(string: string, search: string, replacer: Replacer): string
+function replaceAll(string: string, search: string, replacement: any): string {
   return string.replace(new RegExp(search, 'g'), replacement)
 }
 
@@ -110,7 +113,7 @@ export function convertFirstOccurenceForGivenString(string: string): string {
 
 export function convertEveryOtherOccurrenceForGivenString(string: string): string {
   let replace: boolean = false
-  return replaceAll(string, 'osh', () => {
+  return replaceAll(string, 'osh', (): 'OSH' | 'osh' => {
     replace = !replace
     return replace ? 'OSH' : 'osh'
   })
@@ -168,38 +171,4 @@ export function removeAllHyphensFromTheBeginningOfString(string: string): string
 
 export function removeAllZsFromTheEndOfString(string: string): string {
   return trimCharRight(string, 'z')
-}
-
-module.exports = {
-  shoutWithExclamationPoints,
-  shoutWithUpperCase,
-  shoutToSomeoneWithExclamationPoints,
-  shoutToSomeoneWithUpperCase,
-  whisperWithLowerCase,
-  whisperToSomeoneWithLowerCase,
-  writeFormalLetter,
-  getFirstAndLastLetterOfString,
-  checkForAmazingString,
-  isStringImportant,
-  getIndexOfFirstOccurrence,
-  getIndexOfSecondOccurrence,
-  appendWithUnderscores,
-  prependWithZeros,
-  convertEveryOccurrenceForGivenString,
-  convertEveryOtherOccurrenceForGivenString,
-  convertFirstOccurenceForGivenString,
-  splitStringFrom5thChar,
-  splitStringFrom5thCharToTheEndBut3AtMost,
-  splitStringFrom4thCharFromTheEndToTheEnd,
-  splitStringFrom8thCharFromTheEndToThe6thChar,
-  checkStringStartAndEnd,
-  splitStringIntoArrayConsisting,
-  removesExclamationPointsFromBeginningAndEndButNotMiddle,
-  removeAllHyphensFromTheBeginningOfString,
-  removeAllZsFromTheEndOfString,
-  describeIntegerDivisionRemainder,
-  getSentenceType,
-  trimCharLeft,
-  trimCharRight,
-  trimChar,
 }
