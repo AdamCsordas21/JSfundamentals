@@ -1,17 +1,21 @@
 import { factorial } from './recursion'
 
 describe('recursion', () => {
-  const testCases: { n: number, expected: number }[] = [
-    { n: 0, expected: 0 },
-    { n: 1, expected: 1 },
-    { n: 2, expected: 2 },
-    { n: 3, expected: 6 },
-    { n: 4, expected: 24 },
-    { n: 5, expected: 120 },
+  type RecursionTestCase = [n: number, expected: number]
+  const testCases: RecursionTestCase[] = [
+    [ 0, 0 ],
+    [ 1, 1 ],
+    [ 2, 2 ],
+    [ 3, 6 ],
+    [ 4, 24 ],
+    [ 5, 120 ],
   ]
-  testCases.forEach(({ n, expected }) =>
-    it(`calculates factorial of ${n}`, () => {
-      expect(factorial(n)).toEqual(expected)
-    })
-  )
+  // testCases.forEach(({ n, expected }: RecursionTestCase): void =>
+  //   it(`calculates factorial of ${n}`, () => {
+  //     expect(factorial(n)).toEqual(expected)
+  //   })
+  // )
+  it.each<RecursionTestCase>(testCases)('calculates factorial of %s', (n, expected) => {
+    expect(factorial(n)).toEqual(expected)
+  })
 })
