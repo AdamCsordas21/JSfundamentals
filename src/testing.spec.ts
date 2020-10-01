@@ -18,6 +18,7 @@ describe('how fast', () => {
   })
 
   it("throws an error when speed is not a number", () => {
+    // @ts-expect-error
     expect(() => howFast('light speed')).toThrow()
   })
 })

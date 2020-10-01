@@ -1,8 +1,8 @@
-export function howFast(speed: any): string {
+export function howFast(speed: number): string {
   if (typeof speed !== 'number') {
     throw new Error('speed needs to be a numbers!')
   }
-  let how = 'not too fast';
+  let how: string = 'not too fast';
   if (speed >= 200) {
     how = 'ultra fast'
   } else if (speed >= 100) {
@@ -12,6 +12,3 @@ export function howFast(speed: any): string {
   }
   return how
 }
-
-module.exports = { howFast }
-
