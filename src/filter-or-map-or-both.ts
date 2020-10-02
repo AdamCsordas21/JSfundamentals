@@ -26,6 +26,6 @@ export const doubleDigitId = ({ id, sideLength, colour }:
   colour
 })
 
-export const shortDescriptions = ({ colour }: { colour: string }): string => colour.length >= 8 ? `${colour.substring(0, 5)}...` : colour
+export const shortDescriptions = ({ colour }: Colour): string => colour.length >= 8 ? `${colour.substring(0, 5)}...` : colour
 
-export const longDescriptions = ({ colour }: { colour: string }): boolean => colour.length > 8
+export const longDescriptions = ({ colour }: Colour): boolean => colour.length > 8
