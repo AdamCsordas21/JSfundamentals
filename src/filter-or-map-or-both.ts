@@ -1,6 +1,10 @@
-export const isRed = ({ colour }: { colour: string }): boolean => colour === 'red'
+interface Colour {
+  colour: string
+}
 
-export const isBlue = ({ colour }: { colour: string }): boolean => colour === 'blue'
+export const isRed = ({ colour }: Colour): boolean => colour === 'red'
+
+export const isBlue = ({ colour }: Colour): boolean => colour === 'blue'
 
 export const makeCircle = ({ id, colour, sideLength }:
   { id: string, colour: string, sideLength: number })
