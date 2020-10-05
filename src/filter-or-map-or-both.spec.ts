@@ -7,10 +7,11 @@ import {
   doubleDigitId,
   shortDescriptions,
   longDescriptions,
+  Square
 } from './filter-or-map-or-both'
 
 describe('filter or map', () => {
-  const squares: { id: string, shape: string, sideLength: number, colour: string }[] = [
+  const squares: Square[] = [
     { id: '1', shape: 'square', sideLength: 11, colour: 'red' },
     { id: '2', shape: 'square', sideLength: 22, colour: 'blue' },
     { id: '3', shape: 'square', sideLength: 33, colour: 'green' },
