@@ -1,4 +1,4 @@
-const {
+import {
   addNumbers,
   doesLoveOrNot,
   shapeToCirclesArea,
@@ -6,8 +6,15 @@ const {
   isRed,
   roundTheEdges,
   roundTheEdges2,
-  countEvenAndOdd
-} = require('./reduce-to-ashes')
+  countEvenAndOdd,
+  Flower,
+  Figure
+} from './reduce-to-ashes'
+
+import {
+  Circle,
+  Square
+} from './filter-or-map-or-both'
 
 /*
 reduce takes 2 parameters:
@@ -23,19 +30,19 @@ reduce takes 2 parameters:
 */
 
 test('adds numbers', () => {
-  const input = [1, 2, 3, 4, 5]
+  const input: number[] = [1, 2, 3, 4, 5]
   expect(addNumbers(input)).toEqual(15)
 })
 
 test('does love/does not love', () => {
-  const flower = {
+  const flower: Flower = {
     petals: ['big', 'small', 'big', 'small']
   }
   expect(doesLoveOrNot(flower)).toEqual('loves')
 })
 
 describe('reduce to ashes', () => {
-  const figures = [
+  const figures: Figure[] = [
     { id: '1', shape: 'square', sideLength: 11, colour: 'red' },
     { id: '2', shape: 'circle', radius: 22, colour: 'blue' },
     { id: '3', shape: 'square', sideLength: 33, colour: 'green' },
@@ -56,12 +63,12 @@ describe('reduce to ashes', () => {
   })
 
   test('calculates total area of red squares (alternative)', () => {
-    const actual = figures
-      .filter(({ shape }) => shape === 'square')
-      .filter(({ colour }) => colour.includes('red'))
-      .map(({ sideLength }) => sideLength)
-      .map((sideLength) => sideLength * sideLength)
-      .reduce((total, area) => total + area)
+    const actual: number = figures
+      .filter(({ colour }: Figure): boolean => colour.includes('red'))
+      .filter((figure: Figure): figure is Square => figure.shape === 'square')
+      .map(({ sideLength }: Square): Square['sideLength'] => sideLength)
+      .map((sideLength: Square['sideLength']): number => sideLength * sideLength)
+      .reduce((total: number, area: number): number => total + area)
     expect(actual).toEqual(6050)
   })
 
@@ -73,7 +80,7 @@ describe('reduce to ashes', () => {
   })
 
   test('round the edges to shape it to circles', () => {
-    const expected = [
+    const expected: Circle[] = [
       { id: '1', shape: 'circle', radius: 22, colour: 'red' },
       { id: '2', shape: 'circle', radius: 22, colour: 'blue' },
       { id: '3', shape: 'circle', radius: 66, colour: 'green' },
@@ -89,7 +96,7 @@ describe('reduce to ashes', () => {
   })
 
   it('counts even and odd numbers', () => {
-    const myNumbers = [1, 2, 3, 4, 5, 234, 2345, 2345, 25, 34534, 53, 45, 36, 657345, 3, 45, 345]
+    const myNumbers: number[] = [1, 2, 3, 4, 5, 234, 2345, 2345, 25, 34534, 53, 45, 36, 657345, 3, 45, 345]
     expect(countEvenAndOdd(myNumbers)).toEqual('There was 5 even and 12 odd numbers')
   })
 })

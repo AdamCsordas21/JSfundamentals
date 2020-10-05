@@ -6,7 +6,7 @@ export const isRed = ({ colour }: Colour): boolean => colour === 'red'
 
 export const isBlue = ({ colour }: Colour): boolean => colour === 'blue'
 
-interface Circle {
+export interface Circle {
   id: string
   colour: string
   shape: 'circle'
