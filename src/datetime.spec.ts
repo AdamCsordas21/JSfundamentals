@@ -5,55 +5,63 @@ import {
   getPartyIndicator,
   DayNumber,
   NumberTranslator,
-  PartyIndicator
-} from './datetime'
+  PartyIndicator,
+  getCurrentDate,
+} from "./datetime";
 
-describe('date', () => {
-
-  it('tells day of the week', () => {
+describe("date", () => {
+  it("tells day of the week", () => {
     const testCases: [DayNumber, string][] = [
-      [0, 'Sunday'],
-      [1, 'Monday'],
-      [2, 'Tuesday'],
-      [3, 'Wednesday'],
-      [4, 'Thursday'],
-      [5, 'Friday'],
-      [6, 'Saturday'],
-    ]
+      [0, "Sunday"],
+      [1, "Monday"],
+      [2, "Tuesday"],
+      [3, "Wednesday"],
+      [4, "Thursday"],
+      [5, "Friday"],
+      [6, "Saturday"],
+    ];
     for (const [dayNumber, day] of testCases) {
-      expect(dayNumberToName(dayNumber)).toEqual(day)
+      expect(dayNumberToName(dayNumber)).toEqual(day);
     }
-  })
+  });
 
-  it('tells day of the week in Hungarian', () => {
+  it("tells day of the week in Hungarian", () => {
     const testCases: [DayNumber, string][] = [
-      [0, 'vasárnap'],
-      [1, 'hétfő'],
-      [2, 'kedd'],
-      [3, 'szerda'],
-      [4, 'csütörtök'],
-      [5, 'péntek'],
-      [6, 'szombat'],
-    ]
+      [0, "vasárnap"],
+      [1, "hétfő"],
+      [2, "kedd"],
+      [3, "szerda"],
+      [4, "csütörtök"],
+      [5, "péntek"],
+      [6, "szombat"],
+    ];
     for (const [dayNumber, day] of testCases) {
-      expect(dayNumberToNameInHungarian(dayNumber)).toEqual(day)
+      expect(dayNumberToNameInHungarian(dayNumber)).toEqual(day);
     }
-  })
+  });
 
-  it('translates weekday number', () => {
-    const number: number = 123
-    const fakeTranslator: NumberTranslator = () => 'abc'
-    const expected: string = 'abc'
-    expect(getWeekDay(number, fakeTranslator)).toEqual(expected)
-  })
+  it("translates weekday number", () => {
+    const number: number = 123;
+    const fakeTranslator: NumberTranslator = () => "abc";
+    const expected: string = "abc";
+    expect(getWeekDay(number, fakeTranslator)).toEqual(expected);
+  });
 
-  it('parties on Friday', () => {
+  it("parties on Friday", () => {
     const testCases: [string, PartyIndicator][] = [
-      ['Friday', '🎉'],
-      ['any other day', '😞'],
-    ]
+      ["Friday", "🎉"],
+      ["any other day", "😞"],
+    ];
     for (const [day, expected] of testCases) {
-      expect(getPartyIndicator(day)).toEqual(expected)
+      expect(getPartyIndicator(day)).toEqual(expected);
     }
-  })
-})
+  });
+
+  it("should get current date as string", () => {
+    const dateProvider = () => new Date(2020, 10, 10);
+
+    const currentDate = getCurrentDate(dateProvider);
+
+    expect(currentDate).toEqual("2020-11-10");
+  });
+});
