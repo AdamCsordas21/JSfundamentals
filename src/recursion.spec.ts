@@ -3,12 +3,12 @@ import { factorial } from './recursion'
 describe('recursion', () => {
   type RecursionTestCase = [n: number, expected: number]
   const testCases: RecursionTestCase[] = [
-    [ 0, 0 ],
-    [ 1, 1 ],
-    [ 2, 2 ],
-    [ 3, 6 ],
-    [ 4, 24 ],
-    [ 5, 120 ],
+    [0, 0],
+    [1, 1],
+    [2, 2],
+    [3, 6],
+    [4, 24],
+    [5, 120],
   ]
   // testCases.forEach(({ n, expected }: RecursionTestCase): void =>
   //   it(`calculates factorial of ${n}`, () => {

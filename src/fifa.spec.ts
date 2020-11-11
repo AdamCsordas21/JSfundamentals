@@ -59,9 +59,9 @@ describe('fifa rating', () => {
   })
 
   it('rates player score as low when below or equal to 100', () => {
-    const player: Player = { 
-      name: 'adam', 
-      score: 1000 
+    const player: Player = {
+      name: 'adam',
+      score: 1000
     }
     const actual: boolean = isScoreHigh(player)
     const expected: boolean = false
@@ -69,7 +69,7 @@ describe('fifa rating', () => {
     expect(actual).toEqual(expected)
   })
 
-  const players: Player2 [] = [
+  const players: Player2[] = [
     { name: 'p1', score: { current: 1455, averageInLastWeek: 1300 } },
     { name: 'p2', score: { current: 1235, averageInLastWeek: 1400 } },
     { name: 'p3', score: { current: 1085, averageInLastWeek: 1100 } },
@@ -102,7 +102,7 @@ describe('fifa rating', () => {
       { name: 'p6', score: { current: 3000, averageInLastWeek: 3100 } },
       { name: 'p4', score: { current: 2210, averageInLastWeek: 2100 } },
       { name: 'p5', score: { current: 1565, averageInLastWeek: 1300 } },
-      { name: 'p1', score: { current: 1455, averageInLastWeek: 1300 }},
+      { name: 'p1', score: { current: 1455, averageInLastWeek: 1300 } },
       { name: 'p2', score: { current: 1235, averageInLastWeek: 1400 } },
       { name: 'p3', score: { current: 1085, averageInLastWeek: 1100 } },
     ];
@@ -127,11 +127,11 @@ describe('fifa rating', () => {
 
   it('produces monthly message of the player that will drop out', () => {
     // player to drop out is the player from the current rooster that has the lowest current points
-    const players: Player3[]= [
-      { player: { first: 'Osh', last: 'Sama' }, score: { top: 500, current: 123 }},
-      { player: { first: 'Adam', last: 'Csordas' }, score: { top: 999, current: 501 }},
-      { player: { first: 'Nati', last: 'Fati' }, score: { top: 1000000, current: -12 }},
-      { player: { first: 'Nela', last: 'Trela' }, score: { top: 10, current: 10 }},
+    const players: Player3[] = [
+      { player: { first: 'Osh', last: 'Sama' }, score: { top: 500, current: 123 } },
+      { player: { first: 'Adam', last: 'Csordas' }, score: { top: 999, current: 501 } },
+      { player: { first: 'Nati', last: 'Fati' }, score: { top: 1000000, current: -12 } },
+      { player: { first: 'Nela', last: 'Trela' }, score: { top: 10, current: 10 } },
     ]
     const actual: string = createMonthlyMessageOfPlayerThatWillDropOut(players)
     const expected = 'This month Nati Fati will drop out. With score of -12 was the last one in the league.'
@@ -162,32 +162,32 @@ describe('fifa rating', () => {
 
   describe('player description', () => {
     it('converts player object to string representation', () => {
-      const player: { title: string, firstName: string, midName: string, lastName: string, highScore: number } = 
-      { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
+      const player: { title: string, firstName: string, midName: string, lastName: string, highScore: number } =
+        { title: 'Mr.', firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
       const actual: string = playerToString(player)
       const expected: string = 'Mr. Adam Seer Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when title is undefined', () => {
-      const player: Player4 = 
-      { firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
+      const player: Player4 =
+        { firstName: 'Adam', midName: 'Seer', lastName: 'Csordas', highScore: 4700 }
       const actual: string = playerToString(player)
       const expected: string = 'Adam Seer Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when middle name is undefined', () => {
-      const player: Player4 = 
-      { title: 'Mr.', firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
+      const player: Player4 =
+        { title: 'Mr.', firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
       const actual: string = playerToString(player)
       const expected: string = 'Mr. Adam Csordas: 4700'
       expect(actual).toEqual(expected)
     })
 
     it('converts player object to string representation when title and middle name are undefined', () => {
-      const player: Player4 = 
-      { firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
+      const player: Player4 =
+        { firstName: 'Adam', lastName: 'Csordas', highScore: 4700 }
       const actual: string = playerToString(player)
       const expected: string = 'Adam Csordas: 4700'
       expect(actual).toEqual(expected)

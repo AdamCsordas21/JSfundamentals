@@ -12,8 +12,8 @@ import {
   fizzBuzz,
   miniFizzBuzz,
   oshWasHere,
-  integerDescriptorOfList, 
-  FizzBuzz, 
+  integerDescriptorOfList,
+  FizzBuzz,
   Osh
 } from './'
 
@@ -168,7 +168,7 @@ describe('map', () => {
       "big positive even number",
       "big negative even number"
     ]
-    
+
     expect(integerDescriptorOfList(testArray)).toEqual(expected)
   })
 })

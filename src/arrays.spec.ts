@@ -45,7 +45,7 @@ import {
   removeSomeElementsFromIndexToIndex,
   removeSomeElementsFromIndexToIndex2,
   PlayerTopScore,
-  PlayerAvgScore, 
+  PlayerAvgScore,
   PlayersByWorstPermorming
 } from './arrays'
 

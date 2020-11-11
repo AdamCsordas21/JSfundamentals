@@ -504,7 +504,7 @@ they are evaluated from left to right.
 Strict mode
 
 Strict Mode was a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict”
-operating context. This strict context prevents certain actions from being taken and throws more exceptions. ... 
+operating context. This strict context prevents certain actions from being taken and throws more exceptions. ...
 Strict mode eliminates some JavaScript silent errors by changing them to throw errors.
 
 Strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicity opting-out of
@@ -586,18 +586,18 @@ failure is possible.
 
 2.: strict mode makes assignments which would otherwise silently fail to throw an exception. For example,
 NaN is a non-writable global variable. In normal code assigning to NaN does nothing; the developer receives
-no failure feedback. In strict mode assigning to NaN throws an exception. 
+no failure feedback. In strict mode assigning to NaN throws an exception.
 
 3.: strict mode makes attempts to delete undeletable properties throw (where before the attempt would simply
   have no effect)
-  
+
 4.: strict mode prior to Gecko 34 requires that all properties named in an object literal be unique.
 
 5.: strict mode requires that function parameter names be unique.
 
 6.: strict mode in ECMAScript 5 forbids octal syntax. The octal syntax isn't part of ECMAScript 5, but
 it's supported in all browsers by prefixing the octal number with a zero: 0644 === 420 and "\045" === "%".
-In ECMAScript 2015 Octal number is supported by prefixing a number with "0o". i.e. 
+In ECMAScript 2015 Octal number is supported by prefixing a number with "0o". i.e.
 var a = 0o10; // ES2015: Octal
 
 7.: strict mode in ECMAScript 2015 forbids setting properties on primitive values. Without strict mode,
@@ -616,11 +616,11 @@ false.true = '';         // TypeError
 Strict mode
 
 What is 'use strict'?
-'use strict' is a directive that came out with ECMAScript 5 and what it does is change the way that 
+'use strict' is a directive that came out with ECMAScript 5 and what it does is change the way that
 JavaScript is executed.
 It changes to use a strict operating context.
 Strict mode eliminates some JavaScript silent errors by changing them to throw errors.
-It supposed to help us to write more secure JavaScript. 
+It supposed to help us to write more secure JavaScript.
 Sometimes JavaScript let us get away with things that we shouldn't. Usually code that could have side-effects
 like using variables that hasn't been defined.
 x = 'Hello!'
@@ -635,7 +635,7 @@ function example
 without strict mode X will end up as a global variable and that's not we want.
 Using 'use strict' prevents this
 
-function doWork() {                  
+function doWork() {
   x = 'world'
   console.log(x)
 }

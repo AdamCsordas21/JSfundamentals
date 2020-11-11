@@ -65,11 +65,11 @@ export function createMonthlyRankingOfPlayers(players: Player2[]): string {
 };
 
 export function top3Players(players: Player2[]): Player2[] {
-  return sortPlayersDescendingPure(players).slice(0,3);
+  return sortPlayersDescendingPure(players).slice(0, 3);
 };
 
 export function top5Players(players: Player2[]): Player2[] {
-  return sortPlayersDescending(players).slice(0,5);
+  return sortPlayersDescending(players).slice(0, 5);
 };
 
 export function sortPlayersDescending(players: Player2[]): Player2[] {
@@ -116,7 +116,7 @@ export function createAlphabeticallyOrderedPlayerDetailsList(players: Player4[])
     .map(playerToString)
     .map(stringToListElement)
     .join('\n')
-    
+
   return listElementsToOrderedList(playersList)
 }
 

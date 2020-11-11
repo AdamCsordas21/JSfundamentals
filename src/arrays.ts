@@ -158,7 +158,7 @@ export const sortPlayersByTopScoreAscending = (players: PlayerTopScore[]): void 
   players.reverse()
 }
 
-export const sortPlayersByAvgScoreDescending: (players : PlayerAvgScore[]) => void = (players: PlayerAvgScore[]): void => {
+export const sortPlayersByAvgScoreDescending: (players: PlayerAvgScore[]) => void = (players: PlayerAvgScore[]): void => {
   sortPlayersByAvgScoreAscending(players)
   players.reverse()
 }

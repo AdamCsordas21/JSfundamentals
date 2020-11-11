@@ -43,11 +43,11 @@ interface SquareConstructorParams {
 }
 
 export const doubleDigitId = ({ id, sideLength, colour }: SquareConstructorParams): Square => ({
-    id: id.padStart(2, '0'),
-    shape: 'square',
-    sideLength,
-    colour
-  })
+  id: id.padStart(2, '0'),
+  shape: 'square',
+  sideLength,
+  colour
+})
 
 export const shortDescriptions = ({ colour }: Colour): string => colour.length >= 8 ? `${colour.substring(0, 5)}...` : colour
 

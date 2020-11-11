@@ -42,22 +42,22 @@ export class Item {
   #name: string
   #price: string
   #description: string | undefined
-  
+
   // constructor(name: string, price: string, description?: string) {
   constructor(name: string, price: string, description: string | undefined = undefined) {
     this.#name = name
     this.#price = price
     this.#description = description
   }
-  
+
   get name(): string {
     return this.#name
   }
-  
+
   get price(): string {
     return this.#price
   }
-  
+
   get description(): string | undefined {
     return this.#description
   }
@@ -120,19 +120,19 @@ export class Player {
 
   get lastWin(): any[] {
     return this.#games
-      .filter((game) => game.result === 'win') 
+      .filter((game) => game.result === 'win')
       .sort((a, b) => b.date.localeCompare(a.date))
-      [0]
+    [0]
   }
 }
 
 export class Game {
   #name: string
-  
+
   constructor(name: string) {
     this.#name = name
   }
-  
+
   get name(): string {
     return this.#name
   }

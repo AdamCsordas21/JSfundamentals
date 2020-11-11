@@ -171,7 +171,7 @@ The Villagers`
   // it outputs "OSH was here and osh was there, then OSH was here again, but osh never went back there"
   it('converts every other occurrence of "osh" to "OSH" for a given string', () => {
     expect(convertEveryOtherOccurrenceForGivenString('osh was here and osh was there, then osh was there again, but osh never went back there'))
-    .toEqual('OSH was here and osh was there, then OSH was there again, but osh never went back there')
+      .toEqual('OSH was here and osh was there, then OSH was there again, but osh never went back there')
   })
 
   // splits a string from 5th character to the end (all strings will be 10 characters or longer)

@@ -36,15 +36,15 @@ describe('numbers', () => {
       base: number
       expected: number
     }[] = [
-      { input: '123', base: 10, expected: 123 },
-      { input: '123abc', base: 10, expected: 0 },
-      { input: '01111011', base: 2, expected: 123 },
-      { input: '01211011', base: 2, expected: 0 },
-      { input: '0173', base: 8, expected: 123 },
-      { input: '0183', base: 8, expected: 0 },
-      { input: '0x7b', base: 16, expected: 123 },
-      { input: '0x7g', base: 16, expected: 0 },
-    ]
+        { input: '123', base: 10, expected: 123 },
+        { input: '123abc', base: 10, expected: 0 },
+        { input: '01111011', base: 2, expected: 123 },
+        { input: '01211011', base: 2, expected: 0 },
+        { input: '0173', base: 8, expected: 123 },
+        { input: '0183', base: 8, expected: 0 },
+        { input: '0x7b', base: 16, expected: 123 },
+        { input: '0x7g', base: 16, expected: 0 },
+      ]
 
     for (const { input, base, expected } of testCases) {
       expect(strToInteger(input, base)).toBe(expected)
@@ -62,12 +62,12 @@ describe('numbers', () => {
       base: number
       expected: string
     }[] = [
-      { input: 123, base: 10, expected: '123' },
-      { input: 123, base: 2, expected: '01111011' },
-      { input: 123, base: 8, expected: '0173' },
-      { input: 123, base: 16, expected: '0x7b' },
-      { input: 255, base: 16, expected: '0xff' },
-    ]
+        { input: 123, base: 10, expected: '123' },
+        { input: 123, base: 2, expected: '01111011' },
+        { input: 123, base: 8, expected: '0173' },
+        { input: 123, base: 16, expected: '0x7b' },
+        { input: 255, base: 16, expected: '0xff' },
+      ]
 
     for (const { input, base, expected } of testCases) {
       expect(numberToString(input, base)).toBe(expected)
@@ -80,13 +80,13 @@ describe('numbers', () => {
       currency: string
       expected: string
     }[] = [
-      { number: 1000, currency: 'GBP', expected: '£1,000.00' },
-      { number: 9999.99, currency: 'USD', expected: '$9,999.99' },
-      { number: 9999.99, currency: 'EUR', expected: '€9,999.99' },
-      { number: 9999.99, currency: 'JPY', expected: '¥10,000' },
-      { number: 9999.99, currency: 'HUF', expected: 'HUF 9,999.99' },
-      { number: 9999.99, currency: 'OSH', expected: 'OSH 9,999.99' },
-    ]
+        { number: 1000, currency: 'GBP', expected: '£1,000.00' },
+        { number: 9999.99, currency: 'USD', expected: '$9,999.99' },
+        { number: 9999.99, currency: 'EUR', expected: '€9,999.99' },
+        { number: 9999.99, currency: 'JPY', expected: '¥10,000' },
+        { number: 9999.99, currency: 'HUF', expected: 'HUF 9,999.99' },
+        { number: 9999.99, currency: 'OSH', expected: 'OSH 9,999.99' },
+      ]
 
     for (const { number, currency, expected } of testCases) {
       expect(numberToCurrency(number, currency)).toBe(expected)

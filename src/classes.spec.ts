@@ -107,6 +107,6 @@ describe('players', () => {
     it('can get games name', () => {
       const psStore = new Game('Call of Duty')
       expect(psStore.name).toEqual('Call of Duty')
-    })    
+    })
   })
 })

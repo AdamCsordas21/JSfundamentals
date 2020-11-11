@@ -1,4 +1,4 @@
-import { 
+import {
   Square,
   Circle
 } from "./filter-or-map-or-both"
@@ -23,7 +23,7 @@ export const doesLoveOrNot = ({ petals }: Flower): 'loves' | 'does not' => {
 
 export type Figure = Circle | Square
 
-export const shapeToCirclesArea = (totalArea: number, figure: Figure ): number => {
+export const shapeToCirclesArea = (totalArea: number, figure: Figure): number => {
   if (figure.shape === 'circle' && figure.colour.includes('blue')) {
     totalArea += figure.radius * figure.radius * Math.PI
   }
